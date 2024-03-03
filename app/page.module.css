@@ -1,6 +1,6 @@
 .maincontainer {
     display: grid;
-    grid-template-rows: 80px 40px 1fr;
+    grid-template-rows: 80px 40px 450px 450px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -27,15 +27,16 @@
     background-clip: text;
 }
 
-.mainpage {
+.contentone {
     margin: 40px;
-    margin-top: 50px;
+    margin-top: 80px;
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     color: var(--text);
 }
 
 .h3 {
+    margin-top: 0px;
     font-size: 32px;
     text-align: left;
 }
@@ -48,4 +49,10 @@
 .p {
     font-size: 18px;
     margin-right: 100px;
+}
+
+.contenttwo {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+    color: var(--text);
 }
