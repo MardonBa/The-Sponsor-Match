@@ -28,11 +28,14 @@
 }
 
 .contentone {
-    margin: 40px;
-    margin-top: 80px;
+    margin: 80px 100px 40px 0px;
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     color: var(--text);
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
 }
 
 .h3 {
