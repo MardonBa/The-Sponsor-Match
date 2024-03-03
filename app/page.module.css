@@ -28,7 +28,7 @@
 }
 
 .contentone {
-    margin: 80px 100px 40px 0px;
+    margin: 80px 100px 40px 40px;
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     color: var(--text);
