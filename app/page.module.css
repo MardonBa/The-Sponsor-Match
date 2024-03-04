@@ -28,7 +28,7 @@
 }
 
 .contentone {
-    margin: 80px 100px 40px 40px;
+    margin: 80px 50px 40px 40px;
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     color: var(--text);
@@ -49,13 +49,23 @@
     text-decoration-color: var(--secondary);
 }
 
+.primaryunderline {
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+}
+
 .p {
     font-size: 18px;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 .contenttwo {
     grid-row: 4 / 5;
     grid-column: 2 / 3;
     color: var(--text);
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    margin: 80px 40px 40px 50px;
 }
