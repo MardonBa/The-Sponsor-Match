@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import LandingHeader from "./ui/header/header";
 import LinkToSignUp from "./ui/linkToSignUp/toSignUp";
+import HowItWorks from "./ui/howItWorks/howItWorks";
 
 export default function LandingPage() {
   return (
@@ -24,9 +25,13 @@ export default function LandingPage() {
                 Whether you're a content creator or a sponsor, being able to track engagement and performace is a top priority.
                 For sponsors, see which campaigns are resulting in the most conversions.
                 For creators, see which products are resonating most with your audience.
-                These metrics allow for better matches to be made, allowing for an ultra-effective matching tool.
+                These metrics allow for better matches to be made, allowing for an ultra-effective matching tool, and maximized profits for all.
             </p>
-            <LinkToSignUp text={"Start Now"} color={'primary'} />
+            <LinkToSignUp text={"Get Started"} color={'primary'} />
+        </section>
+        <section className={styles.howitworks} >
+            <h2 className={`${styles.h2} ${styles.secondaryunderline}`} >How it Works</h2>
+            <HowItWorks number={1} header={'yo'} maintext={''} />
         </section>
     </div>
   );

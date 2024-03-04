@@ -1,0 +1,16 @@
+.cardcontainer {
+    display: grid;
+    grid-template-rows: 30px 100px;
+    background-color: var(--primary);
+    border-radius: 15px;
+    width: 200px;
+}
+
+.head {
+    grid-row: 1 / 2;
+    color: var(--background);
+    width: auto;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 20px;
+}
