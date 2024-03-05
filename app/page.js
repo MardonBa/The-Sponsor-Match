@@ -31,7 +31,18 @@ export default function LandingPage() {
         </section>
         <section className={styles.howitworks} >
             <h2 className={`${styles.h2} ${styles.secondaryunderline}`} >How it Works</h2>
-            <HowItWorks number={1} header={'yo'} maintext={''} />
+            <div className={styles.cardcontainer} >
+                <div className={styles.flexrow} >
+                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                </div>
+                <div className={styles.flexrow} >
+                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                </div>
+            </div>
         </section>
     </div>
   );
