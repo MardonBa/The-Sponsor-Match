@@ -34,13 +34,13 @@ export default function LandingPage() {
             <div className={styles.cardcontainer} >
                 <div className={styles.flexrow} >
                     <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
-                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
-                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                    <HowItWorks number={2} header={'Search for partnerships'} maintext={"Creators match with sponsors, and sponsors match with creators! Use our matching tools to forge the best partnerships possible and start working together to create content"} />
+                    <HowItWorks number={3} header={'Use our analytics'} maintext={'For both creators and sponsors, see which campaigns have the bset results. Track clicks, views, and interactions, and use data to maximize your brand.'} />
                 </div>
                 <div className={styles.flexrow} >
-                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
-                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
-                    <HowItWorks number={1} header={'Create Your Account'} maintext={'Click sign up, and start creating your account. Create either a sponsor or creator account, and then pick the best plan for your use case. '} />
+                    <HowItWorks number={4} header={'Make/Recieve Payments'} maintext={'Struggling with payments is a thing of the past. Once the agreed-upon content has been created and published, payments will be automatically processed and distributed. '} />
+                    <HowItWorks number={5} header={'Optional: Advertise!'} maintext={"It's no secret that matching systems aren't perfect. Every plan comes with advertising credits, but you can purchase more to get yourself out there! Creators can match with more sponsors, and sponsors can connect with more creators."} />
+                    <HowItWorks number={6} header={'Repeat!'} maintext={"There's no limit to how many partnerships you can have. Create as many or as little partnerships as you want, and grow your brand/monetize your content to your heart's desire."} />
                 </div>
             </div>
         </section>
