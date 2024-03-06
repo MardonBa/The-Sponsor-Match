@@ -3,14 +3,23 @@
     height: 60px;
     margin-top: 20px;
     border-radius: 10px;
+    box-shadow: 3px 3px 3px #101010;
 }
 
 .bgprimary {
     background-color: var(--primary);
 }
 
+.bgprimary:hover {
+    background-color: var(--primary-variant);
+}
+
 .bgsecondary {
     background-color: var(--secondary);
+}
+
+.bgsecondary:hover {
+    background-color: var(--secondary-variant);
 }
 
 .text {
