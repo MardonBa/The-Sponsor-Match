@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import LandingHeader from "./ui/header/header";
 import LinkToSignUp from "./ui/linkToSignUp/toSignUp";
 import HowItWorks from "./ui/howItWorks/howItWorks";
+import ComparisonCard from "./ui/comparisonCard/comparisonCard";
 
 export default function LandingPage() {
   return (
@@ -29,6 +30,10 @@ export default function LandingPage() {
             </p>
             <LinkToSignUp text={"Get Started"} color={'primary'} />
         </section>
+        <section className={styles.comparisoncontainer} >
+            <ComparisonCard type={'creator'} />
+            <ComparisonCard type={'sponsor'} />
+        </section>
         <section className={styles.howitworks} >
             <h2 className={`${styles.h2} ${styles.secondaryunderline}`} >How it Works</h2>
             <div className={styles.cardcontainer} >
@@ -39,7 +44,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.flexrow} >
                     <HowItWorks number={4} header={'Make/Recieve Payments'} maintext={'Struggling with payments is a thing of the past. Once the agreed-upon content has been created and published, payments will be automatically processed and distributed. '} />
-                    <HowItWorks number={5} header={'Optional: Advertise!'} maintext={"It's no secret that matching systems aren't perfect. Every plan comes with advertising credits, but you can purchase more to get yourself out there! Creators can match with more sponsors, and sponsors can connect with more creators."} />
+                    <HowItWorks number={5} header={'Optional: Advertise!'} maintext={"Even with our matching tool, you want to get your name out there into the world! Every plan comes with advertising credits to help you create new parternships, and you can buy more to maximize your outcome."} />
                     <HowItWorks number={6} header={'Repeat!'} maintext={"There's no limit to how many partnerships you can have. Create as many or as little partnerships as you want, and grow your brand/monetize your content to your heart's desire."} />
                 </div>
             </div>
