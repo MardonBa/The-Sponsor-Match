@@ -16,8 +16,14 @@ export default function ComparisonCard({ type }) {
     }
 
     return (
-        <div className={styles.cardcontainer}>
-            {cardText}
+        <div className={styles.container} >
+            <ul className={styles.tabnav} >
+                    <li>Creators</li>
+                    <li>Sponsors</li>
+                </ul>
+            <div className={styles.cardcontainer}>
+                {cardText}
+            </div>
         </div>
     );
 }

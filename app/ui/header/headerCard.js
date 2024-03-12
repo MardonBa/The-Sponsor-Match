@@ -6,7 +6,7 @@ export default function HeaderCard({ text, gridStyle, hoverstyle=undefined, incl
     // ArrowComponent is only there for the features dropdown, all others will have it as undefined
     return (
     <div className={`${styles.card} ${gridStyle}`} >
-        <p className={`${styles.text} ${hoverstyle}`}>{text}                       {includeArrow ? <ArrowComponent /> : <i></i>}</p>
+        <p className={`${styles.text} ${hoverstyle}`}>{text}{includeArrow ? <ArrowComponent /> : <i></i>}</p>
     </div>
     );
 }

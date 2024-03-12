@@ -32,7 +32,6 @@ export default function LandingPage() {
         </section>
         <section className={styles.comparisoncontainer} >
             <ComparisonCard type={'creator'} />
-            <ComparisonCard type={'sponsor'} />
         </section>
         <section className={styles.howitworks} >
             <h2 className={`${styles.h2} ${styles.secondaryunderline}`} >How it Works</h2>
