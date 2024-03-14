@@ -1,6 +1,6 @@
 .cardcontainer {
     width: 500px;
-    height: 600px;
+    height: 550px;
     border-radius: 30px;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(20px);
@@ -10,6 +10,49 @@
     font-size: 20px;
 }
 
+.tabnav {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 0px;
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: var(--background);
+}
+
+.tabnav li {
+    display: inline;
+    color: var(--text);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.activetab {
+    background-color: var(--text);
+    color: var(--background-variant) !important;
+    border-radius: 30px;
+    height: inherit;
+    width: 50%;
+    margin: 0px !important;
+    transition: all .3s steps(10, jump-start);
+    text-decoration: underline;
+}
+
+.activetab:hover {
+    cursor: pointer;
+}
+
+.inactivetab:hover {
+    cursor: pointer;
+}
+
 .list {
     margin: 20px;
     padding: 15px;
@@ -17,11 +60,6 @@
     flex-direction: column;
     align-self: center;
     justify-self: center;
-    list-style-type: none;
+    justify-content: space-around;
+    height: 500px;
 }
-
-.list:nth-child(even) {
-    color: #262626;
-    text-decoration: underline;
-}
-

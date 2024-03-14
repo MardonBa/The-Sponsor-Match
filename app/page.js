@@ -31,7 +31,7 @@ export default function LandingPage() {
             <LinkToSignUp text={"Get Started"} color={'primary'} />
         </section>
         <section className={styles.comparisoncontainer} >
-            <ComparisonCard type={'creator'} />
+            <ComparisonCard />
         </section>
         <section className={styles.howitworks} >
             <h2 className={`${styles.h2} ${styles.secondaryunderline}`} >How it Works</h2>
