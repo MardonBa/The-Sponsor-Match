@@ -1,6 +1,6 @@
 .cardcontainer {
     width: 500px;
-    height: 550px;
+    height: auto;
     border-radius: 30px;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(20px);
@@ -25,10 +25,9 @@
 }
 
 .tabnav li {
-    display: inline;
     color: var(--text);
     margin: auto;
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
@@ -38,11 +37,13 @@
     background-color: var(--text);
     color: var(--background-variant) !important;
     border-radius: 30px;
-    height: inherit;
+    height: 36px;
     width: 50%;
     margin: 0px !important;
     transition: all .3s steps(10, jump-start);
     text-decoration: underline;
+    border: 2px solid var(--primary);
+    margin-bottom: 10px
 }
 
 .activetab:hover {
@@ -61,5 +62,12 @@
     align-self: center;
     justify-self: center;
     justify-content: space-around;
-    height: 500px;
+}
+
+.list * {
+	list-style-image: url("../../../public/checkmark.png");
+    list-style-position: inside;
+	background-repeat: no-repeat;
+	background-size: 10px;
+    margin-top: 10px
 }
