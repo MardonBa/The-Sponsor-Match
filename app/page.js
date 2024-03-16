@@ -30,9 +30,11 @@ export default function LandingPage() {
             </p>
             <LinkToSignUp text={"Get Started"} color={'primary'} />
         </section>
+        <div className={`${styles.curvespacer} ${styles.layer1}`} ></div>
         <section className={styles.comparisoncontainer} >
             <ComparisonCard />
         </section>
+        <div className={`${styles.curvespacer} ${styles.layer2}`} ></div>
         <section className={styles.howitworks} >
             <h2 className={`${styles.h2} ${styles.secondaryunderline}`} >How it Works</h2>
             <div className={styles.cardcontainer} >
