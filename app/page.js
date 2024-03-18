@@ -33,7 +33,7 @@ export default function LandingPage() {
             <LinkToSignUp text={"Get Started"} color={'primary'} />
         </section>
         <div className={`${styles.curvespacer} ${styles.layer1}`} >
-          <LinkToPages page="features" />
+          <LinkToPages page="pricing" />
         </div>
         <section className={styles.comparisoncontainer} >
           <ComparisonCard />
