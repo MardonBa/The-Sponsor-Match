@@ -33,10 +33,11 @@
     grid-row: 3 / 4;
     grid-column: 1 / 2;
     color: var(--text);
-    max-width: 800px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-self: flex-end;
+    height: auto;
 }
 
 .h3 {
@@ -102,7 +103,7 @@
     grid-column: 1 / 3;
     margin: 0;
     background-color: var(--primary-variant);
-    height: 1000px;
+    height: 800px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -118,6 +119,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 @media (prefers-color-scheme: dark) {
