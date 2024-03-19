@@ -1,8 +1,9 @@
 .textcontainer {
     color: var(--background);
-    background-color: var(--primary);
+    background-color: var(--text);
     border-radius: 10px;
-    box-shadow: 3px 3px 3px #101010;
+    border: 3px solid var(--background);
+    box-shadow: 3px 3px 3px var(--text);
     width: 700px;
     height: 80px;
     text-align: center;
@@ -14,5 +15,5 @@
 }
 
 .textcontainer:hover {
-    background-color: var(--primary-variant);
+    background-color: var(--secondary-variant);
 }
