@@ -3,10 +3,22 @@
 import styles from "./comparisonCard.module.css";
 import CreatorText from "./creators";
 import SponsorText from "./sponsors";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useInView } from "framer-motion";
 
 
 export default function ComparisonCard() {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref); // Should be a boolean T/F used for animations when the component comes into view
+
+
+    let visibility;
+    if (isInView == true) { 
+        visibility = styles.visible;
+    } else {
+        visibility = styles.hidden;
+    }
 
     let cardText;
     let [isActive, setIsActive] = useState('creator');  // 'creators' or 'sponsors'
@@ -28,7 +40,7 @@ export default function ComparisonCard() {
     }
 
     return (
-        <div className={styles.container} >
+        <div className={`${styles.container} ${visibility}`} ref={ref} >
             <ul className={styles.tabnav} >
                     <li className={isActive === 'creator' ? styles.activetab : styles.inactivetab} onClick={handleCreatorTab} >Creators</li>
                     <li className={isActive === 'sponsor' ? styles.activetab : styles.inactivetab} onClick={handleSponsorTab} >Sponsors</li>
