@@ -5,8 +5,7 @@ import LinkToSignUp from "./ui/buttons/linkToSignUp/toSignUp";
 import HowItWorks from "./ui/howItWorks/howItWorks";
 import ComparisonCard from "./ui/comparisonCard/comparisonCard";
 import LinkToPages from "./ui/buttons/linkToPages/linkToPages";
-import Footer from "./ui/footer/footer";
-import Link from "next/link";
+import LandingFooter from "./ui/footer/footer";
 
 export default function LandingPage() {
   return (
@@ -57,7 +56,7 @@ export default function LandingPage() {
                 </div>
             </div>
         </section>
-        <Footer className={styles.footercontainer} />
+        <LandingFooter className={styles.footercontainer} />
     </div>
     
   );

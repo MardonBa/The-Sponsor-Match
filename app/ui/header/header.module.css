@@ -89,3 +89,12 @@
 .hoverunderline:hover::after {
     width: 100%;
 }
+
+.linkstyles {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.linkstyles:active {
+    color: var(--text);
+}

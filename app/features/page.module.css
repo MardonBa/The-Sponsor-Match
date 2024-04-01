@@ -1,0 +1,28 @@
+.pagecontainer {
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.content {
+    margin-top: 80px; /* Height of the header, offset */
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 600px;
+}
+
+.scrollchangecontainer { /* Scrolling will spark fade in-out effect for moving on to the next feature */
+    background-color: var(--background-variant);
+    grid-column: 2 / 3;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.regularcontainer {
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
