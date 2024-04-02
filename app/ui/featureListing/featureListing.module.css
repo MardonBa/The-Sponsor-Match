@@ -1,0 +1,23 @@
+.featurecontainer {
+    color: var(--text);
+    margin: 75px 0px 700px 0px;
+}
+
+.heading {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 12px 0px 12px 0px;
+}
+
+.subheading {
+    font-size: 22px;
+    font-weight: normal;
+    text-decoration: underline;
+    text-decoration-color: var(--secondary);
+    margin: 12px 0px 12px 0px;
+}
+
+.description {
+    font-size: 16px;
+    margin: 12px 0px 12px 0px;
+}

@@ -4,6 +4,8 @@
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 3px 3px 3px #101010;
+    display: inline-grid;
+    align-items: center;
 }
 
 .bgprimary {
