@@ -1,13 +1,12 @@
 .pagecontainer {
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 80px auto auto auto;
 }
 
 .content {
-    margin-top: 80px; /* Height of the header, offset */
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 6fr 5fr;
     height: auto;
 }
 
@@ -27,4 +26,14 @@
     align-items: flex-end;
     flex-direction: column;
     padding: 100px;
+}
+
+.pageheading {
+    width: 100%;
+    text-align: center;
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--primary-variant);
+    font-size: 60px;
+    font-weight: normal;
 }

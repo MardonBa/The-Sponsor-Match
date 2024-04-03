@@ -12,6 +12,7 @@ export default function FeatuersPage() {
         <div className={styles.content} >
             {/* These 2 divs will be side by side, scrollchangecontainer will have fade-in/out  effect on scroll to next feature */}
             <div className={styles.regularcontainer} >
+                <h1 className={styles.pageheading} >Features</h1>
                 <FeatureListing feature="matching" />
                 <FeatureListing feature="engagement" />
                 <FeatureListing feature="comparisons" />
