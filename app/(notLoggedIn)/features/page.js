@@ -1,7 +1,7 @@
 import styles from './page.module.css';
-import LandingHeader from '../ui/header/header';
-import LandingFooter from '../ui/footer/footer';
-import FeatureListing from '../ui/featureListing/featureListing';
+import LandingHeader from '../../ui/header/header';
+import LandingFooter from '../../ui/footer/footer';
+import FeatureListing from '../../ui/featureListing/featureListing';
 
 export default function FeatuersPage() {
     // https://popularpays.com/use-case/content-creation/?utm_source=google&utm_medium=cpc&utm_campaign=20861633461&utm_adset_id=164208522648&utm_ad_id=689885638041&utm_term=content%20maker&gad_source=1&gclid=Cj0KCQjw8J6wBhDXARIsAPo7QA96gXB1x1VLghuX3p8HQP2sJCkFK0qaHoTnczihagsCxMMEGq6B15kaAvTyEALw_wcB
