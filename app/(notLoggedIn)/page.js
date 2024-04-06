@@ -1,16 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import LandingHeader from "../ui/header/header";
 import LinkToSignUp from "../ui/buttons/linkToSignUp/toSignUp";
 import HowItWorks from "../ui/howItWorks/howItWorks";
 import ComparisonCard from "../ui/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/buttons/linkToPages/linkToPages";
-import LandingFooter from "../ui/footer/footer";
 
 export default function LandingPage() {
   return (
     <div className={styles.maincontainer} >
-        <LandingHeader />
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
           <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Start a relationship to promote your product or make money off of your content</h3>
@@ -56,7 +53,6 @@ export default function LandingPage() {
                 </div>
             </div>
         </section>
-        <LandingFooter className={styles.footercontainer} />
     </div>
     
   );

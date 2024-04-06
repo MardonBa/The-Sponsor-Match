@@ -1,5 +1,7 @@
 import { Rubik } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import LandingHeader from "../ui/header/header";
+import LandingFooter from "../ui/footer/footer";
 
 
 const rubik = Rubik({ subsets: ["latin"] });
@@ -12,7 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+        <body className={rubik.className}>
+            <LandingHeader />
+            {children}
+            <LandingFooter />
+        </body>
     </html>
   );
 }

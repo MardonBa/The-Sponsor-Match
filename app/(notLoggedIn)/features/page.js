@@ -1,6 +1,4 @@
 import styles from './page.module.css';
-import LandingHeader from '../../ui/header/header';
-import LandingFooter from '../../ui/footer/footer';
 import FeatureListing from '../../ui/featureListing/featureListing';
 
 export default function FeatuersPage() {
@@ -8,7 +6,6 @@ export default function FeatuersPage() {
     // Maybe use framer-motion (similar to animations) for the fade-in-out effect
     return(
     <div className={styles.pagecontainer} >
-        <LandingHeader />
         <div className={styles.content} >
             {/* These 2 divs will be side by side, scrollchangecontainer will have fade-in/out  effect on scroll to next feature */}
             <div className={styles.regularcontainer} >
@@ -28,6 +25,5 @@ export default function FeatuersPage() {
                 <h2>feature 3 image</h2>
             </div>
         </div>
-        <LandingFooter />
     </div>);
 }
