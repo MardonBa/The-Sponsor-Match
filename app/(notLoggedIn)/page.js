@@ -1,9 +1,9 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import LinkToSignUp from "../ui/buttons/linkToSignUp/toSignUp";
-import HowItWorks from "../ui/howItWorks/howItWorks";
-import ComparisonCard from "../ui/comparisonCard/comparisonCard";
-import LinkToPages from "../ui/buttons/linkToPages/linkToPages";
+import LinkToSignUp from "../ui/notLoggedIn/buttons/linkToSignUp/toSignUp";
+import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
+import ComparisonCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
+import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 
 export default function LandingPage() {
   return (

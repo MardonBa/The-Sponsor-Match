@@ -1,7 +1,7 @@
 import { Rubik } from "next/font/google";
 import "../globals.css";
-import LandingHeader from "../ui/header/header";
-import LandingFooter from "../ui/footer/footer";
+import LandingHeader from "../ui/notLoggedIn/header/header";
+import LandingFooter from "../ui/notLoggedIn/footer/footer";
 
 
 const rubik = Rubik({ subsets: ["latin"] });
