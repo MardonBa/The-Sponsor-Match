@@ -4,7 +4,9 @@ import { Sidebar } from '@/app/ui/loggedIn/dashboardComponents/sidebar';
 export default function Dashboard() {
     return (
         <div className={styles.dashboardcontainer} >
-            <Sidebar className={`${styles.sidebar} ${styles.navsidebar}`} />
+            <Sidebar className={`${styles.sidebar} ${styles.navsidebar}`} >
+                {/* relevant children will go here instead of in the sidebar file for better customization */}
+            </Sidebar>
             <div className={styles.maincontentcontainer} >
                 <div className={styles.searchcontainer} >
 
@@ -14,7 +16,9 @@ export default function Dashboard() {
 
                 </div>
             </div>
-            <Sidebar className={`${styles.sidebar} ${styles.messagessidebar}`} />
+            <Sidebar className={`${styles.sidebar} ${styles.messagessidebar}`} >
+                {/* relevant children will go here instead of in the sidebar file for better customization */}
+            </Sidebar>
         </div>
     );
 }
