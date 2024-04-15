@@ -1,8 +1,35 @@
 .dashboardcontainer {
     height: 100vh;
     overflow: auto;
+    display: grid;
+    grid-template-columns: fit-content(150px) auto fit-content(150px);
 }
 
 .sidebar {
-    max-width: 100px;
+    width: 200px;
+    height: 100vh;
+    color: white;
+    background-color: var(--background-variant);
+}
+
+.navsidebar {
+    grid-column: 1 / 2;
+}
+
+.messagessidebar {
+    grid-column: 3 / 4;
+}
+
+.maincontentcontainer {
+    grid-column: 2 / 3;
+}
+
+.searchcontainer {
+    background: white;
+    height: 70%;
+}
+
+.managementcontainer {
+    background-color: green;
+    height: 30%;
 }
