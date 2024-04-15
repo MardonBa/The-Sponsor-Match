@@ -1,15 +1,18 @@
 .dashboardcontainer {
-    height: 100vh;
-    overflow: auto;
+    height: calc(100vh - 30px);
+    margin: 15px 0px;
     display: grid;
     grid-template-columns: fit-content(150px) auto fit-content(150px);
+    grid-column-gap: 15px;
+    margin: 15px;
 }
 
 .sidebar {
     width: 200px;
-    height: 100vh;
+    height: 100%;
     color: white;
-    background-color: var(--background-variant);
+    background-color: var(--dashboard-front);
+    border-radius: 15px;
 }
 
 .navsidebar {
@@ -25,11 +28,15 @@
 }
 
 .searchcontainer {
-    background: white;
-    height: 70%;
+    height: calc(70% - 10px);
+    border-radius: 15px;
+    margin: 0px 0px 10px 0px;
+    background-color: var(--dashboard-front);
 }
 
 .managementcontainer {
     background-color: green;
     height: 30%;
+    border-radius: 15px;
+    background-color: var(--dashboard-front);
 }

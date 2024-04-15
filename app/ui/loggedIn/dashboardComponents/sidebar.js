@@ -5,7 +5,7 @@ export function Sidebar({ className, children }) {
     // State should change whenever the button is pressed
     return (
         <div className={className} >
-            sidebar
+            {children}
         </div>
     );
 }
