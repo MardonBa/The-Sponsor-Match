@@ -21,6 +21,7 @@
 
 .messagessidebar {
     grid-column: 3 / 4;
+    width: 300px;
 }
 
 .maincontentcontainer {

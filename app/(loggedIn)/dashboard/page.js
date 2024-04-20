@@ -1,11 +1,13 @@
 import styles from './page.module.css';
-import { Sidebar } from '@/app/ui/loggedIn/dashboardComponents/sidebar';
+import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar';
+import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/navsidebar';
 
 export default function Dashboard() {
     return (
         <div className={styles.dashboardcontainer} >
             <Sidebar className={`${styles.sidebar} ${styles.navsidebar}`} >
                 {/* relevant children will go here instead of in the sidebar file for better customization */}
+                <NavSideBar />
             </Sidebar>
             <div className={styles.maincontentcontainer} >
                 <div className={styles.searchcontainer} >
