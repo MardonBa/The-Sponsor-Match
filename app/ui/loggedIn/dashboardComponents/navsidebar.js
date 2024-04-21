@@ -3,6 +3,7 @@ import styles from './navsidebar.module.css';
 export default function NavSideBar() {
     return (
         <div className={styles.container} >
+            <h1 className={`${styles.colorgradient} ${styles.logolarge}`} ><b>The Sponsor Match</b></h1>
             <p className={styles.item} >Dashboard</p>
             <p className={styles.item} >Matching</p>
             <p className={styles.item} >Analytics</p>
