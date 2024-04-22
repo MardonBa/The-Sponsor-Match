@@ -32,6 +32,7 @@
 .collapsebutton {
     width: fit-content;
     margin-right: 20px;
+    color: var(--text);
 }
 
 .collapsebutton:hover {
@@ -99,6 +100,7 @@
     font-size: 14px;
     height: 40px;
     margin: 0px;
+    color: var(--text);
 }
 
 .divider {
