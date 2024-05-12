@@ -8,7 +8,8 @@
   --secondary-variant: #0485ad;
   --error: #B00020;
 
-  --dashboard-front: #cbcbcb;
+  --dashboard-front: #EFEFEF;
+  --dashboard-back: #cbcbcb;
 
   background-color: var(--background);
 }
@@ -25,6 +26,7 @@
         --error: #CF6679;
 
         --dashboard-front: #414141;
+        --dashboard-back: #1F1F1F;
     }
 }
 
