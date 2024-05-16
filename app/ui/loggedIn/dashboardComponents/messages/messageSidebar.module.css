@@ -1,5 +1,37 @@
 .container {
     height: 100%;
-    width: 100%;
-    background-color: red;
+    width: 500px;
+    top: 0;
+}
+
+.headingcontainer {
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.collapsebutton {
+    grid-column: 1 / 2;
+    margin-left: 20px;
+    color: var(--text);
+    text-align: left;
+}
+
+
+.heading {
+    grid-column: 2 / 3;
+    margin: 0px;
+    padding: 5%;
+    text-decoration: underline;
+    font-weight: normal;
+    color: var(--text);
+}
+
+.collapsed {
+    width: 150px;
+}
+
+.fullwidth {
+    width: 300px;
 }

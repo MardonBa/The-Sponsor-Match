@@ -29,11 +29,7 @@ export default function NavSideBar() {
     }
 
     function handleCollapseClick() {
-        if (isCollapsed) {
-            setIsCollapsed(false);
-        } else {
-            setIsCollapsed(true);
-        }
+        setIsCollapsed(!isCollapsed);
     }
 
     return (

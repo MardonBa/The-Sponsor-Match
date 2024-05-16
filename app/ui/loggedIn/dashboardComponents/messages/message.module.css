@@ -1,0 +1,48 @@
+.message {
+    width: calc(100% - 14px); /* removing the margins and border thickness from the width */
+    height: 20%;
+    border: 2px solid var(--text);
+    border-radius: 15px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 70px 1fr 20px;
+    color: var(--text);
+}
+
+.profilepicture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    grid-column: 1 / 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.messagecontent {
+    grid-column: 2 / 3;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    display: grid;
+    grid-template-rows: 30% 70%;
+}
+
+.name {
+    font-size: 20px;
+    grid-row: 1 / 2;
+}
+
+.preview {
+    grid-row: 2 / 3;
+}
+
+.unreadmarker {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    background-color: var(--secondary-variant);
+    grid-column: 3 / 4;
+}
