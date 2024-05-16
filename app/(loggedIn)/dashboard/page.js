@@ -1,6 +1,7 @@
 import styles from './page.module.css';
 import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar';
 import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/navsidebar';
+import MessagesSidebar from '@/app/ui/loggedIn/dashboardComponents/messages/messageSidebar';
 
 export default function Dashboard() {
     return (
@@ -20,6 +21,7 @@ export default function Dashboard() {
             </div>
             <Sidebar className={`${styles.sidebar} ${styles.messagessidebar}`} >
                 {/* relevant children will go here instead of in the sidebar file for better customization */}
+                <MessagesSidebar />
             </Sidebar>
         </div>
     );
