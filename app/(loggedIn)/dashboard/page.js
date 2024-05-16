@@ -16,7 +16,7 @@ export default function Dashboard() {
                 </div>
                 <div className={styles.managementcontainer} >
                 {/* This container either has campaigns if the user is a sponsor or current/recent sponsorships for creators */}
-                {/* It should auto-populate up to 4 campaigns/sponsorships, and have a button to view all at the end regardless of how many there are */}
+                {/* It should auto-populate up to 3-4 campaigns/sponsorships, and have a button to view all at the end regardless of how many there are */}
                     
                 </div>
             </div>
