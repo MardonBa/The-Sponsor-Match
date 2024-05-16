@@ -1,6 +1,6 @@
 import styles from './page.module.css';
-import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar';
-import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/navsidebar';
+import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
+import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
 import MessagesSidebar from '@/app/ui/loggedIn/dashboardComponents/messages/messageSidebar';
 
 export default function Dashboard() {
@@ -16,7 +16,8 @@ export default function Dashboard() {
                 </div>
                 <div className={styles.managementcontainer} >
                 {/* This container either has campaigns if the user is a sponsor or current/recent sponsorships for creators */}
-
+                {/* It should auto-populate up to 4 campaigns/sponsorships, and have a button to view all at the end regardless of how many there are */}
+                    
                 </div>
             </div>
             <Sidebar className={`${styles.sidebar} ${styles.messagessidebar}`} >
