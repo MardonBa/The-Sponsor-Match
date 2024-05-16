@@ -4,7 +4,7 @@ import styles from './card.module.css';
 export default function ManagementCard() {
     return (
         <div className={styles.container} >
-
+            
         </div>
     );
 }

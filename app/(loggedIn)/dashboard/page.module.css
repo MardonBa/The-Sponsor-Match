@@ -38,4 +38,6 @@
     height: 30%;
     border-radius: 15px;
     background-color: var(--dashboard-front);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 70px; /*  */
 }
