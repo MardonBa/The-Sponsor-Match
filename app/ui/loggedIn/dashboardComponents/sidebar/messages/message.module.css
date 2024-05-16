@@ -1,7 +1,7 @@
 .message {
     width: calc(100% - 14px); /* removing the margins and border thickness from the width */
     height: 20%;
-    border: 2px solid var(--text);
+    border: 2px solid var(--primary);
     border-radius: 15px;
     margin: 5px;
     display: grid;
@@ -38,8 +38,8 @@
 }
 
 .unreadmarker {
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     align-self: center;
     justify-self: center;
