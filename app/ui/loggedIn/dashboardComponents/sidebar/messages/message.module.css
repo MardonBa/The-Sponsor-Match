@@ -1,9 +1,7 @@
 .message {
-    width: calc(100% - 14px); /* removing the margins and border thickness from the width */
+    width: 100%; /* removing the margins and border thickness from the width */
     height: 20%;
-    border: 2px solid var(--primary);
-    border-radius: 15px;
-    margin: 5px;
+    border-bottom: 2px solid var(--primary);
     display: grid;
     grid-template-columns: 70px 1fr 20px;
     color: var(--text);

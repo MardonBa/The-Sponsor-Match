@@ -9,6 +9,7 @@
     grid-template-columns: 10px 1fr;
     align-items: center;
     justify-items: center;
+    border-bottom: 2px solid var(--primary);
 }
 
 .collapsebutton {
