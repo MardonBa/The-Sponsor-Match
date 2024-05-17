@@ -37,6 +37,8 @@ export default function MessagesSidebar() {
             <Message />
             <Message />
             <Message />
+            <p className={styles.seemorebutton} >See More</p>
+            {/* Should eventually be a button that links to the messages page */}
         </div>
     );
 }

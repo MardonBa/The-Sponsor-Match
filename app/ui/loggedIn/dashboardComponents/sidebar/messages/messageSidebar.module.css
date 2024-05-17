@@ -36,3 +36,8 @@
 .fullwidth {
     width: 300px;
 }
+
+.seemorebutton {
+    color: var(--text);
+    text-align: center;
+}
