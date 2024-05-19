@@ -5,3 +5,9 @@
     border-radius: 10px;
     margin: 10px;
 }
+
+.title {
+    color: var(--text);
+    font-size: 18px;
+    text-align: center;
+}
