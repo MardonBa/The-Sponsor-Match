@@ -19,6 +19,9 @@
     text-align: left;
 }
 
+.collapsebutton:hover {
+    cursor: pointer;
+}
 
 .heading {
     grid-column: 2 / 3;
