@@ -3,6 +3,8 @@ import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
 import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
 import MessagesSidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/messages/messageSidebar';
 import ManagementCard from '@/app/ui/loggedIn/dashboardComponents/management/card';
+import SearchBar from '@/app/ui/loggedIn/dashboardComponents/search/searchbar';
+import SearchResults from '@/app/ui/loggedIn/dashboardComponents/search/searchResults';
 
 export default function Dashboard() {
     return (
@@ -13,7 +15,8 @@ export default function Dashboard() {
             </Sidebar>
             <div className={styles.maincontentcontainer} >
                 <div className={styles.searchcontainer} >
-
+                    <SearchBar />
+                    <SearchResults />
                 </div>
                 <div className={styles.managementcontainer} >
                 {/* This container either has campaigns if the user is a sponsor or current/recent sponsorships for creators */}

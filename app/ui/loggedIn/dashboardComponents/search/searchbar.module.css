@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.container {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(5, 16%) 20%;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.searchbar {
+    grid-row: 1 / 2;
+    grid-column: 1 / 6;
+    width: 80%;
+    height: 21px;
+    resize: none;
+    background-color: var(--background);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 5px;
+    justify-self: center;
+    font-family: "Rubik", sans-serif;
+    /* TODO: fix overflow */
+}
+
+.searchbar:focus {
+    outline: none;
+}
+
+.searchbutton {
+    grid-row: 1 / 2;
+    grid-column: 6 / 7;
+    color: var(--text);
+    border-radius: 10px;
+    width: 100px;
+    background-color: var(--background);
+    height: 21px;
+    text-align: center;
+    padding: 5px;
+}
+
+.dropdowns {
+    grid-row: 2 / 3;
+}

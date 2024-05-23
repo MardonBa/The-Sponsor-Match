@@ -30,6 +30,7 @@
 
 .searchcontainer {
     height: calc(70% - 10px);
+    max-height: calc(70% - 10px);
     border-radius: 15px;
     margin: 0px 0px 10px 0px;
     background-color: var(--dashboard-front);
