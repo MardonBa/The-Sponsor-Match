@@ -1,0 +1,22 @@
+.container {
+    width: fit-content;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--background);
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    align-items: center;
+    justify-items: center;
+    color: var(--text);
+    font-size: 12px;
+    padding: 0px 10px;
+}
+
+.text {
+    grid-column: 1 / 2;
+    white-space: nowrap;
+}
+
+.arrow {
+    grid-column: 2 / 3;
+}

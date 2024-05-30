@@ -1,4 +1,5 @@
 import styles from './searchbar.module.css';
+import DropdownContainer from './dropdowns/dropdownContainer';
 
 export default function SearchBar() {
     return (
@@ -9,9 +10,9 @@ export default function SearchBar() {
                 Might not be necessary, it just depends on how the databse can be queried when the user presses search
                 */}
             </textarea>
-            <p className={styles.searchbutton} >Search</p>
+            <p className={styles.searchbutton} >Search</p> {/* This should eventually be a button that triggers a database search */}
             <div className={styles.dropdowns} >
-
+                <DropdownContainer />
             </div>
         </div>
     );
