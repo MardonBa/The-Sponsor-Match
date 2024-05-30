@@ -1,11 +1,10 @@
 import styles from './message.module.css';
+import ProfilePicPreview from '../../profilePicPreview/profilePicPreview';
 
 export default function Message() {
     return (
         <div className={styles.message}>
-            <div className={styles.profilepicture} >
-                {/* container for the user's profile picture */}
-            </div>
+            <ProfilePicPreview className={styles.profilepicture} />
             <div className={styles.messagecontent} >
                 <p className={styles.name} >Name</p>
                 <p className={styles.preview} >Lorem ipsum dolor sit amet...</p>
