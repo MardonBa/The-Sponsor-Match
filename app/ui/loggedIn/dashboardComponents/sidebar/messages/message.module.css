@@ -5,12 +5,8 @@
     display: grid;
     grid-template-columns: 70px 1fr 20px;
     color: var(--text);
-}
-
-.profilepicture {
-    grid-column: 1 / 2;
-    align-self: center;
-    justify-self: center;
+    align-items: center;
+    justify-items: center;
 }
 
 .messagecontent {

@@ -17,7 +17,7 @@
     width: 80%;
     height: 21px;
     resize: none;
-    background-color: var(--background);
+    background-color: var(--dashboard-back);
     border-radius: 10px;
     color: var(--text);
     font-size: 16px;
