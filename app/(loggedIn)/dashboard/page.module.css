@@ -26,11 +26,13 @@
 
 .maincontentcontainer {
     grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 70% 30%;
+    height: 100%;
+    max-height: calc(100vh - 30px);
 }
 
 .searchcontainer {
-    height: calc(70% - 10px);
-    max-height: calc(70% - 10px);
     border-radius: 15px;
     margin: 0px 0px 10px 0px;
     background-color: var(--dashboard-front);
@@ -39,10 +41,8 @@
 }
 
 .managementcontainer {
-    background-color: green;
-    height: 30%;
     border-radius: 15px;
     background-color: var(--dashboard-front);
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 70px; /*  */
+    grid-template-columns: repeat(4, 1fr) 70px;
 }
