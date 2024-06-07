@@ -39,12 +39,12 @@ export default function NavSideBar() {
                 <p className={styles.collapsebutton} onClick={handleCollapseClick} >{button}</p>
             </div>
             <p className={styles.item} >Dashboard</p>
-            <p className={styles.item} >Matching</p>
+            <p className={styles.item} >Search</p>
             <p className={styles.item} >Analytics</p>
             <p className={styles.item} >Payment History</p>
             <p className={styles.item} >Legal Documents</p>
             <p className={styles.item} >Partnerships</p>
-            <p className={styles.item} >Chat</p>
+            <p className={styles.item} >Messages</p>
             <div className={styles.divider} >
 
             </div>
