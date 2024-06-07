@@ -1,12 +1,17 @@
 .message {
     width: 100%; /* removing the margins and border thickness from the width */
-    height: 20%;
-    border-bottom: 2px solid var(--primary);
+    height: 130px;
+
     display: grid;
     grid-template-columns: 70px 1fr 20px;
     color: var(--text);
     align-items: center;
     justify-items: center;
+    background-color: var(--dashboard-front);
+}
+
+.message:hover {
+    background-color: var(--message-hover);
 }
 
 .messagecontent {

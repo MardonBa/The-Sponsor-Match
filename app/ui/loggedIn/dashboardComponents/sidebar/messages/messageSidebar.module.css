@@ -1,14 +1,22 @@
 .container {
     height: 100%;
-    width: 500px;
-    top: 0;
+    max-height: calc(100vh - 20px);
+    display: grid;
+    grid-template-rows: 60px 1fr 60px;
 }
 
 .headingcontainer {
+    grid-row: 1 / 2;
     display: grid;
     grid-template-columns: 10px 1fr;
     align-items: center;
     justify-items: center;
+    border-bottom: 2px solid var(--primary);
+}
+
+.messagecontainer {
+    grid-row: 2 / 3;
+    overflow-y: scroll;
     border-bottom: 2px solid var(--primary);
 }
 
@@ -41,6 +49,10 @@
 }
 
 .seemorebutton {
+    width: 100%;
     color: var(--text);
     text-align: center;
+    grid-row: 3 / 4;
+    margin: 0px;
+    align-self: center;
 }

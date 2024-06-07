@@ -33,10 +33,17 @@ export default function MessagesSidebar() {
                 <p className={styles.collapsebutton} onClick={handleCollapseClick} >{button}</p>
                 <h2 className={styles.heading} >{headerText}</h2>
             </div>
-            <Message />
-            <Message />
-            <Message />
-            <Message />
+            <div className={styles.messagecontainer} >
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+            </div>
             <p className={styles.seemorebutton} >See More</p>
             {/* Should eventually be a button that links to the messages page */}
         </div>
