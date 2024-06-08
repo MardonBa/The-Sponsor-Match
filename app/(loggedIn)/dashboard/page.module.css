@@ -1,19 +1,11 @@
 .dashboardcontainer {
     height: calc(100vh - 20px);
-    margin: 15px 0px;
     display: grid;
     grid-template-columns: fit-content(150px) auto fit-content(150px);
     grid-column-gap: 5px;
     padding: 10px;
     margin: 0px;
     background-color: var(--dashboard-back);
-}
-
-.sidebar {
-    height: 100%;
-    color: white;
-    background-color: var(--dashboard-front);
-    border-radius: 15px;
 }
 
 .navsidebar {

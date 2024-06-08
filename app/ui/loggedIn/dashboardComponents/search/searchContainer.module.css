@@ -1,0 +1,7 @@
+.searchcontainer {
+    border-radius: 15px;
+    margin: 0px 0px 10px 0px;
+    background-color: var(--dashboard-front);
+    display: grid;
+    grid-template-rows: auto 1fr;
+}

@@ -1,0 +1,4 @@
+.sidebar {
+    background-color: var(--dashboard-front);
+    border-radius: 15px;
+}
