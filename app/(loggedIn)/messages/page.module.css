@@ -1,0 +1,16 @@
+.pagecontainer {
+    height: 100%;
+    width: 100%;
+    background-color: var(--dashboard-back);
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-column-gap: 5px;
+}
+
+.navsidebar {
+    grid-column: 1 / 2;
+}
+
+.messagesidebar {
+    grid-column: 2 / 3;
+}
