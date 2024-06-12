@@ -73,54 +73,56 @@ function NavIcons() {
 
     let iconTheme = prefersDarkTheme() ? 'dark' : 'light';
 
+    const dimensions = 26;
+
     return (
         <>
             <Image
                 src={`/icons/dashboard_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='dashboard icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/search_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='search icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/analytics_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='analytics icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/payment_history_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='payment history icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/legal_documents_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='legal documents icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/partnerships_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='partnerships icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/messages_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='messages icon'
                 className={styles.item}
             />
@@ -129,29 +131,29 @@ function NavIcons() {
             </div>
             <Image
                 src={`/icons/contact_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='contact icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/advertise_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='advertise icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/settings_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='settings icon'
                 className={styles.item}
             />
             <Image
                 src={`/icons/log_out_icon_${iconTheme}.svg`}
-                width={32}
-                height={32}
+                width={dimensions}
+                height={dimensions}
                 alt='log out icon'
                 className={styles.item}
             />
