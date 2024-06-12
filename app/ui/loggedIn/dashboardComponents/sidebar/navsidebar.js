@@ -128,15 +128,33 @@ function NavIcons() {
 
             </div>
             <Image
+                src={`/icons/contact_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='contact icon'
+                className={styles.item}
+            />
+            <Image
+                src={`/icons/advertise_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='advertise icon'
+                className={styles.item}
+            />
+            <Image
                 src={`/icons/settings_icon_${iconTheme}.svg`}
                 width={32}
                 height={32}
                 alt='settings icon'
                 className={styles.item}
             />
-            <p className={styles.item} >Advertise</p>
-            <p className={styles.item} >Settings</p>
-            <p className={styles.item} >Log Out</p>
+            <Image
+                src={`/icons/log_out_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='log out icon'
+                className={styles.item}
+            />
         </>
     );
 }
