@@ -36,6 +36,7 @@ export default function NavSideBar() {
         setIsCollapsed(!isCollapsed);
     }
 
+
     return (
         <div className={`${widthStyle} ${styles.container}`} >
             <div className={styles.logocontainer} >
@@ -69,29 +70,82 @@ function NavLinksFullWidth() {
 }
 
 function NavIcons() {
+
+    let iconTheme = prefersDarkTheme() ? 'dark' : 'light';
+
     return (
         <>
             <Image
-                src='/icons/icon.svg'
-                width={24}
-                height={24}
+                src={`/icons/dashboard_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
                 alt='dashboard icon'
                 className={styles.item}
             />
-            <p className={styles.item} >Dashboard</p>
-            <p className={styles.item} >Search</p>
-            <p className={styles.item} >Analytics</p>
-            <p className={styles.item} >Payment History</p>
-            <p className={styles.item} >Legal Documents</p>
-            <p className={styles.item} >Partnerships</p>
-            <p className={styles.item} >Messages</p>
+            <Image
+                src={`/icons/search_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='search icon'
+                className={styles.item}
+            />
+            <Image
+                src={`/icons/analytics_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='analytics icon'
+                className={styles.item}
+            />
+            <Image
+                src={`/icons/payment_history_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='payment history icon'
+                className={styles.item}
+            />
+            <Image
+                src={`/icons/legal_documents_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='legal documents icon'
+                className={styles.item}
+            />
+            <Image
+                src={`/icons/partnerships_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='partnerships icon'
+                className={styles.item}
+            />
+            <Image
+                src={`/icons/messages_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='messages icon'
+                className={styles.item}
+            />
             <div className={styles.divider} >
 
             </div>
-            <p className={styles.item} >Contact</p>
+            <Image
+                src={`/icons/settings_icon_${iconTheme}.svg`}
+                width={32}
+                height={32}
+                alt='settings icon'
+                className={styles.item}
+            />
             <p className={styles.item} >Advertise</p>
             <p className={styles.item} >Settings</p>
             <p className={styles.item} >Log Out</p>
         </>
     );
+}
+
+function prefersDarkTheme() {
+    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (darkTheme) {
+        return true;
+    } else {return false;}
+
 }
