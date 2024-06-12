@@ -11,6 +11,8 @@
   --dashboard-front: #EFEFEF;
   --dashboard-back: #cbcbcb;
 
+  --message-hover: #D7D7D7;
+
   background-color: var(--background);
 }
 
