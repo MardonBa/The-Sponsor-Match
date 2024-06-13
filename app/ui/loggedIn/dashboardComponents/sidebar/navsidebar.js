@@ -4,7 +4,7 @@ import styles from './navsidebar.module.css';
 import React from 'react';
 import Image from 'next/image';
 
-export default function NavSideBar() {
+export default function NavSideBar({ forceCollapse }) {
     /*
     Collapsability:
     Track the state of whether a sidebar is collapsed or not
@@ -14,7 +14,17 @@ export default function NavSideBar() {
     Maybe introduce redux and redux toolkit for app-wide state management, since the other components need to update their size accordingly
     Try setting the width of the other elements to a percentage first, no need to over-engineer
     */
-    const [isCollapsed, setIsCollapsed] =  React.useState(false); // defaults to false because the initial state should be full width
+    let [isCollapsed, setIsCollapsed] =  React.useState(false); // defaults to false because the initial state should be full width
+
+    // If the sidebar shuold always be collapsed, set it to be so and remove the button from view using styles
+    let buttonStyle;
+    if (forceCollapse == true) {
+        isCollapsed = true;
+        buttonStyle = `${styles.collapsebutton} ${styles.hidden}`;
+    } else {
+        buttonStyle = `${styles.collapsebutton}`;
+    }
+
 
     let button;
     let widthStyle;
@@ -41,7 +51,7 @@ export default function NavSideBar() {
         <div className={`${widthStyle} ${styles.container}`} >
             <div className={styles.logocontainer} >
                 <h1 className={`${styles.colorgradient} ${styles.logolarge}`} ><b>{logo}</b></h1>
-                <p className={styles.collapsebutton} onClick={handleCollapseClick} >{button}</p>
+                <p className={buttonStyle} onClick={handleCollapseClick} >{button}</p>
             </div>
             {navigation}
         </div>

@@ -7,10 +7,10 @@ export default function MessagesPage() {
     return (
         <div className={styles.pagecontainer} >
             <Sidebar style={styles.navsidebar} >
-                <NavSideBar />
+                <NavSideBar forceCollapse={true} />
             </Sidebar>
             <Sidebar style={styles.messagesidebar} >
-                <MessagesSidebar />
+                <MessagesSidebar forceOpen={true} />
             </Sidebar>
         </div>
     );

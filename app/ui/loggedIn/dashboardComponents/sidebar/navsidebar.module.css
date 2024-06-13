@@ -9,7 +9,7 @@
 }
 
 .collapsed {
-    width: 80px;
+    width: 60px;
 }
 
 .fullsize {
@@ -31,7 +31,7 @@
 
 .collapsebutton {
     width: fit-content;
-    margin-right: 20px;
+    margin-right: 10px;
     color: var(--text);
 }
 
@@ -65,4 +65,8 @@
 
 .item:hover {
     color: var(--primary);
+}
+
+.hidden {
+    display: none;
 }
