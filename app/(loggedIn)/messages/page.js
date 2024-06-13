@@ -12,6 +12,9 @@ export default function MessagesPage() {
             <Sidebar style={styles.messagesidebar} >
                 <MessagesSidebar forceOpen={true} />
             </Sidebar>
+            <div className={styles.messagescontainer} >
+
+            </div>
         </div>
     );
 }

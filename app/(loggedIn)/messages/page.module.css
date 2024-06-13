@@ -1,6 +1,6 @@
 .pagecontainer {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     background-color: var(--dashboard-back);
     display: grid;
@@ -15,4 +15,12 @@
 
 .messagesidebar {
     grid-column: 2 / 3;
+}
+
+.messagescontainer {
+    grid-column: 3 / 4;
+    background-color: var(--dashboard-front);
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
 }
