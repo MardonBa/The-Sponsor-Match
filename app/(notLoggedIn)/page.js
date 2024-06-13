@@ -10,7 +10,7 @@ export default function LandingPage() {
     <div className={styles.maincontainer} >
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
-          <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Start a relationship to promote your product or make money off of your content</h3>
+          <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
           <p className={styles.p} >
             With our AI-powered matching tool, finding partners has never been easier. 
             Just enter your criteria, and our algorithm will find the best creators to promote your product.
