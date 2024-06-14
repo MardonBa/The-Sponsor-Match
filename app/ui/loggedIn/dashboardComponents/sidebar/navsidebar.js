@@ -65,7 +65,6 @@ function NavLinksFullWidth() {
             <p className={styles.item} >Search</p>
             <p className={styles.item} >Analytics</p>
             <p className={styles.item} >Payment History</p>
-            <p className={styles.item} >Legal Documents</p>
             <p className={styles.item} >Partnerships</p>
             <p className={styles.item} >Messages</p>
             <div className={styles.divider} >
@@ -113,13 +112,6 @@ function NavIcons() {
                 width={dimensions}
                 height={dimensions}
                 alt='payment history icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/legal_documents_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='legal documents icon'
                 className={styles.item}
             />
             <Image
