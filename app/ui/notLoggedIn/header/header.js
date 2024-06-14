@@ -1,11 +1,12 @@
 import styles from "./header.module.css";
 import HeaderCard from "./headerCard.js";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LandingHeader() {
     return (
         <div className={styles.landingheader}>
-            <div className={styles.logocontainer} >
+            <Link href={'/'} className={styles.logocontainer} >
                 <Image 
                     src={'/logo.svg'}
                     width={64}
@@ -14,7 +15,7 @@ export default function LandingHeader() {
                     className={styles.logo}
                 />
                 <p className={`${styles.colorgradient} ${styles.p}`} ><b>The Sponsor Match</b></p>
-            </div>
+            </Link>
             <div className={styles.navcontainer} >
                 <HeaderCard text="features" gridStyle={styles.features} hoverstyle={styles.hoverunderline} includeArrow={true} />
                 <HeaderCard text="pricing" gridStyle={styles.pricing} hoverstyle={styles.hoverunderline} />

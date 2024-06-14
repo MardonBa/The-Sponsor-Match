@@ -3,6 +3,7 @@
 import styles from './navsidebar.module.css';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function NavSideBar({ forceCollapse }) {
     /*
@@ -61,19 +62,39 @@ export default function NavSideBar({ forceCollapse }) {
 function NavLinksFullWidth() {
     return (
         <>
-            <p className={styles.item} >Dashboard</p>
-            <p className={styles.item} >Search</p>
-            <p className={styles.item} >Analytics</p>
-            <p className={styles.item} >Payment History</p>
-            <p className={styles.item} >Partnerships</p>
-            <p className={styles.item} >Messages</p>
+            <Link href={'/dashboard'} className={styles.item} >
+                Dashboard
+            </Link>
+            <Link href={'/search'} className={styles.item} >
+                Search
+            </Link>
+            <Link href={'/analytics'} className={styles.item} >
+                Analytics
+            </Link>
+            <Link href={'/payment-history'} className={styles.item} >
+                Payment History
+            </Link>
+            <Link href={'/partnerships'} className={styles.item} >
+                Partnerships
+            </Link>
+            <Link href={'/messages'} className={styles.item} >
+                Messages
+            </Link>
             <div className={styles.divider} >
 
             </div>
-            <p className={styles.item} >Contact</p>
-            <p className={styles.item} >Advertise</p>
-            <p className={styles.item} >Settings</p>
-            <p className={styles.item} >Log Out</p>
+            <Link href={'/contact'} className={styles.item} >
+                Contact
+            </Link>
+            <Link href={'/advertise'} className={styles.item} >
+                Advertise
+            </Link>
+            <Link href={'/settings'} className={styles.item} >
+                Settings
+            </Link>
+            <Link href={'/log-out'} className={styles.item} >
+                Log Out
+            </Link>
         </>
     );
 }
@@ -86,79 +107,89 @@ function NavIcons() {
 
     return (
         <>
-            <Image
-                src={`/icons/dashboard_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='dashboard icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/search_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='search icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/analytics_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='analytics icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/payment_history_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='payment history icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/partnerships_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='partnerships icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/messages_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='messages icon'
-                className={styles.item}
-            />
+            <Link href={'/dashboard'} className={styles.item} >
+                <Image
+                    src={`/icons/dashboard_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='dashboard icon'
+                />
+            </Link>
+            <Link href={'/search'} className={styles.item} >
+                <Image
+                    src={`/icons/search_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='search icon'
+                />
+            </Link>
+            <Link href={'/analytics'} className={styles.item} >
+                <Image
+                    src={`/icons/analytics_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='analytics icon'
+                />
+            </Link>
+            <Link href={'/payment-history'} className={styles.item} >
+                <Image
+                    src={`/icons/payment_history_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='payment history icon'
+                />
+            </Link>
+            <Link href={'/partnerships'} className={styles.item} >
+                <Image
+                    src={`/icons/partnerships_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='partnerships icon'
+                />
+            </Link>
+            <Link href={'/messages'} className={styles.item} >
+                <Image
+                    src={`/icons/messages_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='messages icon'
+                />
+            </Link>
             <div className={styles.divider} >
 
             </div>
-            <Image
-                src={`/icons/contact_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='contact icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/advertise_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='advertise icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/settings_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='settings icon'
-                className={styles.item}
-            />
-            <Image
-                src={`/icons/log_out_icon_${iconTheme}.svg`}
-                width={dimensions}
-                height={dimensions}
-                alt='log out icon'
-                className={styles.item}
-            />
+            <Link href={'/contact'} className={styles.item} >
+                <Image
+                    src={`/icons/contact_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='contact icon'
+                />
+            </Link>
+            <Link href={'/advertise'} className={styles.item} >
+                <Image
+                    src={`/icons/advertise_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='advertise icon'
+                />
+            </Link>
+            <Link href={'/settings'} className={styles.item} >
+                <Image
+                    src={`/icons/settings_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='settings icon'
+                />
+            </Link>
+            <Link href={'/dashboard'} className={styles.item} >
+                <Image
+                    src={`/icons/log_out_icon_${iconTheme}.svg`}
+                    width={dimensions}
+                    height={dimensions}
+                    alt='log out icon'
+                />
+            </Link>
         </>
     );
 }
