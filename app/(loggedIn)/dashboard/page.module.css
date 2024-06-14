@@ -30,6 +30,7 @@
     background-color: var(--dashboard-front);
     display: grid;
     grid-template-rows: auto 1fr;
+    min-height: 350px;
 }
 
 .managementcontainer {
@@ -37,4 +38,5 @@
     background-color: var(--dashboard-front);
     display: grid;
     grid-template-columns: repeat(4, 1fr) 70px;
+    min-height: 170px;
 }
