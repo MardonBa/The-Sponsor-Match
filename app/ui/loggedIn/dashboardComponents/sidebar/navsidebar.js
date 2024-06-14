@@ -4,6 +4,17 @@ import styles from './navsidebar.module.css';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+// import all icon components
+import DashboardIcon from './icons/dashboardIcon';
+import SearchIcon from './icons/searchIcon';
+import AnalyticsIcon from './icons/analyticsIcon';
+import PaymentHistoryIcon from './icons/paymentHistoryIcon';
+import PartnershipsIcon from './icons/partnershipsIcon';
+import MessagesIcon from './icons/messagesIcon';
+import ContactIcon from './icons/contactIcon';
+import AdvertiseIcon from './icons/advertiseIcon';
+import SettingsIcon from './icons/settingsIcon';
+import LogOutIcon from './icons/logOutIcon';
 
 export default function NavSideBar({ forceCollapse }) {
     /*
@@ -108,87 +119,37 @@ function NavIcons() {
     return (
         <>
             <Link href={'/dashboard'} className={styles.item} >
-                <Image
-                    src={`/icons/dashboard_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='dashboard icon'
-                />
+                <DashboardIcon />
             </Link>
             <Link href={'/search'} className={styles.item} >
-                <Image
-                    src={`/icons/search_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='search icon'
-                />
+                <SearchIcon />
             </Link>
             <Link href={'/analytics'} className={styles.item} >
-                <Image
-                    src={`/icons/analytics_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='analytics icon'
-                />
+                <AnalyticsIcon />
             </Link>
             <Link href={'/payment-history'} className={styles.item} >
-                <Image
-                    src={`/icons/payment_history_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='payment history icon'
-                />
+                <PaymentHistoryIcon />
             </Link>
             <Link href={'/partnerships'} className={styles.item} >
-                <Image
-                    src={`/icons/partnerships_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='partnerships icon'
-                />
+                <PartnershipsIcon />
             </Link>
             <Link href={'/messages'} className={styles.item} >
-                <Image
-                    src={`/icons/messages_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='messages icon'
-                />
+                <MessagesIcon />
             </Link>
             <div className={styles.divider} >
 
             </div>
             <Link href={'/contact'} className={styles.item} >
-                <Image
-                    src={`/icons/contact_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='contact icon'
-                />
+                <ContactIcon />
             </Link>
             <Link href={'/advertise'} className={styles.item} >
-                <Image
-                    src={`/icons/advertise_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='advertise icon'
-                />
+                <AdvertiseIcon />
             </Link>
             <Link href={'/settings'} className={styles.item} >
-                <Image
-                    src={`/icons/settings_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='settings icon'
-                />
+                <SettingsIcon />
             </Link>
-            <Link href={'/dashboard'} className={styles.item} >
-                <Image
-                    src={`/icons/log_out_icon_${iconTheme}.svg`}
-                    width={dimensions}
-                    height={dimensions}
-                    alt='log out icon'
-                />
+            <Link href={'/log-out'} className={styles.item} >
+                <LogOutIcon />
             </Link>
         </>
     );
