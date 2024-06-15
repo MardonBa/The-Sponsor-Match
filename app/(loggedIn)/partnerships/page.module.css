@@ -1,0 +1,22 @@
+.pagecontainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 5px;
+    background-color: var(--dashboard-back);
+    height: calc(100vh - 20px);
+    padding: 10px;
+}
+
+.sidebar {
+    height: calc(100vh - 20px);
+    background-color: var(--dashboard-front);
+    grid-column: 1 / 2;
+}
+
+.pagecontent {
+    grid-column: 2 / 3;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--dashboard-front);
+}

@@ -112,10 +112,6 @@ function NavLinksFullWidth() {
 
 function NavIcons() {
 
-    let iconTheme = prefersDarkTheme() ? 'dark' : 'light';
-
-    const dimensions = 26;
-
     return (
         <>
             <Link href={'/dashboard'} className={styles.item} >

@@ -1,15 +1,17 @@
 import styles from './page.module.css';
 import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
 import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
-import SearchContainer from '@/app/ui/loggedIn/dashboardComponents/search/searchContainer';
 
-export default function SearchPage() {
+export default function ContactPage() {
+    // This page should render differently depending on if the user is logged in or not, probably the difference would be that the sidebar isn't rendered when the user insn't logged in
     return (
         <div className={styles.pagecontainer} >
-            <Sidebar style={styles.sidebar} >
+            <Sidebar>
                 <NavSideBar />
             </Sidebar>
-            <SearchContainer style={styles.search} />
+            <div className={styles.pagecontent}>
+                
+            </div>
         </div>
     );
 }
