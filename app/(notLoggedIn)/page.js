@@ -10,14 +10,24 @@ export default function LandingPage() {
     <div className={styles.maincontainer} >
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
-          <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
-          <p className={styles.p} >
-            With our AI-powered matching tool, finding partners has never been easier. 
-            Just enter your criteria, and our algorithm will find the best creators to promote your product.
-            If you&apos;re a creator, the process is just as simple. 
-            Our platform connects you with potential sponsors based on your preferences in order to give the best possible experience in monetizing yourself and your content.
-          </p>
-          <LinkToSignUp text={"Start Now"} color={'secondary'} />
+            <div className={styles.textcontainer}>
+                <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
+                <p className={styles.p} >
+                    With our AI-powered matching tool, finding partners has never been easier. 
+                    Just enter your criteria, and our algorithm will find the best creators to promote your product.
+                    If you&apos;re a creator, the process is just as simple. 
+                    Our platform connects you with potential sponsors based on your preferences in order to give the best possible experience in monetizing yourself and your content.
+                </p>
+                <LinkToSignUp text={"Start Now"} color={'secondary'} />
+            </div>
+          <Image 
+            src={'/homepageResources/searchPreview.png'}
+            height={275}
+            width={622}
+            alt="search preview"
+            className={styles.searchimg}
+          />
+          {/* The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well */}
         </section>
         <section className={styles.contenttwo} >
             <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
