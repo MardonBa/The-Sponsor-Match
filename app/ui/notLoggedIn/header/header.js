@@ -2,19 +2,15 @@ import styles from "./header.module.css";
 import HeaderCard from "./headerCard.js";
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "../../logo/logo";
+
+// TODO fix spacing on homepage
 
 export default function LandingHeader() {
     return (
         <div className={styles.landingheader}>
-            <Link href={'/'} className={styles.logocontainer} >
-                <Image 
-                    src={'/logo.svg'}
-                    width={64}
-                    height={64}
-                    alt='The Sponsor Match Logo'
-                    className={styles.logo}
-                />
-                <p className={`${styles.colorgradient} ${styles.p}`} ><b>The Sponsor Match</b></p>
+            <Link href={'/'} className={styles.link} >
+                <Logo dimensions={64} />
             </Link>
             <div className={styles.navcontainer} >
                 <HeaderCard text="features" gridStyle={styles.features} hoverstyle={styles.hoverunderline} includeArrow={true} />

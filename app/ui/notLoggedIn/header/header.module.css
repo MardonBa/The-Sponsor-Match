@@ -13,12 +13,6 @@
     z-index: 5;
 }
 
-.logo {
-    grid-column: 1 / 2;
-    align-self: center;
-    justify-self: center;
-}
-
 .navcontainer {
     grid-column: 2 / 3;
     display: flex;
@@ -105,23 +99,6 @@
     text-align: center;
 }
 
-.colorgradient {
-    background-image: linear-gradient(to right, var(--secondary), var(--primary), var(--secondary), var(--primary), var(--secondary));
-    background-size: 100%;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-
-    background-clip: text;
-}
-
-.logocontainer {
-    width: 150px;
-    display: flex;
-    flex-direction: row;
-    justify-self: center;
-    align-self: center;
+.link {
     text-decoration: none;
 }

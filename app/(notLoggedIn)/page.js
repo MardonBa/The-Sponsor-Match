@@ -68,7 +68,10 @@ export default function LandingPage() {
             alt="search preview"
             className={styles.contentoneimage}
           />
-          {/* The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well */}
+          {/* 
+          The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well 
+          Also, a card/some styles behind it would be good for some depth, 
+          */}
         </section>
         <section className={styles.contenttwo} >
           {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
