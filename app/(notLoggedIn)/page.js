@@ -35,11 +35,11 @@ export default function LandingPage() {
 
   // Target element for resizing hook
   let targetRef1 = useRef(null);
-  let targetRef22 = useRef(null);
+  let targetRef2 = useRef(null);
 
   // Define the changing heights and widths for the images in contentone and contenttwo (denoted by 1 and 2 above and below)
   let [width1, height1] = useElementSize(targetRef1); // For the text size in contentone
-  let [width2, height2] = useElementSize(targetRef22) // For the text size in contenttwo
+  let [width2, height2] = useElementSize(targetRef2) // For the text size in contenttwo
 
   return (
     <div className={styles.maincontainer} >
@@ -73,7 +73,7 @@ export default function LandingPage() {
               alt="search preview"
               className={styles.contenttwoimage}
             />
-            <div className={styles.contenttwotext} >
+            <div className={styles.contenttwotext} ref={targetRef2} >
               <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
               <p className={styles.p} >
                 Whether you&apos;re a content creator or a sponsor, being able to track engagement and performace is a top priority.
