@@ -1,4 +1,7 @@
+"use client"
+
 import Image from "next/image";
+import { useLayoutEffect, useState, useRef } from 'react';
 import styles from "./page.module.css";
 import LinkToSignUp from "../ui/notLoggedIn/buttons/linkToSignUp/toSignUp";
 import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
@@ -6,11 +9,43 @@ import ComparisonCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 
 export default function LandingPage() {
+
+  // Custom React hook for getting size
+  function useElementSize(ref) {
+    const [size, setSize] = useState([0, 0]);
+  
+    useLayoutEffect(() => {
+      if (!ref.current) return;
+  
+      const updateSize = () => {
+        setSize([ref.current.offsetWidth, ref.current.offsetHeight]);
+      };
+  
+      const resizeObserver = new ResizeObserver(() => updateSize());
+  
+      resizeObserver.observe(ref.current);
+  
+      updateSize();
+  
+      return () => resizeObserver.disconnect();
+    }, [ref]);
+  
+    return size;
+  }
+
+  // Target element for resizing hook
+  let targetRef1 = useRef(null);
+  let targetRef22 = useRef(null);
+
+  // Define the changing heights and widths for the images in contentone and contenttwo (denoted by 1 and 2 above and below)
+  let [width1, height1] = useElementSize(targetRef1); // For the text size in contentone
+  let [width2, height2] = useElementSize(targetRef22) // For the text size in contenttwo
+
   return (
     <div className={styles.maincontainer} >
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
-            <div className={styles.contentonetext}>
+            <div className={styles.contentonetext} ref={targetRef1} >
                 <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
                 <p className={styles.p} >
                     With our AI-powered matching tool, finding partners has never been easier. 
@@ -22,8 +57,8 @@ export default function LandingPage() {
             </div>
           <Image 
             src={'/homepageResources/searchPreview.png'}
-            height={334}
-            width={800}
+            height={height1}
+            width={width1}
             alt="search preview"
             className={styles.contentoneimage}
           />
@@ -33,8 +68,8 @@ export default function LandingPage() {
           {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
           <Image 
               src={'/homepageResources/searchPreview.png'}
-              height={334}
-              width={800}
+              height={height2}
+              width={width2}
               alt="search preview"
               className={styles.contenttwoimage}
             />
