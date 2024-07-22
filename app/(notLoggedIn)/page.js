@@ -10,7 +10,7 @@ export default function LandingPage() {
     <div className={styles.maincontainer} >
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
-            <div className={styles.textcontainer}>
+            <div className={styles.contentonetext}>
                 <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
                 <p className={styles.p} >
                     With our AI-powered matching tool, finding partners has never been easier. 
@@ -22,22 +22,32 @@ export default function LandingPage() {
             </div>
           <Image 
             src={'/homepageResources/searchPreview.png'}
-            height={275}
-            width={622}
+            height={334}
+            width={800}
             alt="search preview"
-            className={styles.searchimg}
+            className={styles.contentoneimage}
           />
           {/* The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well */}
         </section>
         <section className={styles.contenttwo} >
-            <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
-            <p className={styles.p} >
-              Whether you&apos;re a content creator or a sponsor, being able to track engagement and performace is a top priority.
-              For sponsors, see which campaigns are resulting in the most conversions.
-              For creators, see which products are resonating most with your audience.
-              These metrics allow for better matches to be made, allowing for an ultra-effective matching tool, and maximized profits for all.
-            </p>
-            <LinkToSignUp text={"Get Started"} color={'primary'} />
+          {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
+          <Image 
+              src={'/homepageResources/searchPreview.png'}
+              height={334}
+              width={800}
+              alt="search preview"
+              className={styles.contenttwoimage}
+            />
+            <div className={styles.contenttwotext} >
+              <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
+              <p className={styles.p} >
+                Whether you&apos;re a content creator or a sponsor, being able to track engagement and performace is a top priority.
+                For sponsors, see which campaigns are resulting in the most conversions.
+                For creators, see which products are resonating most with your audience.
+                These metrics allow for better matches to be made, allowing for an ultra-effective matching tool, and maximized profits for all.
+              </p>
+              <LinkToSignUp text={"Get Started"} color={'primary'} />
+            </div>
         </section>
         <div className={`${styles.curvespacer} ${styles.layer1}`} >
           <LinkToPages page="pricing" />
@@ -66,4 +76,8 @@ export default function LandingPage() {
     </div>
     
   );
+}
+
+function getDimensions(classname) { // return the dimensions of the desired element has [height, width]
+
 }
