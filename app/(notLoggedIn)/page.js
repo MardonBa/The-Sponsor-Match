@@ -8,6 +8,12 @@ import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
 import ComparisonCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 
+
+/*
+  TODO: Fix bug where resizing to increase the image's height causes the image's height to not resize to decrease the height
+  TODO: Possibly make size of both image and text dynamic to better preserve the iamge's aspect ratio upon resize
+*/
+
 export default function LandingPage() {
 
   // Custom React hook for getting size
