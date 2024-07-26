@@ -13,7 +13,7 @@ export default function LandingHeader() {
                 <Logo dimensions={64} />
             </Link>
             <div className={styles.navcontainer} >
-                <HeaderCard text="features" gridStyle={styles.features} hoverstyle={styles.hoverunderline} includeArrow={true} />
+                <HeaderCard text="features" gridStyle={styles.features} hoverstyle={styles.hoverunderline} />
                 <HeaderCard text="pricing" gridStyle={styles.pricing} hoverstyle={styles.hoverunderline} />
             </div>
             <div className={styles.accountcontainer} >

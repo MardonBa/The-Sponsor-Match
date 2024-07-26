@@ -24,15 +24,15 @@ export default function LandingPage() {
       if (!ref.current) return;
   
       const updateSize = () => {
-        setSize([ref.current.offsetWidth, ref.current.offsetHeight]);
+        let width = ref.current.offsetWidth;
+        let height = 0.5 * width; // For aspect ratio, 0.5 is a placeholder that will be adjusted
+        setSize([width, height]);
       };
   
       const resizeObserver = new ResizeObserver(() => updateSize());
   
       resizeObserver.observe(ref.current);
-  
-      updateSize();
-  
+    
       return () => resizeObserver.disconnect();
     }, [ref]);
   
@@ -120,8 +120,4 @@ export default function LandingPage() {
     </div>
     
   );
-}
-
-function getDimensions(classname) { // return the dimensions of the desired element has [height, width]
-
 }
