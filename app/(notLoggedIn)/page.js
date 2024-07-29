@@ -1,13 +1,13 @@
 "use client"
 
 import Image from "next/image";
-import { useLayoutEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 import styles from "./page.module.css";
 import LinkToSignUp from "../ui/notLoggedIn/buttons/linkToSignUp/toSignUp";
 import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
 import ComparisonCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
-
+import { useElementSize } from "@/utils/customHooks";
 
 /*
   TODO: Fix bug where resizing to increase the image's height causes the image's height to not resize to decrease the height
@@ -15,29 +15,6 @@ import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 */
 
 export default function LandingPage() {
-
-  // Custom React hook for getting size
-  function useElementSize(ref) {
-    const [size, setSize] = useState([0, 0]);
-  
-    useLayoutEffect(() => {
-      if (!ref.current) return;
-  
-      const updateSize = () => {
-        let width = ref.current.offsetWidth;
-        let height = ref.current.offsetHeight;
-        setSize([width, height]);
-      };
-  
-      const resizeObserver = new ResizeObserver(() => updateSize());
-  
-      resizeObserver.observe(ref.current);
-    
-      return () => resizeObserver.disconnect();
-    }, [ref]);
-  
-    return size;
-  }
 
   // Target element for resizing hook
   let targetRef1 = useRef(null);

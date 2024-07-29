@@ -1,5 +1,6 @@
 import styles from './page.module.css';
 import FeatureListing from '../../ui/notLoggedIn/featureListing/featureListing';
+import Image from 'next/image';
 
 export default function FeatuersPage() {
     // https://popularpays.com/use-case/content-creation/?utm_source=google&utm_medium=cpc&utm_campaign=20861633461&utm_adset_id=164208522648&utm_ad_id=689885638041&utm_term=content%20maker&gad_source=1&gclid=Cj0KCQjw8J6wBhDXARIsAPo7QA96gXB1x1VLghuX3p8HQP2sJCkFK0qaHoTnczihagsCxMMEGq6B15kaAvTyEALw_wcB
@@ -20,9 +21,10 @@ export default function FeatuersPage() {
                 <FeatureListing feature="advertising" />
             </div>
             <div className={styles.scrollchangecontainer} >
-                <h2>feature 1 image</h2>
-                <h2>feature 2 image </h2>
-                <h2>feature 3 image</h2>
+            src={'/homepageResources/searchPreview.png'}
+            height={height1}
+            width={width1}
+            alt="search preview"
             </div>
         </div>
     </div>);
