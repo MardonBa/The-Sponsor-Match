@@ -25,7 +25,7 @@ export default function LandingPage() {
   
       const updateSize = () => {
         let width = ref.current.offsetWidth;
-        let height = 0.5 * width; // For aspect ratio, 0.5 is a placeholder that will be adjusted
+        let height = ref.current.offsetHeight;
         setSize([width, height]);
       };
   
