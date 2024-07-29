@@ -5,7 +5,7 @@ export default function LandingFooter() {
     return (
         <div className={styles.footer}>
             <div className={styles.logo} >
-                <Logo dimensions={256}/>
+                <Logo dimensions={128}/>
             </div>
             <div className={styles.aboutus} >
                 <h3 className={styles.heading} >About Us</h3>
