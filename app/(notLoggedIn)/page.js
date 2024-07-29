@@ -24,15 +24,15 @@ export default function LandingPage() {
       if (!ref.current) return;
   
       const updateSize = () => {
-        setSize([ref.current.offsetWidth, ref.current.offsetHeight]);
+        let width = ref.current.offsetWidth;
+        let height = ref.current.offsetHeight;
+        setSize([width, height]);
       };
   
       const resizeObserver = new ResizeObserver(() => updateSize());
   
       resizeObserver.observe(ref.current);
-  
-      updateSize();
-  
+    
       return () => resizeObserver.disconnect();
     }, [ref]);
   
@@ -68,7 +68,10 @@ export default function LandingPage() {
             alt="search preview"
             className={styles.contentoneimage}
           />
-          {/* The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well */}
+          {/* 
+          The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well 
+          Also, a card/some styles behind it would be good for some depth, 
+          */}
         </section>
         <section className={styles.contenttwo} >
           {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
