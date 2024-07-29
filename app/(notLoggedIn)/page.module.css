@@ -36,7 +36,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 90%;
-    column-gap: 50px;
 }
 
 .contenttwo {
@@ -47,17 +46,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 90%;
-    column-gap: 50px;
 }
 
 .contentonetext {
     grid-column: 1 / 2;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
 }
 
 .contenttwotext {
     grid-column: 2 / 3;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
 }
 
 .contentoneimage {

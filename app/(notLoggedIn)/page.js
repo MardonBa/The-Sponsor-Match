@@ -61,6 +61,7 @@ export default function LandingPage() {
                 </p>
                 <LinkToSignUp text={"Start Now"} color={'secondary'} />
             </div>
+            {/*
           <Image 
             src={'/homepageResources/searchPreview.png'}
             height={height1}
@@ -68,6 +69,7 @@ export default function LandingPage() {
             alt="search preview"
             className={styles.contentoneimage}
           />
+            */}
           {/* 
           The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well 
           Also, a card/some styles behind it would be good for some depth, 
@@ -75,6 +77,7 @@ export default function LandingPage() {
         </section>
         <section className={styles.contenttwo} >
           {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
+          {/*
           <Image 
               src={'/homepageResources/searchPreview.png'}
               height={height2}
@@ -82,6 +85,7 @@ export default function LandingPage() {
               alt="search preview"
               className={styles.contenttwoimage}
             />
+        */}
             <div className={styles.contenttwotext} ref={targetRef2} >
               <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
               <p className={styles.p} >
