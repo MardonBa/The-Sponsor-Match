@@ -8,6 +8,7 @@
     -moz-text-fill-color: transparent;
 
     background-clip: text;
+    margin: 0px;
 }
 
 .logocontainer {

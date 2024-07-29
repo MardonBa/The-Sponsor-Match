@@ -1,10 +1,11 @@
 import styles from './footer.module.css';
+import Logo from '../../logo/logo';
 
 export default function LandingFooter() {
     return (
         <div className={styles.footer}>
             <div className={styles.logo} >
-                Logo
+                <Logo dimensions={256}/>
             </div>
             <div className={styles.aboutus} >
                 <h3 className={styles.heading} >About Us</h3>

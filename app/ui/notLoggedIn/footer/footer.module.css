@@ -1,5 +1,4 @@
 .footer {
-    margin-top: 100px;
     background-color: var(--background-variant);
     color: var(--text);
     grid-row: -2 / -1;
@@ -17,6 +16,8 @@
 
 .logo {
     grid-column: 1 / 2;
+    margin: auto 0px;
+    max-height: 300px;
 }
 
 .aboutus {
