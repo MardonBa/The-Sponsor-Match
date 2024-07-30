@@ -2,12 +2,12 @@ import styles from './featureListing.module.css';
 import LinkToSignUp from '../buttons/linkToSignUp/toSignUp';
 
 
-export default function FeatureListing({ feature }) {
+export default function FeatureListing({ feature, reference }) {
 
     let [heading, subHeading, description, buttonText] = featureText(feature);
     
     return (
-        <div className={styles.featurecontainer} >
+        <div className={styles.featurecontainer} ref={reference} >
             <h2 className={styles.heading} >{heading}</h2>
             <h4 className={styles.subheading} >{subHeading}</h4>
             <p className={styles.description} >{description}</p>

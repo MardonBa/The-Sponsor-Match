@@ -6,7 +6,7 @@
 .content {
     grid-row: 3 / 4;
     display: grid;
-    grid-template-columns: 6fr 5fr;
+    grid-template-columns: 1fr 1fr;
     height: auto;
 }
 
@@ -36,4 +36,9 @@
     text-decoration-color: var(--primary-variant);
     font-size: 60px;
     font-weight: normal;
+}
+
+.image {
+    margin: 150px 0px 500px 0px;
+    border-radius: 15px;
 }
