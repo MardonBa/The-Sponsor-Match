@@ -7,7 +7,6 @@ export default function LinkToSignUp({ text, color }) {
     } else if (color == 'secondary') {
         colorStyle = styles.bgsecondary;
     } else {
-        console.log("Color not defined");
         colorStyle = styles.bgprimary; // default for a fallback
     }
 

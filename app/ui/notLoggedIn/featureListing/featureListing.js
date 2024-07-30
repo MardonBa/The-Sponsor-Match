@@ -1,17 +1,63 @@
+"use client"
+
 import styles from './featureListing.module.css';
 import LinkToSignUp from '../buttons/linkToSignUp/toSignUp';
+import { useRef } from 'react';
+import { useElementSize } from '@/utils/customHooks';
+import Image from 'next/image';
+import { motion } from "framer-motion"
 
+/*
+TODO: fix image dynamic sizing, fix spacing based on screen size
+*/
 
-export default function FeatureListing({ feature, reference }) {
+export default function FeatureListing({ feature, imgSrc }) {
+
+    let textRef = useRef(null);
+    let image_dims = useElementSize(textRef);
+
+    let img_width = image_dims[0] / 3;
+    let img_height = 0.5 * img_width; // Based on the dimensions/aspect ratio of the images, subject to change
 
     let [heading, subHeading, description, buttonText] = featureText(feature);
+
+    const imageAnimation = {
+        offscreen: {
+          opacity: 0
+        },
+        onscreen: {
+          opacity: 1,
+          transition: {
+            type: "ease",
+            duration: 1
+          }
+        }
+      };
+
     
     return (
-        <div className={styles.featurecontainer} ref={reference} >
-            <h2 className={styles.heading} >{heading}</h2>
-            <h4 className={styles.subheading} >{subHeading}</h4>
-            <p className={styles.description} >{description}</p>
-            <LinkToSignUp  text={buttonText} />
+        <div className={styles.featurecontainer} ref={textRef} >
+            <div className={styles.textcontainer}>
+                <h2 className={styles.heading} >{heading}</h2>
+                <h4 className={styles.subheading} >{subHeading}</h4>
+                <p className={styles.description} >{description}</p>
+                <LinkToSignUp  text={buttonText} />
+            </div>
+            <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false }}
+                className={styles.imagecontainer}
+                variants={imageAnimation}
+            >
+                <Image
+                    src={imgSrc}
+                    height={img_height}
+                    width={img_width}
+                    alt="search preview" 
+                    className={styles.image}
+                />
+            </motion.div>
         </div>
     );
 }

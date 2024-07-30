@@ -1,6 +1,9 @@
 .featurecontainer {
     color: var(--text);
-    margin: 75px 0px 700px 0px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 5% auto 30% auto;
+    max-width: 90%;
 }
 
 .heading {
@@ -20,4 +23,19 @@
 .description {
     font-size: 16px;
     margin: 12px 0px 12px 0px;
+}
+
+.textcontainer {
+    grid-column: 1 / 2;
+    margin: auto 10% auto 0px;
+}
+
+.imagecontainer {
+    grid-column: 2 / 3;
+    margin: auto 0px auto 10%;
+    border-radius: 15px;
+}
+
+.image {
+    border-radius: 15px;
 }

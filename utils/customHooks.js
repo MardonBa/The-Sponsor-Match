@@ -7,9 +7,7 @@ export function useElementSize(ref) {
     const [size, setSize] = useState([0, 0]);
   
     useLayoutEffect(() => {
-      if (!ref.current) {
-        console.log('failed');
-        return};
+      if (!ref.current) return;
   
       const updateSize = () => {
         let width = ref.current.offsetWidth;
