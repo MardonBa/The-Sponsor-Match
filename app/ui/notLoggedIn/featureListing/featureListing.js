@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { motion } from "framer-motion"
 
 /*
-TODO: fix image dynamic sizing, fix spacing based on screen size
+TODO: fix image dynamic sizing, fix spacing based on screen size (text overflowing to iamge side)
 */
 
 export default function FeatureListing({ feature, imgSrc }) {
