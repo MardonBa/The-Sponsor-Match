@@ -1,6 +1,5 @@
 import styles from "./header.module.css";
 import HeaderCard from "./headerCard.js";
-import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../logo/logo";
 

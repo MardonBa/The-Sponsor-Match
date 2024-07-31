@@ -27,6 +27,7 @@
     min-width: 80px;
     max-width: 100px;
     margin-right: 10px;
+    color: var(--text);
 }
 
 .pricing {
@@ -36,6 +37,7 @@
     max-width: 100px;
     margin-left: 10px;
     margin-right: 40px;
+    color: var(--text);
 }
 
 .accountcontainer {
@@ -51,6 +53,7 @@
     min-width: 80px;
     max-width: 100px;
     margin-right: 10px;
+    color: var(--text);
 }
 
 .signin {
