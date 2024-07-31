@@ -8,6 +8,7 @@ import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
 import ComparisonCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 import { useElementSize } from "@/utils/customHooks";
+import LandingFooter from "../ui/notLoggedIn/footer/footer";
 
 /*
   TODO: Fix bug where resizing to increase the image's height causes the image's height to not resize to decrease the height
@@ -98,6 +99,7 @@ export default function LandingPage() {
                 </div>
             </div>
         </section>
+        <LandingFooter />
     </div>
     
   );
