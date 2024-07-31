@@ -1,0 +1,8 @@
+.container {
+    height: 500px;
+    width: 400px;
+    background-color: var(--background-variant);
+    margin: 150px auto auto auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px var(--primary-variant);
+}
