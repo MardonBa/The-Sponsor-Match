@@ -17,7 +17,7 @@ export default function LandingHeader() {
             </div>
             <div className={styles.accountcontainer} >
                 <HeaderCard text="sign up" gridStyle={styles.signup} />
-                <HeaderCard text="sign in" gridStyle={styles.signin} />
+                <HeaderCard text="log in" gridStyle={styles.signin} />
             </div>
         </div>
     );
