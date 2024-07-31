@@ -1,8 +1,14 @@
 .container {
-    height: 500px;
-    width: 400px;
-    background-color: var(--background-variant);
-    margin: 150px auto auto auto;
-    border-radius: 20px;
-    box-shadow: 5px 5px 5px var(--primary-variant);
+    height: 100%;
+    width: auto;
+    margin: 120px auto;
+
+}
+
+.h2 {
+    font-size: 48px;
+    color: var(--text);
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
 }
