@@ -30,7 +30,6 @@
     resize: none;
     white-space: nowrap;
     overflow-x: scroll;
-    /* TODO: fix overflow */
 }
 
 .searchbar:focus {
