@@ -1,4 +1,5 @@
 import styles from "./toSignUp.module.css";
+import Link from 'next/link';
 
 export default function LinkToSignUp({ text, color }) {
     let colorStyle;
@@ -11,8 +12,8 @@ export default function LinkToSignUp({ text, color }) {
     }
 
     return (
-        <div className={`${styles.container} ${colorStyle}`} >
+        <Link className={`${styles.container} ${colorStyle}`} href={'/sign-up'} >
             <p className={styles.text} >{text}</p>
-        </div>
+        </Link>
     );
 }

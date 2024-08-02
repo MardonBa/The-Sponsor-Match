@@ -11,8 +11,8 @@ import { useElementSize } from "@/utils/customHooks";
 import LandingFooter from "../ui/notLoggedIn/footer/footer";
 
 /*
-  TODO: Fix bug where resizing to increase the image's height causes the image's height to not resize to decrease the height
-  TODO: Possibly make size of both image and text dynamic to better preserve the iamge's aspect ratio upon resize
+    TODO change the checkmarks on this page because they look terrible. Also change the sizing of the card they are in to make it consistent,
+    TODO as well as the text sizing
 */
 
 export default function LandingPage() {

@@ -12,6 +12,7 @@
     font-size: 30px;
     top: calc(10%);
     position: relative;
+    text-decoration: none;
 }
 
 .textcontainer:hover {

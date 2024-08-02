@@ -1,4 +1,5 @@
-import styles from './linkToPages.module.css'
+import styles from './linkToPages.module.css';
+import Link from 'next/link';
 
 export default function LinkToPages({ page }) { // Page should either be 'features' or 'pricing'
     let text;
@@ -11,6 +12,6 @@ export default function LinkToPages({ page }) { // Page should either be 'featur
     }
 
     return (
-        <p className={styles.textcontainer} >{text}</p>
+        <Link className={styles.textcontainer} href={`/${page}`} >{text}</Link>
     );
 }
