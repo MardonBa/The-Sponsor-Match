@@ -138,7 +138,8 @@
     column-gap: 50px;
     align-items: center;
     justify-content: center;
-    position: relative;
+    height: auto;
+    top: 0;
 }
 
 .curvespacer {

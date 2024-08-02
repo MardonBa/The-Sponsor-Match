@@ -40,7 +40,7 @@ export default function ComparisonCard() {
     }
 
     return (
-        <div className={`${styles.container} ${visibility}`} ref={ref} >
+        <div className={visibility} ref={ref} >
             <ul className={styles.tabnav} >
                     <li className={isActive === 'creator' ? styles.activetab : styles.inactivetab} onClick={handleCreatorTab} >Creators</li>
                     <li className={isActive === 'sponsor' ? styles.activetab : styles.inactivetab} onClick={handleSponsorTab} >Sponsors</li>

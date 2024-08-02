@@ -1,10 +1,10 @@
 .cardcontainer {
     width: 500px;
-    height: 670px;
+    height: auto;
     border-radius: 30px;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
     backdrop-filter: blur(20px);
-    box-shadow: 3px 3px 3px 3px black;
+    box-shadow: 3px 3px black;
     color: #D9D9D9;
     display: flex;
     font-size: 20px;
@@ -56,7 +56,7 @@
 
 .list {
     margin: 20px;
-    padding: 15px;
+    padding: 5px 15px;
     display: flex;
     flex-direction: column;
     align-self: center;
