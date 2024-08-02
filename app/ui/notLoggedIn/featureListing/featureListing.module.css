@@ -34,6 +34,11 @@
     grid-column: 2 / 3;
     margin: auto 0px auto 10%;
     border-radius: 15px;
+    /*
+    position: sticky;
+    top: 200px;
+    TODO Make this like the popular pays (might need a full redisgn of the page again)
+    */
 }
 
 .image {

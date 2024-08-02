@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { motion } from "framer-motion"
 
 /*
-TODO: fix image dynamic sizing, fix spacing based on screen size (text overflowing to iamge side)
+TODO: fix image dynamic sizing, fix spacing based on screen size (text overflowing to image side)
 */
 
 export default function FeatureListing({ feature, imgSrc }) {
@@ -16,20 +16,24 @@ export default function FeatureListing({ feature, imgSrc }) {
     let textRef = useRef(null);
     let image_dims = useElementSize(textRef);
 
-    let img_width = image_dims[0] / 3;
+    let img_width = 1.2 * (image_dims[0] / 3);
     let img_height = 0.5 * img_width; // Based on the dimensions/aspect ratio of the images, subject to change
 
     let [heading, subHeading, description, buttonText] = featureText(feature);
 
     const imageAnimation = {
         offscreen: {
-          opacity: 0
+          opacity: 0,
+          transition: {
+            type: "ease",
+            duration: 2
+          }
         },
         onscreen: {
           opacity: 1,
           transition: {
             type: "ease",
-            duration: 1
+            duration: 2
           }
         }
       };
@@ -95,7 +99,7 @@ function featureText(feature) { // Gets passed in the feature from the component
             buttonText = 'Sign up';
             break;
         case 'comparisons':
-            heading = 'Platform/creator/sponsor comparisons';
+            heading = 'Categorical comparisons';
             subHeading = 'Compare platforms, creators, and/or sponsors with a few clicks';
             description = "If you're a sponsor, these analytics will help you determine which sponsors and which platforms are best promoting your brand. If you're a creator, take a peek at what types of sponsors resonate with your audience. For both sponsors and creators, these analytics can be used to maximize profit and engagement.";
             buttonText = 'Create your account';
