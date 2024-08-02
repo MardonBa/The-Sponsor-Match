@@ -22,8 +22,8 @@ export default function LandingPage() {
   let targetRef2 = useRef(null);
 
   // Define the changing heights and widths for the images in contentone and contenttwo (denoted by 1 and 2 above and below)
-  let [width1, height1] = useElementSize(targetRef1); // For the text size in contentone
-  let [width2, height2] = useElementSize(targetRef2) // For the text size in contenttwo
+  let [width1, height1] = useElementSize(targetRef1, 3, 0.5); // For the text size in contentone
+  let [width2, height2] = useElementSize(targetRef2, 3, 0.5) // For the text size in contenttwo
 
   return (
     <div className={styles.maincontainer} >
@@ -39,7 +39,6 @@ export default function LandingPage() {
                 </p>
                 <LinkToSignUp text={"Start Now"} color={'secondary'} />
             </div>
-            {/*
           <Image 
             src={'/homepageResources/searchPreview.png'}
             height={height1}
@@ -47,7 +46,6 @@ export default function LandingPage() {
             alt="search preview"
             className={styles.contentoneimage}
           />
-            */}
           {/* 
           The image eventually needs to be sized so that it is in line with the items aroud it, probably another image will be used as well 
           Also, a card/some styles behind it would be good for some depth, 
@@ -55,15 +53,13 @@ export default function LandingPage() {
         </section>
         <section className={styles.contenttwo} >
           {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
-          {/*
-          <Image 
+            <Image 
               src={'/homepageResources/searchPreview.png'}
               height={height2}
               width={width2}
               alt="search preview"
               className={styles.contenttwoimage}
             />
-        */}
             <div className={styles.contenttwotext} ref={targetRef2} >
               <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
               <p className={styles.p} >

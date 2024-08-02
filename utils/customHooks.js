@@ -3,15 +3,15 @@ import { useLayoutEffect, useState } from 'react';
 
 
 // Custom React hook for getting size
-export function useElementSize(ref) {
+export function useElementSize(ref, scaling_factor, aspectRatio) {
     const [size, setSize] = useState([0, 0]);
   
     useLayoutEffect(() => {
       if (!ref.current) return;
   
       const updateSize = () => {
-        let width = ref.current.offsetWidth;
-        let height = ref.current.offsetHeight;
+        let width = scaling_factor * (ref.current.offsetWidth / 3); // I found this to be the best scaling to prevent the resizing issue, can be subject to change
+        let height = aspectRatio * width; // Aspect ratio is determined by the image (might become a constant if the images end up all having the same aspect ratio)
         setSize([width, height]);
       };
   

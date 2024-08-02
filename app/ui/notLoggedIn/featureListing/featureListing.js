@@ -14,10 +14,10 @@ TODO: fix image dynamic sizing, fix spacing based on screen size (text overflowi
 export default function FeatureListing({ feature, imgSrc }) {
 
     let textRef = useRef(null);
-    let image_dims = useElementSize(textRef);
+    let image_dims = useElementSize(textRef, 1.2, 0.5);
 
-    let img_width = 1.2 * (image_dims[0] / 3);
-    let img_height = 0.5 * img_width; // Based on the dimensions/aspect ratio of the images, subject to change
+    let img_width = image_dims[0]
+    let img_height = image_dims[1]
 
     let [heading, subHeading, description, buttonText] = featureText(feature);
 
