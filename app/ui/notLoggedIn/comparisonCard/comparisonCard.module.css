@@ -65,7 +65,8 @@
 }
 
 .list * {
-	list-style-image: url("../../../../public/homepageResources/checkmark.png");
+	/*list-style-image: url("../../../../public/homepageResources/checkmark.png");*/
+    list-style-type: "\2705";
     list-style-position: inside;
 	background-repeat: no-repeat;
 	background-size: 10px;
