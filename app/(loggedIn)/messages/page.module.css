@@ -23,4 +23,28 @@
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.searchbar {
+    width: 95%;
+    height: auto;
+    min-height: 30px;
+    border-radius: 40px;
+    background-color: var(--dashboard-back);
+    grid-row: 2 / 3;
+    place-self: center;
+    color: var(--text);
+    padding: 5px 50px 5px 20px;
+    line-height: 30px;
+    resize: none;
+    overflow-x: none;
+    overflow-y: auto;
+    margin: 15px 0px;
+}
+
+.searchbar:empty::before {
+    content: "Message...";
+    color: var(--text);
 }
