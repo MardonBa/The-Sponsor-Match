@@ -48,3 +48,9 @@
     content: "Message...";
     color: var(--text);
 }
+
+.messages {
+    grid-row: 1/ 2;
+    display: flex;
+    flex-direction: column;
+}

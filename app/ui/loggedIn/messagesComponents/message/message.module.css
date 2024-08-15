@@ -1,0 +1,17 @@
+.messagecontainer {
+    width: auto;
+    max-width: 40%;
+    height: auto;
+    border-radius: 20px;
+    color: var(--text)
+}
+
+.primarybg {
+    background-color: var(--primary-variant);
+    align-self: flex-end;
+}
+
+.darkbg {
+    background-color: var(--dashboard-back);
+    align-self: flex-start;
+}
