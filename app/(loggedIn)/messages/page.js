@@ -6,6 +6,14 @@ export default function MessagesPage() {
         <div className={styles.messages} >
             <Message fromUser={true} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
             <Message fromUser={false} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={true} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={false} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={false} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={false} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={true} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={true} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={false} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
+            <Message fromUser={false} messageContent={'darkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbgdarkbg'}/>
         </div>
     );
 }

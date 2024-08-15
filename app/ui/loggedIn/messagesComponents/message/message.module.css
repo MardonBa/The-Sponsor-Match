@@ -6,6 +6,7 @@
     color: var(--text);
     padding: 0px 10px;
     overflow-wrap: break-word;
+    margin: 2px 0px;
 }
 
 .primarybg {
