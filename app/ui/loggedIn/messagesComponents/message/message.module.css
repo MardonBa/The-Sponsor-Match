@@ -3,7 +3,9 @@
     max-width: 40%;
     height: auto;
     border-radius: 20px;
-    color: var(--text)
+    color: var(--text);
+    padding: 0px 10px;
+    overflow-wrap: break-word;
 }
 
 .primarybg {
