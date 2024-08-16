@@ -10,8 +10,9 @@
 }
 
 .primarybg {
-    background-color: var(--primary-variant);
+    background-color: var(--primary);
     align-self: flex-end;
+    color: var(--background);
 }
 
 .darkbg {
