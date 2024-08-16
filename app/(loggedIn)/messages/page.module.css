@@ -50,6 +50,11 @@
     color: var(--text);
 }
 
+.searchbar:focus {
+    outline: none;
+    border: 2px solid var(--secondary-variant);
+}
+
 .messages {
     grid-row: 1/ 2;
     display: flex;
