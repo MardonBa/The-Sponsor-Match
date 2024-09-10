@@ -122,8 +122,8 @@ export default function FeatuersPage() {
                                 <Image
                                 src={section.imgSrc}
                                 alt={`Image for ${section.heading}`}
-                                width={400}
-                                height={200}
+                                width={600}
+                                height={338}
                                 className={styles.imagestyles}/>
                             </div>
                     )})}

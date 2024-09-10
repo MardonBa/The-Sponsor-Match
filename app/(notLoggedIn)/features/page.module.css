@@ -11,7 +11,7 @@
 
 .textcontainer {
     padding: 2rem; 
-    width: calc(50% - 4rem);     
+    width: calc(50% - 4rem);    
 }
 
 .textsectioncontainer {
@@ -20,6 +20,9 @@
     justify-content: center; 
     min-height: 100vh; 
     color: var(--text);
+    width: 600px;
+    float: right;
+    margin-right: 100px;
 }
 
 .imagescontainer {
