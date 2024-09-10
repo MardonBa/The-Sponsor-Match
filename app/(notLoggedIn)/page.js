@@ -30,7 +30,7 @@ export default function LandingPage() {
     <div className={styles.maincontainer} >
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
-            <AspectRatio.Root ratio={16/9} >
+            <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
                 <div className={styles.contentonetext} ref={targetRef1} >
                     <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
                     <p className={styles.p} >
@@ -42,7 +42,7 @@ export default function LandingPage() {
                     <LinkToSignUp text={"Start Now"} color={'secondary'} />
                 </div>
             </AspectRatio.Root>
-            <AspectRatio.Root ratio={16/9} >
+            <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
                 <Image 
                     src={'/homepageResources/searchPreview.png'}
                     alt="search preview"
@@ -58,7 +58,7 @@ export default function LandingPage() {
         </section>
         <section className={styles.contenttwo} >
           {/* This images will be changed, it is here as a placeholder for sizing and style purposes */}
-            <AspectRatio.Root ratio={16/9} >
+            <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
                 <Image 
                 src={'/homepageResources/searchPreview.png'}
                 height={0}
@@ -67,7 +67,7 @@ export default function LandingPage() {
                 className={styles.contenttwoimage}
                 />
             </AspectRatio.Root>
-            <AspectRatio.Root ratio={16/9} >
+            <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
                 <div className={styles.contenttwotext} ref={targetRef2} >
                 <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
                 <p className={styles.p} >
