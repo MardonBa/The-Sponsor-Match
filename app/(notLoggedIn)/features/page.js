@@ -5,7 +5,7 @@ import LandingFooter from '@/app/ui/notLoggedIn/footer/footer';
 import {useEffect, useRef, useState} from 'react';
 import LinkToSignUp from '@/app/ui/notLoggedIn/buttons/linkToSignUp/toSignUp';
 import Image from 'next/image';
-import { useElementSize } from "@/utils/customHooks";
+import  * as AspectRatio from '@radix-ui/react-aspect-ratio';
 
 /*
     TODO: fix sizing of images (make it dynamic again) (base this on landing page)
@@ -119,12 +119,16 @@ export default function FeatuersPage() {
                                 className={`${styles.imagesectioncontainer} ${
                                 index === activeSection ? styles.show : styles.hide
                                 }`}>
-                                <Image
-                                src={section.imgSrc}
-                                alt={`Image for ${section.heading}`}
-                                width={600}
-                                height={338}
-                                className={styles.imagestyles}/>
+                                <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
+                                
+                                    <Image
+                                    src={section.imgSrc}
+                                    alt={`Image for ${section.heading}`}
+                                    width={0}
+                                    height={0}
+                                    className={styles.imagestyles}/>
+                                
+                                </AspectRatio.Root>
                             </div>
                     )})}
                 </div>
