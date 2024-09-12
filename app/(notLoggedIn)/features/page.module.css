@@ -72,14 +72,8 @@
     font-size: 46px;
     font-weight: bold;
     margin: 12px 0px 12px 0px;
-}
-
-.subheading {
-    font-size: 30px;
-    font-weight: normal;
     text-decoration: underline;
     text-decoration-color: var(--secondary);
-    margin: 12px 0px 12px 0px;
 }
 
 .description {

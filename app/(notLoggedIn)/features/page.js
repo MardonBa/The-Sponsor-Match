@@ -16,49 +16,42 @@ import  * as AspectRatio from '@radix-ui/react-aspect-ratio';
 const sections = [
     {
         heading: 'AI-powered matching tool',
-        subHeading: 'Use the power of AI to match with sponsors or creators',
         description: 'Find opportunities more easily than ever before with our AI-powered matching tool, which takes your preferences and finds the best creators to maximize your brand and advertising reach.',
         buttonText: 'Get started',
         imgSrc: '/homepageResources/searchPreview.png'
     }, 
     {
         heading: 'Engagement analytics',
-        subHeading: 'Track the engagement of your campaigns',
         description: 'With our engagement tracking analytics, see what is leading to the most engagement, and what kinds of audiences you are reaching the most.',
         buttonText: 'Sign up',
         imgSrc: '/homepageResources/checkmark.png'
     },
     {
         heading: 'Categorical comparisons',
-        subHeading: 'Compare platforms, creators, and/or sponsors with a few clicks',
         description: "For both sponsors and creators, these analytics can be used to maximize profit and engagement. Find out what types of relationshpis work best for you.",
         buttonText: 'Create your account',
         imgSrc: '/homepageResources/searchPreview.png'
     },
     {
         heading: 'Payment handling',
-        subHeading: 'Handle payments with ease using Stripe',
         description: 'As soon as the requirements are met as outlined in the sponsorship agreement, payments will be made. This means as a sponsor or a creator, your banking information will be securely stored so that payments can be made with no extra work. In rare the event of a payment dispute, our support team is here to help.',
         buttonText: 'Get started',
         imgSrc: '/homepageResources/searchPreview.png'
     },
     {
         heading: 'Legal documents',
-        subHeading: 'Easily generate and fill out legal documents',
         description: 'The most frustrating part of sponsorships is often the legal hassle. With our built-in tooling, generate legal agreements and fill them out with no extra work. Just enter the requirements, have all parties sign, and move on to what matters.',
         buttonText: 'Create your account',
         imgSrc: '/homepageResources/searchPreview.png'
     },
     {
         heading: 'Messaging',
-        subHeading: "Chat with the other party in-app, no worrying about contact info",
         description: 'Sharing contact information can be difficult and personal, and is a thing of the past. Use our chat feature to build relationships, make sure your goals align, and find good fits. All before making a final agreement.',
         buttonText: 'Get started',
         imgSrc: '/homepageResources/searchPreview.png'
     },
     {
         heading: 'Advertising',
-        subHeading: 'Advertise yourself or your brand to maximize profits',
         description: "Do you feel like you or your brand aren't getting matched as much as you should? You have the option to advertise yourself on our website to boost your image. Don't worry, the algorithm's magic is still at work, this is just an added option.",
         buttonText: 'Sign up',
         imgSrc: '/homepageResources/searchPreview.png'
@@ -117,7 +110,6 @@ export default function FeatuersPage() {
                                 ref={el => sectionRefs.current[index] = el}
                                 className={styles.textsectioncontainer}>
                                 <h2 className={styles.heading}>{section.heading}</h2>
-                                <h4 className={styles.subheading} >{section.subHeading}</h4>
                                 <p className={styles.description} >{section.description}</p>
                                 <LinkToSignUp text={section.buttonText} />
                             </div>
