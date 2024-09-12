@@ -69,6 +69,7 @@ export default function FeatuersPage() {
 
     const [activeSection, setActiveSection] = useState(0);
     const sectionRefs = useRef([]);
+    const [imageSectionPosition, setImageSectionPosition] = useState('fixed');
 
     useEffect(() => {
         const observers = sections.map((_, index) => {
@@ -77,13 +78,24 @@ export default function FeatuersPage() {
               if (entry.isIntersecting) {
                 setActiveSection(index);
               }
+            // Check to see if the last section is on screen
+            console.log(index);
+            console.log(sections.length - 1);
+            console.log(_.heading);
+            if (index == sections.length - 1) {
+                setImageSectionPosition('sticky');
+            } else {
+                setImageSectionPosition('fixed');
+            }
             },
-            { threshold: 0.5 }
+            { threshold: 0.6 }
           )
     
           if (sectionRefs.current[index]) {
             observer.observe(sectionRefs.current[index]);
           }
+
+          
     
           return observer;
         })
@@ -111,7 +123,7 @@ export default function FeatuersPage() {
                             </div>
                     )})}
                 </div>
-                <div className={styles.imagescontainer} >
+                <div className={styles.imagescontainer} style={{position: imageSectionPosition}} >
                     {sections.map((section, index) => {
                         return (
                             <div
@@ -127,7 +139,6 @@ export default function FeatuersPage() {
                                     width={0}
                                     height={0}
                                     className={styles.imagestyles}/>
-                                
                                 </AspectRatio.Root>
                             </div>
                     )})}

@@ -6,6 +6,7 @@
 .contentcontainer {
     display: flex; 
     background-image: linear-gradient(to right, var(--background) 0%, var(--background) 50%, var(--background-variant) 50%, var(--background-variant) 100%);
+    overflow: visible;
 }
 
 .textcontainer {
@@ -26,14 +27,12 @@
 }
 
 .imagescontainer {
-    position: fixed; 
-    top: 0; 
+    margin-top: 50px;
     right: 0; 
-    bottom: 0; 
+    bottom: 0;
+    top: 0; 
     width: 50%; 
-    display: grid;
-    align-items: center;
-    top: 40%
+    height: 100vh;
 }
 
 .aspectratio {
@@ -46,12 +45,13 @@
 
 .imagesectioncontainer {
     position: absolute; 
+    top: 10%;
     transition-property: opacity;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 1000ms; 
     width: calc(100% - 120px);
-    height: 100%;
-    padding: 0px 60px;
+    height: 40%;
+    padding: 15% 60px;
 }
 
 .imagestyles {
