@@ -36,7 +36,7 @@ const sections = [
         heading: 'Payment handling',
         description: 'As soon as the requirements are met as outlined in the sponsorship agreement, payments will be made. This means as a sponsor or a creator, your banking information will be securely stored so that payments can be made with no extra work. In rare the event of a payment dispute, our support team is here to help.',
         buttonText: 'Get started',
-        imgSrc: '/homepageResources/searchPreview.png'
+        imgSrc: '/homepageResources/checkmark.png'
     },
     {
         heading: 'Legal documents',
@@ -48,7 +48,7 @@ const sections = [
         heading: 'Messaging',
         description: 'Sharing contact information can be difficult and personal, and is a thing of the past. Use our chat feature to build relationships, make sure your goals align, and find good fits. All before making a final agreement.',
         buttonText: 'Get started',
-        imgSrc: '/homepageResources/searchPreview.png'
+        imgSrc: '/homepageResources/checkmark.png'
     },
     {
         heading: 'Advertising',
