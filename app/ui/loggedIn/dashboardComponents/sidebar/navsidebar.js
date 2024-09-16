@@ -30,7 +30,7 @@ export default function NavSideBar() {
                 </div>
                 <Tooltip.Root >
                     <Tooltip.Trigger asChild >
-                        <Link href={'/dashboard'} className={styles.item} >
+                        <Link href={'/dashboard'} className={`${styles.item} ${highlightCurrentPath("dashboard", pathname)}`} >
                             <DashboardIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -42,7 +42,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/search'} className={styles.item} >
+                        <Link href={'/search'} className={`${styles.item} ${highlightCurrentPath("search", pathname)}`} >
                             <SearchIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -52,7 +52,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/analytics'} className={styles.item} >
+                        <Link href={'/analytics'} className={`${styles.item} ${highlightCurrentPath("analytics", pathname)}`} >
                             <AnalyticsIcon />
                         </Link>
                         </Tooltip.Trigger>
@@ -62,7 +62,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/payment-history'} className={styles.item} >
+                        <Link href={'/payment-history'} className={`${styles.item} ${highlightCurrentPath("payment-history", pathname)}`} >
                             <PaymentHistoryIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -72,7 +72,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/partnerships'} className={styles.item} >
+                        <Link href={'/partnerships'} className={`${styles.item} ${highlightCurrentPath("partnerships", pathname)}`} >
                             <PartnershipsIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -82,7 +82,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/messages'} className={styles.item} >
+                        <Link href={'/messages'} className={`${styles.item} ${highlightCurrentPath("messages", pathname)}`} >
                             <MessagesIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -95,7 +95,7 @@ export default function NavSideBar() {
                 </div>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/contact'} className={styles.item} >
+                        <Link href={'/contact'} className={`${styles.item} ${highlightCurrentPath("contact", pathname)}`} >
                             <ContactIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -105,7 +105,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/advertise'} className={styles.item} >
+                        <Link href={'/advertise'} className={`${styles.item} ${highlightCurrentPath("advertise", pathname)}`} >
                             <AdvertiseIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -115,7 +115,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/settings'} className={styles.item} >
+                        <Link href={'/settings'} className={`${styles.item} ${highlightCurrentPath("settings", pathname)}`} >
                             <SettingsIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -125,7 +125,7 @@ export default function NavSideBar() {
                 </Tooltip.Root>
                 <Tooltip.Root>
                     <Tooltip.Trigger asChild >
-                        <Link href={'/log-out'} className={styles.item} >
+                        <Link href={'/log-out'} className={`${styles.item} ${highlightCurrentPath("log-out", pathname)}`} >
                             <LogOutIcon />
                         </Link>
                     </Tooltip.Trigger>
@@ -136,4 +136,12 @@ export default function NavSideBar() {
             </nav>
         </Tooltip.TooltipProvider>
     );
+}
+
+function highlightCurrentPath(tab, path) {
+    if (tab == path) {
+        return styles.itemactive;
+    } else {
+        return null;
+    }
 }
