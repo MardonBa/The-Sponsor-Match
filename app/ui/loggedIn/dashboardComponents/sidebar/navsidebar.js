@@ -35,7 +35,7 @@ export default function NavSideBar() {
                         </Link>
                     </Tooltip.Trigger>
                     <Tooltip.Portal>
-                        <Tooltip.Content side="right" className={styles.tooltip} >
+                        <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                             Dashboard
                         </Tooltip.Content>
                     </Tooltip.Portal>
@@ -46,7 +46,7 @@ export default function NavSideBar() {
                             <SearchIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Search
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -56,7 +56,7 @@ export default function NavSideBar() {
                             <AnalyticsIcon />
                         </Link>
                         </Tooltip.Trigger>
-                        <Tooltip.Content side="right" className={styles.tooltip} >
+                        <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                             Analytics
                         </Tooltip.Content>
                 </Tooltip.Root>
@@ -66,7 +66,7 @@ export default function NavSideBar() {
                             <PaymentHistoryIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Payment History
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -76,7 +76,7 @@ export default function NavSideBar() {
                             <PartnershipsIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Partnerships
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -86,7 +86,7 @@ export default function NavSideBar() {
                             <MessagesIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Messages
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -99,7 +99,7 @@ export default function NavSideBar() {
                             <ContactIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Contact
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -109,7 +109,7 @@ export default function NavSideBar() {
                             <AdvertiseIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Advertise
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -119,7 +119,7 @@ export default function NavSideBar() {
                             <SettingsIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Settings
                     </Tooltip.Content>
                 </Tooltip.Root>
@@ -129,7 +129,7 @@ export default function NavSideBar() {
                             <LogOutIcon />
                         </Link>
                     </Tooltip.Trigger>
-                    <Tooltip.Content side="right" className={styles.tooltip} >
+                    <Tooltip.Content side="right" className={styles.tooltip} sideOffset={10} >
                         Log Out
                     </Tooltip.Content>
                 </Tooltip.Root>
