@@ -2,7 +2,6 @@
 
 import styles from './navsidebar.module.css';
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 // import all icon components
 import DashboardIcon from './icons/dashboardIcon';
@@ -15,147 +14,126 @@ import ContactIcon from './icons/contactIcon';
 import AdvertiseIcon from './icons/advertiseIcon';
 import SettingsIcon from './icons/settingsIcon';
 import LogOutIcon from './icons/logOutIcon';
+import * as Tooltip from '@radix-ui/react-tooltip';
+import { usePathname } from 'next/navigation';
 
-export default function NavSideBar({ forceCollapse }) {
-    /*
-    Collapsability:
-    Track the state of whether a sidebar is collapsed or not
-    When the collapse button is clicked, update the state
-    When state is updated, change the style that impacts the width of the sidebar
-    Also change what dispays (text or icon) (icons still need to be made)
-    Maybe introduce redux and redux toolkit for app-wide state management, since the other components need to update their size accordingly
-    Try setting the width of the other elements to a percentage first, no need to over-engineer
-    */
-    let [isCollapsed, setIsCollapsed] =  React.useState(false); // defaults to false because the initial state should be full width
+export default function NavSideBar() {
 
-    // If the sidebar shuold always be collapsed, set it to be so and remove the button from view using styles
-    let buttonStyle;
-    if (forceCollapse == true) {
-        isCollapsed = true;
-        buttonStyle = `${styles.collapsebutton} ${styles.hidden}`;
-    } else {
-        buttonStyle = `${styles.collapsebutton}`;
-    }
-
-
-    let button;
-    let widthStyle;
-    let logo;
-    let navigation;
-    if (isCollapsed) {
-        button = '>';
-        widthStyle = styles.collapsed;
-        logo = 'TSM';
-        navigation = NavIcons();
-    } else {
-        button = '<';
-        widthStyle = styles.fullwidth;
-        logo = 'The Sponsor Match';
-        navigation = NavLinksFullWidth();
-    }
-
-    function handleCollapseClick() {
-        setIsCollapsed(!isCollapsed);
-    }
-
+    const pathname = usePathname().slice(1);
+    console.log(pathname);
 
     return (
-        <div className={`${widthStyle} ${styles.container}`} >
-            <div className={styles.logocontainer} >
-                <h1 className={`${styles.colorgradient} ${styles.logolarge}`} ><b>{logo}</b></h1>
-                <p className={buttonStyle} onClick={handleCollapseClick} >{button}</p>
-            </div>
-            {navigation}
-        </div>
+        <Tooltip.TooltipProvider delayDuration={0} >
+            <nav className={styles.container} >
+                <div className={styles.logocontainer} >
+                    <h1 className={`${styles.colorgradient} ${styles.logolarge}`} ><b>TSM</b></h1>
+                </div>
+                <Tooltip.Root >
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/dashboard'} className={styles.item} >
+                            <DashboardIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Portal>
+                        <Tooltip.Content side="right" className={styles.tooltip} >
+                            Dashboard
+                        </Tooltip.Content>
+                    </Tooltip.Portal>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/search'} className={styles.item} >
+                            <SearchIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Search
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/analytics'} className={styles.item} >
+                            <AnalyticsIcon />
+                        </Link>
+                        </Tooltip.Trigger>
+                        <Tooltip.Content side="right" className={styles.tooltip} >
+                            Analytics
+                        </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/payment-history'} className={styles.item} >
+                            <PaymentHistoryIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Payment History
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/partnerships'} className={styles.item} >
+                            <PartnershipsIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Partnerships
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/messages'} className={styles.item} >
+                            <MessagesIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Messages
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <div className={styles.divider} >
+
+                </div>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/contact'} className={styles.item} >
+                            <ContactIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Contact
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/advertise'} className={styles.item} >
+                            <AdvertiseIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Advertise
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/settings'} className={styles.item} >
+                            <SettingsIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Settings
+                    </Tooltip.Content>
+                </Tooltip.Root>
+                <Tooltip.Root>
+                    <Tooltip.Trigger asChild >
+                        <Link href={'/log-out'} className={styles.item} >
+                            <LogOutIcon />
+                        </Link>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content side="right" className={styles.tooltip} >
+                        Log Out
+                    </Tooltip.Content>
+                </Tooltip.Root>
+            </nav>
+        </Tooltip.TooltipProvider>
     );
-}
-
-function NavLinksFullWidth() {
-    return (
-        <>
-            <Link href={'/dashboard'} className={styles.item} >
-                Dashboard
-            </Link>
-            <Link href={'/search'} className={styles.item} >
-                Search
-            </Link>
-            <Link href={'/analytics'} className={styles.item} >
-                Analytics
-            </Link>
-            <Link href={'/payment-history'} className={styles.item} >
-                Payment History
-            </Link>
-            <Link href={'/partnerships'} className={styles.item} >
-                Partnerships
-            </Link>
-            <Link href={'/messages'} className={styles.item} >
-                Messages
-            </Link>
-            <div className={styles.divider} >
-
-            </div>
-            <Link href={'/contact'} className={styles.item} >
-                Contact
-            </Link>
-            <Link href={'/advertise'} className={styles.item} >
-                Advertise
-            </Link>
-            <Link href={'/settings'} className={styles.item} >
-                Settings
-            </Link>
-            <Link href={'/log-out'} className={styles.item} >
-                Log Out
-            </Link>
-        </>
-    );
-}
-
-function NavIcons() {
-
-    return (
-        <>
-            <Link href={'/dashboard'} className={styles.item} >
-                <DashboardIcon />
-            </Link>
-            <Link href={'/search'} className={styles.item} >
-                <SearchIcon />
-            </Link>
-            <Link href={'/analytics'} className={styles.item} >
-                <AnalyticsIcon />
-            </Link>
-            <Link href={'/payment-history'} className={styles.item} >
-                <PaymentHistoryIcon />
-            </Link>
-            <Link href={'/partnerships'} className={styles.item} >
-                <PartnershipsIcon />
-            </Link>
-            <Link href={'/messages'} className={styles.item} >
-                <MessagesIcon />
-            </Link>
-            <div className={styles.divider} >
-
-            </div>
-            <Link href={'/contact'} className={styles.item} >
-                <ContactIcon />
-            </Link>
-            <Link href={'/advertise'} className={styles.item} >
-                <AdvertiseIcon />
-            </Link>
-            <Link href={'/settings'} className={styles.item} >
-                <SettingsIcon />
-            </Link>
-            <Link href={'/log-out'} className={styles.item} >
-                <LogOutIcon />
-            </Link>
-        </>
-    );
-}
-
-function prefersDarkTheme() {
-    const darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (darkTheme) {
-        return true;
-    } else {return false;}
-
 }
