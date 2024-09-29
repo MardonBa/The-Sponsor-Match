@@ -18,7 +18,7 @@ export default function MessagesPage() {
             console.log("working");
             messages.scrollTop = messages.scrollHeight;
         }
-    }, [messageText]);
+    }, []);
 
     const onMessageTextChange = (e) => {
         setMessageText(e.target.textContent);
