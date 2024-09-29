@@ -4,7 +4,6 @@ import styles from './page.module.css';
 import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
 import MessagesSidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/messages/messageSidebar';
 import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
-import SendButton from "@/app/ui/loggedIn/messagesComponents/sendButton/sendButton";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -30,18 +29,7 @@ export default function RootLayout({ children }) {
             <Sidebar style={styles.messagesidebar} >
                 <MessagesSidebar forceOpen={true} />
             </Sidebar>
-            <div className={styles.messagescontainer} >
-                {children}
-                <div className={styles.searchbarcontainer} >
-                    <span className={styles.searchbar} role="textbox" contentEditable spellcheck="true"  />
-                    <div className={styles.sendbutton} >
-                        <SendButton />
-                        {/* 
-                        This will eventually trigger an action on clicking that sends the message
-                        */}
-                    </div>
-                </div>
-            </div>
+            { children }
         </div>
       </body>
     </html>
