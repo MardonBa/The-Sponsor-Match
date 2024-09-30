@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import styles from "./page.module.css";
 import LinkToSignUp from "../ui/notLoggedIn/buttons/linkToSignUp/toSignUp";
 import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
-import ComparisonCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
+import ToggleCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 import { useElementSize } from "@/utils/customHooks";
 import LandingFooter from "../ui/notLoggedIn/footer/footer";
@@ -86,7 +86,7 @@ export default function LandingPage() {
           <LinkToPages page="pricing" />
         </div>
         <section className={styles.comparisoncontainer} >
-          <ComparisonCard sponsorComponent={<SponsorText />} creatorComponent={<CreatorText />} />
+          <ToggleCard sponsorComponent={<SponsorText />} creatorComponent={<CreatorText />} />
         </section>
         <div className={`${styles.curvespacer} ${styles.layer2}`} >
           <LinkToPages page="features" />

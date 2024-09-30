@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 
 // This component is used for when there needs to be a toggle between sponsors and creators, 
 // namely on landing and pricing pages
-export default function ComparisonCard({ sponsorComponent, creatorComponent }) { 
+export default function ToggleCard({ sponsorComponent, creatorComponent }) { 
 
     const ref = useRef(null);
     const isInView = useInView(ref); // Should be a boolean T/F used for animations when the component comes into view
