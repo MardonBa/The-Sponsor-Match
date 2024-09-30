@@ -10,6 +10,8 @@ import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
 import { useElementSize } from "@/utils/customHooks";
 import LandingFooter from "../ui/notLoggedIn/footer/footer";
 import  * as AspectRatio from '@radix-ui/react-aspect-ratio';
+import CreatorText from "../ui/notLoggedIn/comparisonCard/creators";
+import SponsorText from "../ui/notLoggedIn/comparisonCard/sponsors";
 
 /*
     TODO change the checkmarks on this page because they look terrible. Also change the sizing of the card they are in to make it consistent,
@@ -84,7 +86,7 @@ export default function LandingPage() {
           <LinkToPages page="pricing" />
         </div>
         <section className={styles.comparisoncontainer} >
-          <ComparisonCard />
+          <ComparisonCard sponsorComponent={<SponsorText />} creatorComponent={<CreatorText />} />
         </section>
         <div className={`${styles.curvespacer} ${styles.layer2}`} >
           <LinkToPages page="features" />
