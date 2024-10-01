@@ -43,10 +43,8 @@ export default function ToggleCard({ sponsorComponent, creatorComponent }) {
             <ul className={styles.tabnav} >
                     <li className={isActive === 'creator' ? styles.activetab : styles.inactivetab} onClick={handleCreatorTab} >Creators</li>
                     <li className={isActive === 'sponsor' ? styles.activetab : styles.inactivetab} onClick={handleSponsorTab} >Sponsors</li>
-                </ul>
-            <div className={styles.cardcontainer}>
-                {cardText}
-            </div>
+            </ul>
+            {cardText}
         </div>
     );
 }

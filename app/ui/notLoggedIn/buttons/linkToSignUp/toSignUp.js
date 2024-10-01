@@ -1,7 +1,7 @@
 import styles from "./toSignUp.module.css";
 import Link from 'next/link';
 
-export default function LinkToSignUp({ text, color }) {
+export default function LinkToSignUp({ text, color, classes }) {
     let colorStyle;
     if (color == 'primary') {
         colorStyle = styles.bgprimary;
@@ -12,7 +12,7 @@ export default function LinkToSignUp({ text, color }) {
     }
 
     return (
-        <Link className={`${styles.container} ${colorStyle}`} href={'/sign-up'} >
+        <Link className={`${styles.container} ${colorStyle} ${classes}`} href={'/sign-up'} >
             <p className={styles.text} >{text}</p>
         </Link>
     );
