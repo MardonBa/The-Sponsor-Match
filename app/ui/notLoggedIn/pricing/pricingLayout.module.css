@@ -110,11 +110,22 @@
 }
 
 .featurelist {
-    padding-left: 20px;
+    padding-left: 0px;
     margin: 0px;
     margin-bottom: 20px;
 }
 
 .li {
     font-size: 18px;
+    list-style-type: "✓";
+    list-style-position: inside;
+    margin: 10px 0px;
+}
+
+.li::marker {
+    color: var(--primary);
+}
+
+.li span {
+    padding-left: 10px;
 }
