@@ -1,12 +1,12 @@
 'use client'
 
 import styles from "./comparisonCard.module.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 // This component is used for when there needs to be a toggle between sponsors and creators, 
 // namely on landing and pricing pages
-export default function ToggleCard({ sponsorComponent, creatorComponent }) { 
+export default function ToggleCard({ components }) { 
 
     const ref = useRef(null);
     const isInView = useInView(ref); // Should be a boolean T/F used for animations when the component comes into view
@@ -22,6 +22,8 @@ export default function ToggleCard({ sponsorComponent, creatorComponent }) {
     let cardText;
     let [isActive, setIsActive] = useState('creator');  // 'creators' or 'sponsors'
 
+    const [creatorComponent, sponsorComponent] = components;
+
     if (isActive == 'sponsor') {
         cardText = sponsorComponent;
     } else if (isActive == 'creator') {
@@ -29,6 +31,7 @@ export default function ToggleCard({ sponsorComponent, creatorComponent }) {
     } else {
         console.log('Invalid comparison card type!');
     }
+
 
     const handleCreatorTab = () => {
         setIsActive('creator');

@@ -10,14 +10,14 @@
     height: auto;
     width: auto;
     display: grid;
-    grid-template-rows: 50px 50px 200px auto;
+    grid-template-rows: 50px 50px 200px auto auto;
     align-content: flex-start;
     color: var(--text);
     border-radius: 15px;
     width: 330px;
     margin: 20px;
     padding: 15px;
-    background-color: var(--message-hover);
+    background-color: var(--background-variant);
 }
 
 .freeplan {
@@ -77,6 +77,10 @@
     padding: 10px;
 }
 
+.percentoff:hover {
+    cursor: pointer;
+}
+
 .button {
     margin-bottom: 20px;
     grid-row: 4 / 5;
@@ -87,12 +91,30 @@
     width: 100%;
 }
 
-.lineprimary {
-    border: 1px solid var(--primary);
-    width: 100%;
-}
-
 .bottomline {
     position: absolute;
     bottom: 0;
+}
+
+.features {
+    grid-row: 5 / 6;
+    padding-left: 5px;
+}
+
+.featuresheader {
+    font-size: 26px;
+    font-weight: normal;
+    text-decoration: underline;
+    text-decoration-color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.featurelist {
+    padding-left: 20px;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.li {
+    font-size: 18px;
 }

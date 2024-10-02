@@ -86,7 +86,7 @@ export default function LandingPage() {
           <LinkToPages page="pricing" />
         </div>
         <section className={styles.comparisoncontainer} >
-          <ToggleCard sponsorComponent={<SponsorText />} creatorComponent={<CreatorText />} />
+          <ToggleCard components={[<CreatorText />, <SponsorText />]} />
         </section>
         <div className={`${styles.curvespacer} ${styles.layer2}`} >
           <LinkToPages page="features" />
