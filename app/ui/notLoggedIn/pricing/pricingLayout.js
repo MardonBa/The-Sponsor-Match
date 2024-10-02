@@ -2,11 +2,11 @@
 
 import styles from "./pricingLayout.module.css";
 import LinkToSignUp from "../buttons/linkToSignUp/toSignUp";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Content is an object that has the title, description, price, button text
 // children is a features component that shows all of the available features
-export default function PricingLayout({ content, children, classes }) {
+export default function PricingLayout({ content, children, classes, currentContent }) {
 
     const { title, description, price, buttonText } = content;
     const priceBilledAnnually = content?.priceBilledAnnually;
@@ -26,6 +26,11 @@ export default function PricingLayout({ content, children, classes }) {
     if (priceBilledAnnually) {
         percentOff = Math.round(((priceBilledAnnually - price * 12) / (price * 12)) * -100);
     }
+
+    // Prices weren't changing when the tab changed, this fixes that bug
+    useEffect(() => {
+        setPricingText(`$${price}/mo billed monthly`);
+    }, [currentContent]);
 
     return (
         <div className={classes} >

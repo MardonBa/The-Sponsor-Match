@@ -27,17 +27,17 @@ export default function SponsorPricing() {
 
     return (
         <div className={styles.pricingcontainer} >
-            <PricingLayout content={freePlan} classes={`${styles.freeplan} ${styles.container}`} >
+            <PricingLayout content={freePlan} classes={`${styles.freeplan} ${styles.container}`} currentContent="sponsor" >
                 <ul className={styles.featurelist}>
                     <li className={styles.li} >argh</li>
                 </ul>
             </PricingLayout>
-            <PricingLayout content={proPlan} classes={`${styles.proplan} ${styles.container}`} >
+            <PricingLayout content={proPlan} classes={`${styles.proplan} ${styles.container}`} currentContent="sponsor" >
                 <ul className={styles.featurelist}>
                     <li className={styles.li} >Everything in basic, plus...</li>
                 </ul>
             </PricingLayout>
-            <PricingLayout content={premiumPlan} classes={`${styles.premiumplan} ${styles.container}`} >
+            <PricingLayout content={premiumPlan} classes={`${styles.premiumplan} ${styles.container}`} currentContent="sponsor" >
                 <ul className={styles.featurelist}>
                     <li className={styles.li} >Everything in pro, plus...</li>
                 </ul>
