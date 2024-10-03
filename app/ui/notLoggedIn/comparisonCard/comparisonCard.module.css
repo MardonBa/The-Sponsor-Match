@@ -3,8 +3,6 @@
     height: auto;
     border-radius: 30px;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
-    backdrop-filter: blur(20px);
-    box-shadow: 3px 3px black;
     color: #D9D9D9;
     display: flex;
     font-size: 20px;
@@ -65,7 +63,6 @@
 }
 
 .list * {
-	/*list-style-image: url("../../../../public/homepageResources/checkmark.svg");*/
     list-style-type: "✓";
     list-style-position: inside;
 	background-repeat: no-repeat;
