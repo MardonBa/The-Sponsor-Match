@@ -23,7 +23,6 @@
 }
 
 .tabnav li {
-    color: var(--text);
     margin: auto;
     display: inline-flex;
     flex-wrap: wrap;
@@ -32,8 +31,6 @@
 }
 
 .activetab {
-    background-color: var(--text);
-    color: var(--background-variant) !important;
     border-radius: 30px;
     height: 36px;
     width: 50%;
@@ -41,7 +38,6 @@
     transition: all .3s steps(10, jump-start);
     text-decoration: underline;
     border: 2px solid var(--primary);
-    margin-bottom: 10px
 }
 
 .activetab:hover {

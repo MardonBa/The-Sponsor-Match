@@ -172,6 +172,16 @@
     position: relative;
 }
 
+.activetabcolor {
+    background-color: var(--text);
+    color: var(--background-variant) !important;
+}
+
+.inactivetabcolor {
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+}
+
 @media (prefers-color-scheme: dark) {
     .layer1 {
         background-image: url("../../public/homepageResources/waves1Dark.svg");

@@ -14,3 +14,13 @@
     font-size: 40px;
     margin: 10px;
 }
+
+.activetabcolor {
+    background-color: var(--text) !important;
+    color: var(--background-variant) !important;
+}
+
+.inactivetabcolor {
+    background-color: var(--secondary) !important;
+    color: var(--background-variant) !important;
+}
