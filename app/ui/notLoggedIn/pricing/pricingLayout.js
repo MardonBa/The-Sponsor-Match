@@ -11,25 +11,28 @@ export default function PricingLayout({ content, children, classes, currentConte
     const { title, description, price, buttonText } = content;
     const priceBilledAnnually = content?.priceBilledAnnually;
     const [pricingText, setPricingText] = useState(
-        `$${price}/mo billed monthly`
+        `$${price}/mo`
     );
+    const [pricingPeriod, setPricingPeriod] = useState("billed monthly");
 
     function onPricingTextClick() {
-        if (pricingText == `$${price}/mo billed monthly`) {
-            setPricingText(`$${priceBilledAnnually}/yr billed annually`);
+        if (pricingText == `$${price}/mo`) {
+            setPricingText(`$${priceBilledAnnually}/yr`);
+            setPricingPeriod("billed annually");
         } else {
-            setPricingText(`$${price}/mo billed monthly`);
+            setPricingText(`$${price}/mo`);
+            setPricingPeriod("billed monthly");
         }
     }
 
     let percentOff;
     if (priceBilledAnnually) {
-        percentOff = Math.round(((priceBilledAnnually - price * 12) / (price * 12)) * -100);
+        percentOff = Math.round(((priceBilledAnnually - price * 12) / (price * 12)) * - 100);
     }
 
     // Prices weren't changing when the tab changed, this fixes that bug
     useEffect(() => {
-        setPricingText(`$${price}/mo billed monthly`);
+        setPricingText(`$${price}/mo`);
     }, [currentContent]);
 
     return (
@@ -38,7 +41,7 @@ export default function PricingLayout({ content, children, classes, currentConte
             <p className={styles.description} >{description}</p>
             <div className={styles.pricing}>
                 <hr className={styles.linesecondary} />
-                <p className={styles.price} >{Number.isInteger(price) ? pricingText : `${price} forever`}</p>
+                {Number.isInteger(price) ? <p className={styles.price} >{pricingText}<span className={styles.pricingperiod}> {pricingPeriod}</span></p> : <p className={styles.price} ><s>$3/mo</s><br/>Free!</p>}
                 {priceBilledAnnually ? <p className={styles.percentoff} onClick={onPricingTextClick} >save {percentOff}% when you bill annually (click to see)</p> : <p></p>}
                 <hr className={`${styles.linesecondary} ${styles.bottomline}`} />
             </div>
