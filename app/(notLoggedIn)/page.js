@@ -1,13 +1,10 @@
-"use client"
 
 import Image from "next/image";
-import { useRef } from 'react';
 import styles from "./page.module.css";
 import LinkToSignUp from "../ui/notLoggedIn/buttons/linkToSignUp/toSignUp";
 import HowItWorks from "../ui/notLoggedIn/howItWorks/howItWorks";
 import ToggleCard from "../ui/notLoggedIn/comparisonCard/comparisonCard";
 import LinkToPages from "../ui/notLoggedIn/buttons/linkToPages/linkToPages";
-import { useElementSize } from "@/utils/customHooks";
 import LandingFooter from "../ui/notLoggedIn/footer/footer";
 import  * as AspectRatio from '@radix-ui/react-aspect-ratio';
 import CreatorText from "../ui/notLoggedIn/comparisonCard/creators";
@@ -18,22 +15,14 @@ import SponsorText from "../ui/notLoggedIn/comparisonCard/sponsors";
     TODO as well as the text sizing
 */
 
-export default function LandingPage() {
-
-  // Target element for resizing hook
-  let targetRef1 = useRef(null);
-  let targetRef2 = useRef(null);
-
-  // Define the changing heights and widths for the images in contentone and contenttwo (denoted by 1 and 2 above and below)
-  let [width1, height1] = useElementSize(targetRef1, 3, 0.5); // For the text size in contentone
-  let [width2, height2] = useElementSize(targetRef2, 3, 0.5) // For the text size in contenttwo
+export default async function LandingPage() {
 
   return (
     <div className={styles.maincontainer} >
         <h1 className={`${styles.colorgradient} ${styles.h1}`} ><b>The Sponsor Match</b></h1>
         <section className={styles.contentone}>
             <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
-                <div className={styles.contentonetext} ref={targetRef1} >
+                <div className={styles.contentonetext} >
                     <h3 className={`${styles.h3} ${styles.secondaryunderline}`} >Monetize your content or raise awareness about your product with ease</h3>
                     <p className={styles.p} >
                         With our AI-powered matching tool, finding partners has never been easier. 
@@ -70,7 +59,7 @@ export default function LandingPage() {
                 />
             </AspectRatio.Root>
             <AspectRatio.Root ratio={16/9} className={styles.aspectratio} >
-                <div className={styles.contenttwotext} ref={targetRef2} >
+                <div className={styles.contenttwotext} >
                 <h3 className={`${styles.h3} ${styles.primaryunderline}`} >Use our data and analytics to maximize engagement and profits.</h3>
                 <p className={styles.p} >
                     Whether you&apos;re a content creator or a sponsor, being able to track engagement and performace is a top priority.
