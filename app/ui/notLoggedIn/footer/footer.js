@@ -1,5 +1,6 @@
 import styles from './footer.module.css';
 import Logo from '../../logo/logo';
+import Link from 'next/link';
 
 export default function LandingFooter() {
     return (
@@ -10,7 +11,7 @@ export default function LandingFooter() {
             <div className={styles.aboutus} >
                 <h3 className={styles.heading} >About Us</h3>
                 <div className={styles.links} >
-                    <p>Meet the Team</p>
+                    <Link href="/meet-the-team" className={styles.link} >Meet the Team</Link>
                     <p>Pricing</p>
                     <p>Features</p>
                     <p>Testimonials</p>

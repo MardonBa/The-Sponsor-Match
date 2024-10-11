@@ -34,3 +34,7 @@
 .links {
     text-decoration: underline;
 }
+
+.link {
+    color: var(--text);
+}
