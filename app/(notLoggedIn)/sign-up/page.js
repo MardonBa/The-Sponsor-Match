@@ -8,13 +8,15 @@ export default function Page() {
 
     const handleClick = () => {
         supabase.auth.signInWithOAuth({
-            provider: "google"
+            provider: "google",
+            options: {
+                redirectTo: "http://localhost:3000/dashboard"            }
         });
     }
 
     return (
         <div className={styles.container} >
-         <GoogleButton onClick={handleClick} >click here</GoogleButton>
+         <GoogleButton onClick={handleClick} label="Sign up with Google" >click here</GoogleButton>
         </div>
     );
 }
