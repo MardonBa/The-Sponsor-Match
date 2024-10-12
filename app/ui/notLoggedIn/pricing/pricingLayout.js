@@ -33,7 +33,7 @@ export default function PricingLayout({ content, children, classes, currentConte
     // Prices weren't changing when the tab changed, this fixes that bug
     useEffect(() => {
         setPricingText(`$${price}/mo`);
-    }, [currentContent]);
+    }, [currentContent, price]);
 
     return (
         <div className={classes} >
