@@ -3,15 +3,24 @@
 import styles from './page.module.css';
 import GoogleButton from 'react-google-button';
 import supabase from '@/utils/supabase/supabaseClient';
+import { redirect } from 'next/navigation';
 
 export default function Page() {
 
-    const handleClick = () => {
+    const handleClick = async () => {
         supabase.auth.signInWithOAuth({
             provider: "google",
             options: {
-                redirectTo: "http://localhost:3000/dashboard"            }
+                redirectTo: "http://localhost:3000/dashboard"
+            }
         });
+
+        const {data: {session: {user}}, error} = await supabase.auth.getSession();
+
+        if (error) {
+            // Handle error
+            // TODO build out error handling
+        }
     }
 
     return (
