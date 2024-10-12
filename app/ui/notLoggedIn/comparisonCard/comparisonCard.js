@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 
 // This component is used for when there needs to be a toggle between sponsors and creators, 
 // namely on landing and pricing pages
-export default function ToggleCard({ components, activeColorStyle, inactiveColorStyle }) { 
+export default function ToggleCard({ creatorComponent, sponsorComponent, activeColorStyle, inactiveColorStyle }) { 
 
     const ref = useRef(null);
     const isInView = useInView(ref); // Should be a boolean T/F used for animations when the component comes into view
@@ -21,8 +21,6 @@ export default function ToggleCard({ components, activeColorStyle, inactiveColor
 
     let cardText;
     let [isActive, setIsActive] = useState('creator');  // 'creators' or 'sponsors'
-
-    const [creatorComponent, sponsorComponent] = components;
 
     if (isActive == 'sponsor') {
         cardText = sponsorComponent;
