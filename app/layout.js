@@ -1,5 +1,5 @@
 import { Rubik } from "next/font/google";
-import "../../app/globals.css";
+import "../app/globals.css";
 
 
 const rubik = Rubik({ subsets: ["latin"] });
@@ -15,11 +15,10 @@ a left and right sidebar with a large middle section and a short middle section 
 Dashboard should fill only one screen, shouldn't be taller
 */
 
-export default function Layout({ children }) {
+export default function RootLayout({ children }) {
   return (
-    <>
-      {children}
-    </>
+    <html>
+      <body className={rubik.className}>{children}</body>
+    </html>
   );
 }
-

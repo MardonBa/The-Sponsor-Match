@@ -10,13 +10,11 @@ export const metadata = {
   icon: "/icon.png"
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
-    <html lang="en">
-        <body className={rubik.className}>
+        <>
             <LandingHeader />
             {children}
-        </body>
-    </html>
+        </>
   );
 }
