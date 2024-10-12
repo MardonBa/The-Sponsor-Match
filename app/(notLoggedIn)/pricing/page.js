@@ -12,7 +12,7 @@ export default function Page() {
                 <h2 className={styles.h2} >Start for free</h2>
                 <h2 className={styles.h2} >Upgrade when you grow</h2>
             </section>
-            <ToggleCard creatorComponent={<CreatorText />} sponsorComponent={<SponsorText />} activeColorStyle={styles.activetabcolor} inactiveColorStyle={styles.inactivetabcolor} />
+            <ToggleCard creatorComponent={<CreatorPricing />} sponsorComponent={<SponsorPricing />} activeColorStyle={styles.activetabcolor} inactiveColorStyle={styles.inactivetabcolor} />
         </div>
         <LandingFooter />
         </>
