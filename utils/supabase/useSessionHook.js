@@ -10,7 +10,7 @@ export default function useSession() {
 
     useEffect(() => {
         supabase.auth.getSession().then(({data: { session }}) => {
-            setUserInfo(...userInfo, session);
+            setUserInfo({...userInfo, session});
             supabase.auth.onAuthStateChange((_event, session) => {
                 setUserInfo({session, profile: null}); 
                 // profile is set to null because the next hook updates profile data when session changes
