@@ -1,6 +1,5 @@
 import { Rubik } from "next/font/google";
 import "../app/globals.css";
-import useSession from "@/utils/supabase/useSessionHook";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -12,8 +11,6 @@ export const metadata = {
 
 
 export default function RootLayout({ children }) {
-
-    const userInfo = useSession();
 
   return (
     <html>

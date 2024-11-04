@@ -2,7 +2,6 @@
 
 import styles from './page.module.css';
 import GoogleButton from 'react-google-button';
-import supabase from '@/utils/supabase/supabaseClient';
 import { redirect } from 'next/navigation';
 
 export default function Page() {
