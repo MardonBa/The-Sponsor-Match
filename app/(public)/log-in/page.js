@@ -1,36 +1,25 @@
-"use client";
-
 import styles from './page.module.css';
-import GoogleButton from 'react-google-button';
-import { redirect } from 'next/navigation';
+import { login } from './action';
 
 export default function Page() {
 
-    const handleClick = async () => {
-        supabase.auth.signInWithOAuth({
-            provider: "google",
-            options: {
-                redirectTo: "http://localhost:3000/dashboard"
-            }
-        });
-
-        const {data: {session: {user}}, error} = await supabase.auth.getSession();
-
-        if (error) {
-            // Handle error
-            // TODO build out error handling
-        }
-    }
+    /*
+    Need to validate the form input on the frontend as well as the backend
+    */
 
     return (
         <div className={styles.container} >
-            <h2 className={styles.h2} >Log In to The Sponsor Match</h2>
-            <GoogleButton onClick={handleClick} label="Log in with Google" />
-
-
-            <form>
-                <label></label>
+            <form className={styles.loginform} >
+                <label htmlFor="email">Email:</label>
+                <input id="email" name="email" type="email" required />
+                <label htmlFor="password">Password:</label>
+                <input id="password" name="password" type="password" required />
+                <button formAction={login} >Log in</button>
             </form>
         </div>
     );
+}
+
+function test(formData) {
+    console.log(formData);
 }

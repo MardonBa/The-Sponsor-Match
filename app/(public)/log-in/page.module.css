@@ -1,8 +1,8 @@
 .container {
     height: 100%;
-    width: auto;
-    margin: 120px auto;
-
+    margin: 120px auto auto auto;
+    width: 300px;
+    align-items: center;
 }
 
 .h2 {
@@ -11,4 +11,12 @@
     text-align: center;
     text-decoration: underline;
     text-decoration-color: var(--primary);
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    color: var(--text);
+    margin: auto;
 }
