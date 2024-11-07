@@ -1,6 +1,7 @@
 import { Rubik } from "next/font/google";
 import "../globals.css";
 import LandingHeader from "../ui/notLoggedIn/header/header";
+import Script from "next/script";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -13,8 +14,10 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
         <>
+            <Script src="https://accounts.google.com/gsi/client" async />
             <LandingHeader />
             {children}
+            
         </>
   );
 }

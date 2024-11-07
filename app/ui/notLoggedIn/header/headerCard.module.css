@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+.card:hover {
+    cursor: pointer
+}
+
 .text {
     margin: auto;
     text-align: center;

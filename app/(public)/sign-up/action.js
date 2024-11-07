@@ -30,3 +30,18 @@ export async function signup(formData) {
         console.log("failed");
     }
 }
+
+
+export async function signupWithGoogle(response) {
+    const { data, error } = await supabase.auth.signInWithIdToken({
+        provider: 'google',
+        token: response.credential,
+      });
+
+      if (error) {
+        redirect('/');
+      }
+
+      revalidatePath('/');
+      redirect('/dashboard');
+}
