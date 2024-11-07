@@ -6,7 +6,6 @@ import { validateEmail, validatePassword } from '@/app/lib/validation';
 import { createClient } from '@/utils/supabase/server';
 
 export async function login(formData) {
-    console.log("started");
     const supabase = await createClient();
 
     const data = {
@@ -23,7 +22,7 @@ export async function login(formData) {
             redirect('/');
         }
     
-        //revalidatePath('/', 'layout');
+        revalidatePath('/', 'layout');
         redirect('/dashboard');
     } else {
         // TODO: Build this out

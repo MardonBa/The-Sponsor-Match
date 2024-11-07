@@ -46,7 +46,8 @@ export async function updateSession(request) {
   // Each list should contain all routes in the private and public route groups respectively
   // If a path is ever added to either group, it has to be added to these lists
   const privatePaths = [
-    '/advertise', '/analytics', '/dashboard', '/log-out', '/messages', '/partnerships', '/payment-history', '/search', '/settings'
+    '/advertise', '/analytics', '/dashboard', '/log-out', '/messages', '/partnerships', '/payment-history', '/search', '/settings', 
+    '/log-out'
   ];
   const publicPaths = [
     '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up'
