@@ -1,8 +1,8 @@
 import "../../../app/globals.css";
 import styles from './page.module.css';
-import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
-import MessagesSidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/messages/messageSidebar';
-import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
+import Sidebar from '@/app/ui/private/dashboardComponents/sidebar/sidebar';
+import MessagesSidebar from '@/app/ui/private/dashboardComponents/sidebar/messages/messageSidebar';
+import NavSideBar from '@/app/ui/private/dashboardComponents/sidebar/navsidebar';
 
 
 export const metadata = {

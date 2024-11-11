@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { validateEmail, validatePassword } from '@/app/lib/validation';
+import { validateEmail, validatePassword } from '@/app/lib/auth/validation';
 import { createClient } from '@/utils/supabase/server';
 
 export async function login(formData) {
@@ -29,18 +29,4 @@ export async function login(formData) {
         // If the email or password is invalid, update the UI (somehow)
         console.log("failed");
     }
-}
-
-export async function loginWithGoogle(response) {
-    const { data, error } = await supabase.auth.signInWithIdToken({
-        provider: 'google',
-        token: response.credential,
-      });
-
-      if (error) {
-        redirect('/');
-      }
-
-      revalidatePath('/');
-      redirect('/');
 }

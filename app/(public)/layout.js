@@ -1,6 +1,6 @@
 import { Rubik } from "next/font/google";
 import "../globals.css";
-import LandingHeader from "../ui/notLoggedIn/header/header";
+import LandingHeader from "../ui/public/header/header";
 import Script from "next/script";
 
 const rubik = Rubik({ subsets: ["latin"] });

@@ -1,9 +1,9 @@
 import styles from './page.module.css';
-import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
-import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
-import MessagesSidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/messages/messageSidebar';
-import ManagementCard from '@/app/ui/loggedIn/dashboardComponents/management/card';
-import SearchContainer from '@/app/ui/loggedIn/dashboardComponents/search/searchContainer';
+import Sidebar from '@/app/ui/private/dashboardComponents/sidebar/sidebar';
+import NavSideBar from '@/app/ui/private/dashboardComponents/sidebar/navsidebar';
+import MessagesSidebar from '@/app/ui/private/dashboardComponents/sidebar/messages/messageSidebar';
+import ManagementCard from '@/app/ui/private/dashboardComponents/management/card';
+import SearchContainer from '@/app/ui/private/dashboardComponents/search/searchContainer';
 
 export default function Dashboard() {
     return (

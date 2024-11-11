@@ -1,5 +1,5 @@
 import styles from './dropdownItem.module.css';
-import DownArrow from '@/app/ui/notLoggedIn/downArrow/downArrow';
+import DownArrow from '@/app/ui/public/downArrow/downArrow';
 
 export default function DropdownItem({ text }) {
     return (

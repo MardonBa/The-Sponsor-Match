@@ -1,7 +1,7 @@
 import styles from './page.module.css';
-import Sidebar from '@/app/ui/loggedIn/dashboardComponents/sidebar/sidebar';
-import NavSideBar from '@/app/ui/loggedIn/dashboardComponents/sidebar/navsidebar';
-import SearchContainer from '@/app/ui/loggedIn/dashboardComponents/search/searchContainer';
+import Sidebar from '@/app/ui/private/dashboardComponents/sidebar/sidebar';
+import NavSideBar from '@/app/ui/private/dashboardComponents/sidebar/navsidebar';
+import SearchContainer from '@/app/ui/private/dashboardComponents/search/searchContainer';
 
 export default function SearchPage() {
     return (

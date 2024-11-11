@@ -1,9 +1,9 @@
 'use client'
 
 import styles from './page.module.css';
-import LandingFooter from '@/app/ui/notLoggedIn/footer/footer';
+import LandingFooter from '@/app/ui/public/footer/footer';
 import {useEffect, useRef, useState} from 'react';
-import LinkToSignUp from '@/app/ui/notLoggedIn/buttons/linkToSignUp/toSignUp';
+import LinkToSignUp from '@/app/ui/public/buttons/linkToSignUp/toSignUp';
 import Image from 'next/image';
 import  * as AspectRatio from '@radix-ui/react-aspect-ratio';
 

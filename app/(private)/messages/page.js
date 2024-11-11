@@ -1,8 +1,8 @@
 "use client"
 
 import styles from './page.module.css';
-import Message from "@/app/ui/loggedIn/messagesComponents/message/message";
-import SendButton from "@/app/ui/loggedIn/messagesComponents/sendButton/sendButton";
+import Message from "@/app/ui/private/messagesComponents/message/message";
+import SendButton from "@/app/ui/private/messagesComponents/sendButton/sendButton";
 import { useRef, useEffect, useState } from "react";
 
 export default function MessagesPage() {

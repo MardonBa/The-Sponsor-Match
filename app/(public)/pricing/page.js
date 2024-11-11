@@ -1,8 +1,8 @@
 import styles from "./page.module.css";
-import LandingFooter from "@/app/ui/notLoggedIn/footer/footer";
-import ToggleCard from "@/app/ui/notLoggedIn/comparisonCard/comparisonCard";
-import CreatorPricing from "@/app/ui/notLoggedIn/pricing/creatorPricing/creatorPricing";
-import SponsorPricing from "@/app/ui/notLoggedIn/pricing/sponsorPricing/sponsorPricing";
+import LandingFooter from "@/app/ui/public/footer/footer";
+import ToggleCard from "@/app/ui/public/comparisonCard/comparisonCard";
+import CreatorPricing from "@/app/ui/public/pricing/creatorPricing/creatorPricing";
+import SponsorPricing from "@/app/ui/public/pricing/sponsorPricing/sponsorPricing";
 
 export default function Page() {
     return (
