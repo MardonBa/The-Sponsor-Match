@@ -32,16 +32,19 @@ export async function signup(formData) {
 }
 
 
-export async function signupWithGoogle(response) {
-    const { data, error } = await supabase.auth.signInWithIdToken({
+export async function signUpWithGoogle() {
+    const supabase = await createClient();
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
-        token: response.credential,
-      });
+        options: {
+            redirectTo: 'localhost:3000/auth/callback'
+        }
+    });
 
-      if (error) {
-        redirect('/');
-      }
+    console.log(data.url);
 
-      revalidatePath('/');
-      redirect('/dashboard');
+    if (data.url) {
+        redirect(data.url);
+    }
 }
