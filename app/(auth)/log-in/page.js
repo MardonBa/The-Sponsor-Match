@@ -11,6 +11,8 @@ export default function Page() {
     */
 
     return (
+      <div className={styles.pagecontainer} >
         <AuthComponent buttonText={"Log in"} action={login} />
+      </div>
     );
 }

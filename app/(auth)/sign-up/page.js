@@ -7,6 +7,8 @@ import AuthComponent from '@/app/ui/public/auth/authComponent';
 export default function Page() {
 
     return (
-        <AuthComponent buttonText={"Sign up"} action={signup }/>
+      <div className={styles.pagecontainer} >
+        <AuthComponent buttonText={"Sign up"} action={signup}/>
+      </div>
     );
 }

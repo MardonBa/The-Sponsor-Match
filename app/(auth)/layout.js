@@ -1,8 +1,4 @@
-import { Rubik } from "next/font/google";
 import "../globals.css";
-import LandingHeader from "../ui/public/header/header";
-
-const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
   title: "The Sponsor Match",
@@ -13,7 +9,6 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
         <>
-            <LandingHeader />
             {children}
         </>
   );

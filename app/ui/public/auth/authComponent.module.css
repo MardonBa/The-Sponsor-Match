@@ -1,8 +1,10 @@
 .container {
-  height: 100%;
-  margin: 120px auto auto auto;
+  height: 300px;
   width: 300px;
-  align-items: center;
+  background-color: var(--background);
+  padding: 100px;
+  border-radius: 20px;
+  margin: auto;
 }
 
 .h2 {
@@ -19,4 +21,56 @@
   width: 300px;
   color: var(--text);
   margin: auto;
+}
+
+.input {
+  width: 300px;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin: 10px 0px;
+  background-color: var(--background-variant);
+  color: var(--text);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.line {
+  color: var(--text);
+  width: 250px;
+}
+
+.button {
+  margin: 20px 0px;
+  width: 300px;
+  height: 40px;
+  font-size: 18px;
+  background-color: var(--secondary);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+}
+
+.button:active {
+  background-color: var(--secondary-variant);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.googlebutton {
+  margin: auto;
+}
+
+.nav {
+  margin: auto;
+  width: 250px;
+  color: var(--text);
+}
+
+.navlink {
+  color: var(--text);
 }
