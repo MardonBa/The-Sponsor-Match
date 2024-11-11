@@ -28,8 +28,12 @@ export default function AuthComponent({ buttonText, action }) {
         <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
         <button formAction={action} className={styles.button} >{buttonText}</button>
       </form>
-      <hr className={styles.line} />
-      <GoogleButton onClick={() => {loginWithGoogle()}} />
+      <div className={styles.divider} >
+        <div className={styles.line} ></div>
+        <span className={styles.text} >or</span>
+        <div className={styles.line}></div>
+      </div>
+      <GoogleButton clickAction={loginWithGoogle} styles={styles.googlebutton} />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>

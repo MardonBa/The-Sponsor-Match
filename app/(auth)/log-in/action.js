@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { validateEmail, validatePassword } from '@/app/lib/auth/validation';
 import { createClient } from '@/utils/supabase/server';
 
-export async function login(formData) {
+export default async function login(formData) {
     const supabase = await createClient();
 
     const data = {

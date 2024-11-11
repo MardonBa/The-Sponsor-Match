@@ -1,6 +1,6 @@
 .container {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 320px;
   background-color: var(--background);
   padding: 100px;
   border-radius: 20px;
@@ -25,7 +25,7 @@
 
 .input {
   width: 300px;
-  height: 30px;
+  height: 45px;
   font-size: 16px;
   border-radius: 10px;
   margin: 10px 0px;
@@ -37,15 +37,30 @@
   outline: none;
 }
 
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--text);
+  margin: 0 10px;
+}
+
+.text {
+  font-size: 16px;
   color: var(--text);
-  width: 250px;
 }
 
 .button {
   margin: 20px 0px;
   width: 300px;
-  height: 40px;
+  height: 45px;
   font-size: 18px;
   background-color: var(--secondary);
   color: var(--text);
@@ -62,7 +77,13 @@
 }
 
 .googlebutton {
-  margin: auto;
+  margin-left: 47.5px;
+  background-color: var(--background);
+  border: none;
+}
+
+.googlebutton:hover {
+  cursor: pointer;
 }
 
 .nav {
