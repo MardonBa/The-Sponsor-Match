@@ -11,7 +11,7 @@ export default function Logo({ dimensions }) {
                 alt='The Sponsor Match Logo'
                 className={styles.logo}
             />
-            <p className={`${styles.colorgradient}`} style={{fontSize: dimensions/3.7}}  ><b>The Sponsor Match</b></p>
+            <p className={`${styles.colorgradient}`} style={{fontSize: dimensions/3.6}}  ><b>The<br />Sponsor<br />Match</b></p>
         </div>
     );
 }

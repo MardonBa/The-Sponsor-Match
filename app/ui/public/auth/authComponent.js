@@ -4,6 +4,7 @@ import GoogleButton from "./googleButton";
 import styles from "./authComponent.module.css";
 import { loginWithGoogle } from "./action";
 import Link from "next/link";
+import Logo from "../../logo/logo";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
 export default function AuthComponent({ buttonText, action }) {
@@ -22,6 +23,10 @@ export default function AuthComponent({ buttonText, action }) {
   }
 
   return (
+  <>
+    <Link className={styles.logocontainer} href="/" >
+        <Logo dimensions={64} />
+    </Link>
     <div className={styles.container} >
       <div className={styles.formcontainer} >
         <form className={styles.loginform} >
@@ -40,13 +45,13 @@ export default function AuthComponent({ buttonText, action }) {
         </div>
       </div>
     </div>
+  </>
   );
 }
 
 /*
 TODOS
 - Add more styles to make the page more visually appealing
-- Add a link back to the homepage
 - For signup, only have user enter email, then continue and get more of
 their information in subsequent pages
 - Add more oauth providers

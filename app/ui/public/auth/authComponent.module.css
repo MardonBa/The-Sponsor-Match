@@ -1,5 +1,5 @@
 .container {
-  height: 400px;
+  height: 370px;
   width: 320px;
   background-color: var(--background);
   padding: 100px;
@@ -99,4 +99,16 @@
 
 .navlink {
   color: var(--text);
+}
+
+.logocontainer {
+  background-color: var(--background);
+  width: 160px;
+  height: 80px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding-top: 14px;
+  display: block;
+  text-decoration: none;
 }
