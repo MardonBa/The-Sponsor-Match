@@ -1,6 +1,7 @@
 .pagecontainer {
   background-color: var(--primary);
   width: 100%;
-  height: calc(100vh - (100vh - 400px) / 5);
-  padding-top: calc((100vh - 400px) / 5);
+  padding-top: 10px;
+  min-height: calc(100vh - 30px);
+  padding-bottom: 20px;
 }
