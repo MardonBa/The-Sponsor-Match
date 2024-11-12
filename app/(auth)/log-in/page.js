@@ -1,7 +1,7 @@
 "use client";
 
 import styles from './page.module.css';
-import { login } from './action';
+import login from './action';
 import AuthComponent from '@/app/ui/public/auth/authComponent';
 
 export default function Page() {
