@@ -33,7 +33,7 @@ export default function AuthComponent({ buttonText, action }) {
         <span className={styles.text} >or</span>
         <div className={styles.line}></div>
       </div>
-      <GoogleButton clickAction={loginWithGoogle} styles={styles.googlebutton} />
+      <GoogleButton clickAction={loginWithGoogle} buttonStyles={styles.googlebutton} />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>

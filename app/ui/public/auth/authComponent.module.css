@@ -31,6 +31,8 @@
   margin: 10px 0px;
   background-color: var(--background-variant);
   color: var(--text);
+  border-color: var(--text-variant);
+  border-style: solid;
 }
 
 .input:focus {

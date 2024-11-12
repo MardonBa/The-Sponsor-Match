@@ -1,0 +1,7 @@
+.bg {
+  fill: var(--text);
+}
+
+.text {
+  fill: var(--background);
+}
