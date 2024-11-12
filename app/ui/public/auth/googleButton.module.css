@@ -1,4 +1,8 @@
 .bg {
+  fill: var(--text-variant);
+}
+
+.bg:hover {
   fill: var(--text);
 }
 

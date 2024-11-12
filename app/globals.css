@@ -4,6 +4,7 @@
   --background: #EFEFEF;
   --background-variant: #FEFEFE;
   --text: #262626;
+  --text-variant: #0F0F0F;
   --primary: #6200EE;
   --primary-variant: #3700B3;
   --secondary: #03C8DA;
@@ -23,6 +24,7 @@
         --background: #1F1F1F;
         --background-variant: #101010;
         --text: #D9D9D9;
+        --text-variant: #E8E8E8;
         --primary: #BB86FC;
         --primary-variant: #5d23e3;
         --secondary: #01bfac;
