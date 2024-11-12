@@ -42,3 +42,14 @@ export default function AuthComponent({ buttonText, action }) {
     </div>
   );
 }
+
+/*
+TODOS
+- Add more styles to make the page more visually appealing
+- Add a link back to the homepage
+- For signup, only have user enter email, then continue and get more of
+their information in subsequent pages
+- Add more oauth providers
+- When the user enters their email and eventually password to the form, 
+don't send them a confirmation email
+*/
