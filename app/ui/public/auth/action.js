@@ -32,3 +32,18 @@ export async function loginWithTwitch() {
     redirect(data.url);
   }
 }
+
+export async function loginWithFacebook() { // Doesn't work yet, facebook oauth not set up
+  const supabase = await createClient();
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "facebook",
+    options: {
+      redirectTo: 'http://localhost:3000/auth/callback'
+    },
+  });
+  
+  if (data.url) {
+    redirect(data.url);
+  }
+}

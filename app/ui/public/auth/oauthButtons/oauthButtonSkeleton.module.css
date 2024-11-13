@@ -3,17 +3,11 @@
   margin-left: 35px;
   width: 225px;
   height: 51px;
-  background-color: #6441A5;
   border-radius: 50px;
   border: none;
   display: grid;
   grid-template-columns: auto 1fr;
   padding-left: 10px;
-}
-
-.container:hover {
-  background-color: #7F5CBF;
-  cursor: pointer;
 }
 
 .text {

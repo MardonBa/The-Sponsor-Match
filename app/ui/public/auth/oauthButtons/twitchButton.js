@@ -5,7 +5,7 @@ import OauthButtonSkeleton from "./oauthButtonSkeleton";
 
 export default function TwitchButton({ action }) {
     return (
-        <OauthButtonSkeleton clickAction={action} logo={<TwitchLogo />} provider="Twitch" />
+        <OauthButtonSkeleton clickAction={action} logo={<TwitchLogo />} provider="Twitch" colorStyle={styles.color} />
     );
 }
 

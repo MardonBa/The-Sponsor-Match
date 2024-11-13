@@ -2,10 +2,11 @@
 
 import GoogleButton from "./oauthButtons/googleButton";
 import styles from "./authComponent.module.css";
-import { loginWithGoogle, loginWithTwitch } from "./action";
+import { loginWithGoogle, loginWithTwitch, loginWithFacebook } from "./action";
 import Link from "next/link";
 import Logo from "../../logo/logo";
 import TwitchButton from "./oauthButtons/twitchButton";
+import FacebookButton from "./oauthButtons/facebookButton";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
 export default function AuthComponent({ buttonText, action }) {
@@ -43,6 +44,7 @@ export default function AuthComponent({ buttonText, action }) {
       </div>
       <GoogleButton clickAction={loginWithGoogle} buttonStyles={styles.googlebutton} />
       <TwitchButton clickAction={loginWithTwitch} />
+      <FacebookButton clickAction={loginWithFacebook} />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>
