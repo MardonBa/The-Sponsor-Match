@@ -2,9 +2,10 @@
 
 import GoogleButton from "./googleButton";
 import styles from "./authComponent.module.css";
-import { loginWithGoogle } from "./action";
+import { loginWithGoogle, loginWithTwitch } from "./action";
 import Link from "next/link";
 import Logo from "../../logo/logo";
+import TwitchButton from "./twitchButton";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
 export default function AuthComponent({ buttonText, action }) {
@@ -34,15 +35,16 @@ export default function AuthComponent({ buttonText, action }) {
           <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
           <button formAction={action} className={styles.button} >{buttonText}</button>
         </form>
-        <div className={styles.divider} >
-          <div className={styles.line} ></div>
+        </div>
+      <div className={styles.divider} >
+        <div className={styles.line} ></div>
           <span className={styles.text} >or</span>
-          <div className={styles.line}></div>
-        </div>
-        <GoogleButton clickAction={loginWithGoogle} buttonStyles={styles.googlebutton} />
-        <div className={styles.nav} >
-          <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
-        </div>
+        <div className={styles.line}></div>
+      </div>
+      <GoogleButton clickAction={loginWithGoogle} buttonStyles={styles.googlebutton} />
+      <TwitchButton clickAction={loginWithTwitch} />
+      <div className={styles.nav} >
+        <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>
     </div>
   </>
@@ -57,4 +59,5 @@ their information in subsequent pages
 - Add more oauth providers
 - When the user enters their email and eventually password to the form, 
 don't send them a confirmation email
+- When a user signs in with linked oauth accounts, only let them sign up with the original one
 */
