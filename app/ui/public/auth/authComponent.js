@@ -1,11 +1,11 @@
 "use client";
 
-import GoogleButton from "./googleButton";
+import GoogleButton from "./oauthButtons/googleButton";
 import styles from "./authComponent.module.css";
 import { loginWithGoogle, loginWithTwitch } from "./action";
 import Link from "next/link";
 import Logo from "../../logo/logo";
-import TwitchButton from "./twitchButton";
+import TwitchButton from "./oauthButtons/twitchButton";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
 export default function AuthComponent({ buttonText, action }) {
