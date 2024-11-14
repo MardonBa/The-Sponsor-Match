@@ -1,11 +1,13 @@
-.bg {
-  fill: var(--text-variant);
+.logo {
+  grid-column: 1 / 2;
+  margin: auto;
 }
 
-.bg:hover {
-  fill: var(--text);
+.color {
+  /*background-color: #4285F4;*/
+  background-color: var(--text-variant);
 }
 
-.text {
-  fill: var(--background);
+.color:hover {
+  background-color: var(--text);
 }
