@@ -4,8 +4,8 @@
 }
 
 .color {
-  /*background-color: #4285F4;*/
   background-color: var(--text-variant);
+  color: #000000;
 }
 
 .color:hover {

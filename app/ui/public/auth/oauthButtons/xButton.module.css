@@ -4,11 +4,12 @@
 }
 
 .color {
-  background-color: #6441A5;
+  background-color: #000000;
+  border: 2px solid #FFFFFF;
   color: #FFFFFF;
 }
 
 .color:hover {
-  background-color: #805EC0;
+  background-color: #333333;
   cursor: pointer;
 }

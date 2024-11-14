@@ -7,6 +7,7 @@ import Link from "next/link";
 import Logo from "../../logo/logo";
 import TwitchButton from "./oauthButtons/twitchButton";
 import FacebookButton from "./oauthButtons/facebookButton";
+import XButton from "./oauthButtons/xButton";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
 export default function AuthComponent({ buttonText, action }) {
@@ -45,6 +46,7 @@ export default function AuthComponent({ buttonText, action }) {
       <GoogleButton action={loginWithGoogle} />
       <TwitchButton action={loginWithTwitch} />
       <FacebookButton action={loginWithFacebook} />
+      <XButton />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>
