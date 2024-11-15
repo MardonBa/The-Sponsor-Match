@@ -5,7 +5,7 @@
 
 .color {
   background-color: var(--text-variant);
-  color: #000000;
+  color: var(--background);
 }
 
 .color:hover {

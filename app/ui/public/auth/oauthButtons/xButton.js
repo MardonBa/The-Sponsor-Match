@@ -5,7 +5,7 @@ import OauthButtonSkeleton from "./oauthButtonSkeleton";
 
 export default function XButton({ action }) {
   return (
-    <OauthButtonSkeleton clickAction={action} logo={<XLogo />} provider="X" colorStyle={styles.color}/>
+    <OauthButtonSkeleton clickAction={action} logo={<XLogo />} provider="X" colorStyle={styles.color} />
   );
 }
 

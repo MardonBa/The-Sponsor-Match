@@ -2,7 +2,7 @@
 
 import GoogleButton from "./oauthButtons/googleButton";
 import styles from "./authComponent.module.css";
-import { loginWithGoogle, loginWithTwitch, loginWithFacebook } from "./action";
+import { oauthLogin } from "./action";
 import Link from "next/link";
 import Logo from "../../logo/logo";
 import TwitchButton from "./oauthButtons/twitchButton";
@@ -43,10 +43,10 @@ export default function AuthComponent({ buttonText, action }) {
           <span className={styles.text} >or</span>
         <div className={styles.line}></div>
       </div>
-      <GoogleButton action={loginWithGoogle} />
-      <TwitchButton action={loginWithTwitch} />
-      <FacebookButton action={loginWithFacebook} />
-      <XButton />
+      <GoogleButton action={oauthLogin} />
+      <TwitchButton action={oauthLogin} />
+      <FacebookButton action={oauthLogin} />
+      <XButton action={oauthLogin} />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>
@@ -58,9 +58,10 @@ export default function AuthComponent({ buttonText, action }) {
 /*
 TODOS
 - Add more styles to make the page more visually appealing
-- For signup, only have user enter email, then continue and get more of
-their information in subsequent pages
-- Add more oauth providers
+- For signup, have the user to click a "create an account" button if they want to
+sign up with email, then continue and get more of their information in subsequent pages 
+(if the user creates an account with email, send them to a page that gets username and password,
+authenticate them, then send them to the page to get necessary info)
 - When the user enters their email and eventually password to the form, 
 don't send them a confirmation email
 - When a user signs in with linked oauth accounts, only let them sign up with the original one

@@ -3,11 +3,18 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
-export async function loginWithGoogle() {
+// May need to have some different authentication logic later based on the provider,
+// just add conditionals
+export async function oauthLogin(prov) {
+
+  if (prov == "X") {
+    prov = "twitter";
+  }
+
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
+      provider: prov,
       options: {
           redirectTo: 'http://localhost:3000/auth/callback'
       }
@@ -15,35 +22,5 @@ export async function loginWithGoogle() {
 
   if (data.url) {
       redirect(data.url);
-  }
-}
-
-export async function loginWithTwitch() {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "twitch",
-    options: {
-      redirectTo: 'http://localhost:3000/auth/callback'
-    },
-  });
-  
-  if (data.url) {
-    redirect(data.url);
-  }
-}
-
-export async function loginWithFacebook() { // Doesn't work yet, facebook oauth not set up
-  const supabase = await createClient();
-
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "facebook",
-    options: {
-      redirectTo: 'http://localhost:3000/auth/callback'
-    },
-  });
-  
-  if (data.url) {
-    redirect(data.url);
   }
 }
