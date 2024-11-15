@@ -1,8 +1,8 @@
 .container {
-  height: 500px;
+  height: auto;
   width: 320px;
   background-color: var(--background);
-  padding: 30px 100px;
+  padding: 20px 100px;
   border-radius: 20px;
   margin: auto;
 }
