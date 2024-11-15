@@ -67,27 +67,14 @@
   width: 320px;
   height: 45px;
   font-size: 18px;
-  background-color: var(--secondary);
-  color: var(--text);
+  background-color: var(--text-variant);
+  color: var(--background);
   border: none;
   border-radius: 10px;
 }
 
-.button:active {
-  background-color: var(--secondary-variant);
-}
-
 .button:hover {
-  cursor: pointer;
-}
-
-.googlebutton {
-  margin-left: 29px;
-  background-color: var(--background);
-  border: none;
-}
-
-.googlebutton:hover {
+  background-color: var(--text);
   cursor: pointer;
 }
 
@@ -111,4 +98,12 @@
   padding-top: 14px;
   display: block;
   text-decoration: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

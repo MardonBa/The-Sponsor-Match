@@ -15,14 +15,21 @@ export default function AuthComponent({ buttonText, action }) {
   let navText;
   let navButton;
   let link;
+  let displayForm;
+  let buttonType;
   if (buttonText == "Log in") {
     navText = "Don't have an account?";
-    navButton = "Sign up"
-    link = "/sign-up"
-  } else if (buttonText == "Sign up") {
+    navButton = "Sign up";
+    link = "/sign-up";
+    displayForm = styles.show;
+    buttonType = "submit";
+    // Create an account will send the user to a page to enter username and password, etc
+  } else if (buttonText == "Create an account") {
     navText = "Already have an account?";
     navButton = "Log in";
     link = "/log-in";
+    displayForm = styles.hide;
+    buttonType = "button";
   }
 
   return (
@@ -33,9 +40,9 @@ export default function AuthComponent({ buttonText, action }) {
     <div className={styles.container} >
       <div className={styles.formcontainer} >
         <form className={styles.loginform} >
-          <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
-          <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
-          <button formAction={action} className={styles.button} >{buttonText}</button>
+          <input id="email" name="email" type="email" required className={`${styles.input} ${displayForm}`} placeholder="Email" />
+          <input id="password" name="password" type="password" required className={`${styles.input} ${displayForm}`} placeholder="Password" />
+          <button formAction={action} className={styles.button} type={buttonType} onClick={() => action()} >{buttonText}</button>
         </form>
         </div>
       <div className={styles.divider} >

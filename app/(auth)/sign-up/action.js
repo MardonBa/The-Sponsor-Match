@@ -5,6 +5,9 @@ import { redirect } from 'next/navigation';
 import { createClient } from "@/utils/supabase/server";
 import { validateEmail, validatePassword } from "@/app/lib/auth/validation";
 
+// This action should be called in the page that is redirected to 
+// when the user wants to create an account with email
+
 export async function signup(formData) {
     const supabase = await createClient();
 
@@ -29,4 +32,9 @@ export async function signup(formData) {
         // If the email or password is invalid, update the UI (somehow)
         console.log("failed");
     }
+}
+
+export async function redirectToSignUp() {
+  console.log("hey");
+  redirect('/'); // This should redirect to a page that allows the user to set email, password, some other info
 }
