@@ -8,6 +8,7 @@ import Logo from "../../logo/logo";
 import TwitchButton from "./oauthButtons/twitchButton";
 import FacebookButton from "./oauthButtons/facebookButton";
 import XButton from "./oauthButtons/xButton";
+import AuthForm from "./authForm";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
 export default function AuthComponent({ buttonText, action }) {
@@ -38,13 +39,7 @@ export default function AuthComponent({ buttonText, action }) {
         <Logo dimensions={64} />
     </Link>
     <div className={styles.container} >
-      <div className={styles.formcontainer} >
-        <form className={styles.loginform} >
-          <input id="email" name="email" type="email" required className={`${styles.input} ${displayForm}`} placeholder="Email" />
-          <input id="password" name="password" type="password" required className={`${styles.input} ${displayForm}`} placeholder="Password" />
-          <button formAction={action} className={styles.button} type={buttonType} onClick={() => action()} >{buttonText}</button>
-        </form>
-        </div>
+      <AuthForm display={displayForm} buttonType={buttonType} action={action} buttonText={buttonText} />
       <div className={styles.divider} >
         <div className={styles.line} ></div>
           <span className={styles.text} >or</span>
@@ -70,6 +65,7 @@ sign up with email, then continue and get more of their information in subsequen
 (if the user creates an account with email, send them to a page that gets username and password,
 authenticate them, then send them to the page to get necessary info)
 - When the user enters their email and eventually password to the form, 
-don't send them a confirmation email
+tell them the email they are sent will send them to the page to finish setting up their account.
+Link to the account setup page in the confirmation email
 - When a user signs in with linked oauth accounts, only let them sign up with the original one
 */

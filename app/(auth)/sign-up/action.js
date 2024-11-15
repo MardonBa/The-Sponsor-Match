@@ -35,6 +35,5 @@ export async function signup(formData) {
 }
 
 export async function redirectToSignUp() {
-  console.log("hey");
-  redirect('/'); // This should redirect to a page that allows the user to set email, password, some other info
+  redirect('/create-account'); // This should redirect to a page that allows the user to set email, password, some other info
 }
