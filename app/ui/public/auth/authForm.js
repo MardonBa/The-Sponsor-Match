@@ -1,13 +1,25 @@
-import styles from "./authForm.module.css";
+"use client";
 
-export default function AuthForm({ display, buttonType, action, buttonText }) {
+import styles from "./authForm.module.css";
+import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
+
+export default function AuthForm({ displayForm, displayButton, action, buttonText }) {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <div className={styles.formcontainer} >
-      <form className={styles.loginform} >
-        <input id="email" name="email" type="email" required className={`${styles.input} ${display}`} placeholder="Email" />
-        <input id="password" name="password" type="password" required className={`${styles.input} ${display}`} placeholder="Password" />
-        <button formAction={action} className={styles.button} type={buttonType} onClick={() => action()} >{buttonText}</button>
+      <form className={`${styles.loginform} ${displayForm}`} >
+        <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
+        <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
+        <button formAction={action} className={styles.button} >{buttonText}</button>
       </form>
+      <Dialog.Root open={open} onOpenChange={setOpen} >
+        <Dialog.Trigger className={`${styles.button} ${displayButton}`} onClick={() => action()} >{buttonText}</Dialog.Trigger>
+      </Dialog.Root>
     </div>
   );
 }
+
+// no need for an action, use the radix ui dialog

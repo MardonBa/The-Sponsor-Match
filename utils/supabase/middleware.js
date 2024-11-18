@@ -50,7 +50,7 @@ export async function updateSession(request) {
     '/log-out'
   ];
   const publicPaths = [
-    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up'
+    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/create-account'
   ];
   
   const isPrivateRoute = privatePaths.some(path => url.pathname.startsWith(path));

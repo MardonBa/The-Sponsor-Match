@@ -17,20 +17,20 @@ export default function AuthComponent({ buttonText, action }) {
   let navButton;
   let link;
   let displayForm;
-  let buttonType;
+  let displayButton;
   if (buttonText == "Log in") {
     navText = "Don't have an account?";
     navButton = "Sign up";
     link = "/sign-up";
     displayForm = styles.show;
-    buttonType = "submit";
+    displayButton = styles.hide;
     // Create an account will send the user to a page to enter username and password, etc
   } else if (buttonText == "Create an account") {
     navText = "Already have an account?";
     navButton = "Log in";
     link = "/log-in";
     displayForm = styles.hide;
-    buttonType = "button";
+    displayButton = styles.show;
   }
 
   return (
@@ -39,7 +39,7 @@ export default function AuthComponent({ buttonText, action }) {
         <Logo dimensions={64} />
     </Link>
     <div className={styles.container} >
-      <AuthForm display={displayForm} buttonType={buttonType} action={action} buttonText={buttonText} />
+      <AuthForm displayForm={displayForm} displayButton={displayButton} action={action} buttonText={buttonText} />
       <div className={styles.divider} >
         <div className={styles.line} ></div>
           <span className={styles.text} >or</span>
