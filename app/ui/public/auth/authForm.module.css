@@ -41,3 +41,51 @@
   background-color: var(--text);
   cursor: pointer;
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.dialog {
+  width: 550px;
+  height: 550px;
+  border-radius: 20px;
+  background-color: var(--background);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialogtitle {
+  color: var(--text);
+  text-align: center;
+  width: auto;
+}
+
+.closebutton {
+  width: auto;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: inherit;
+  border: none;
+  color: var(--text)
+}
+
+.closebutton:hover{
+  cursor: pointer;
+  color: rgb(250, 50, 50);
+}
+
+.dialogform {
+  margin-left: 20%;
+  margin-top: 15%;
+}
