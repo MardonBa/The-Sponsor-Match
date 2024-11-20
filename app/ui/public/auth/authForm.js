@@ -7,7 +7,35 @@ import * as Dialog from "@radix-ui/react-dialog";
 export default function AuthForm({ displayForm, displayButton, action, buttonText }) {
 
   const [open, setOpen] = useState(false);
-  const [dialogContent, setDialogContent] = useState(<DialogForm />);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = {
+      email: e.target.email?.value,
+      password: e.target.password?.value,
+      confirmedPassword: e.target.confirmpassword?.value
+    };
+
+    try {
+      const result = await action(formData);
+
+      if (result.success) {
+        setSignUpSuccess(true);
+      } else {
+        // TODO update the UI if something is invalid
+      }
+    } catch (error) {
+      console.log(error);
+      // TODO set up some sort of error handling, may display a little thing that says
+      // an error occured and try again
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <div className={styles.formcontainer} >
@@ -21,26 +49,18 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
         <Dialog.Portal>
           <Dialog.Overlay className={styles.overlay} />
           <Dialog.Content className={styles.dialog}>
-            <DialogForm action={action} />
+            <Dialog.Title className={styles.dialogtitle} >Create Your Account</Dialog.Title>
+            <Dialog.Close className={styles.closebutton}>Close</Dialog.Close>
+            {signUpSuccess ? <DialogCheckEmail/> : <form className={styles.dialogform} onSubmit={handleSignUp} >
+              <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
+              <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
+              <input id="confirmpassword" name="confirmpassword" type="password" required className={styles.input} placeholder="Confirm password" />
+              <button type="submit" disabled={isSubmitting} className={styles.button} >Sign up</button>
+            </form>}
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
     </div>
-  );
-}
-
-function DialogForm({ action }) {
-  return (
-    <>
-      <Dialog.Title className={styles.dialogtitle} >Create Your Account</Dialog.Title>
-      <Dialog.Close className={styles.closebutton}>Close</Dialog.Close>
-      <form className={styles.dialogform} >
-        <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
-        <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
-        <input id="confirmpassword" name="confirmpassword" type="password" required className={styles.input} placeholder="Confirm password" />
-        <button formAction={action} className={styles.button} >Sign up</button>
-      </form>
-    </>
   );
 }
 

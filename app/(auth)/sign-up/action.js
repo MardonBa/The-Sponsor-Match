@@ -1,7 +1,6 @@
 "use server"
 
 import { revalidatePath } from 'next/cache';
-import { redirect } from 'next/navigation';
 import { createClient } from "@/utils/supabase/server";
 import { validateEmail, validatePassword } from "@/app/lib/auth/validation";
 
@@ -10,32 +9,27 @@ import { validateEmail, validatePassword } from "@/app/lib/auth/validation";
 export async function signup(formData) {
     const supabase = await createClient();
 
-    const data = {
-        email: formData.get("email"),
-        password: formData.get("password"),
-        confirmPassword: formData.get("confirmpassword")
-    };
+    const validEmail = validateEmail(formData.email);
+    const validPassword = validatePassword(formData.password);
+    const validConfirmedPassword = validatePassword(formData.confirmedPassword);
 
-    const validEmail = validateEmail(data.email);
-    const validPassword = validatePassword(data.password);
-    const validConfirmedPassword = validatePassword(data.confirmPassword);
-
-    if (validEmail && validPassword) {
-      if (validPassword != validConfirmedPassword) {
+    if (validEmail && validPassword && validConfirmedPassword) {
+      if (formData.password!= formData.confirmedPassword) {
         // update the ui in some way so that the user knows their passwords don't match
         console.log("passwords don't match");
         return;
       }
 
-      delete data.confirmPassword;
+      delete formData.confirmPassword;
 
-      const { error } = await supabase.auth.signUp(data);
+      const { data, error } = await supabase.auth.signUp(formData);
+      console.log("data: " + data);
+      console.log("err: " + error);
       if (error) {
-          redirect('/');
+        return { success: false, error }
       }
-    
       revalidatePath('/', 'layout');
-      //redirect('/dashboard'); no need to redirect
+      return { success: true, data }
     } else {
         // TODO: Build this out
         // If the email or password is invalid, update the UI (somehow)

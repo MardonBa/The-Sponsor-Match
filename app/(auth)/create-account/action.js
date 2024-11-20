@@ -22,7 +22,7 @@ export async function signup(formData) {
     if (validEmail && validPassword) {
         const { error } = await supabase.auth.signUp(data);
         if (error) {
-          return Response.json({  });
+          
             redirect('/');
         }
     
