@@ -23,8 +23,7 @@ export async function signup(formData) {
       delete formData.confirmPassword;
 
       const { data, error } = await supabase.auth.signUp(formData);
-      console.log("data: " + data);
-      console.log("err: " + error);
+
       if (error) {
         return { success: false, error }
       }

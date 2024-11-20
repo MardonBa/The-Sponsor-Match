@@ -89,3 +89,29 @@
   margin-left: 20%;
   margin-top: 15%;
 }
+
+.container {
+  height: 80%;
+  width: 100%;
+  color: var(--text);
+}
+
+.text {
+  width: calc(100% - 100px);
+  margin: 40px 50px;
+  text-align: center;
+}
+
+.mailicon {
+  margin: 30px 200px 0px 200px;
+}
+
+.resendconfirmation {
+  text-decoration: underline;
+  color: var(--secondary);
+}
+
+.resendconfirmation:hover {
+  cursor: pointer;
+  color: var(--secondary-variant);
+}
