@@ -64,8 +64,12 @@ TODOS
 sign up with email, then continue and get more of their information in subsequent pages 
 (if the user creates an account with email, send them to a page that gets username and password,
 authenticate them, then send them to the page to get necessary info)
-- When the user enters their email and eventually password to the form, 
-tell them the email they are sent will send them to the page to finish setting up their account.
 Link to the account setup page in the confirmation email
 - When a user signs in with linked oauth accounts, only let them sign up with the original one
+- Add ability to show password
+- show a green thing when password and confirmation match
+- add a forgot password to log in
+- on create account dialog, check is a user with the email exists. If it does, tell the user
+that they already have an account associated with that email, prompt them to go to the login page
+- add a "remember me" checkbox (also look into what it should actually do to remember the user)
 */
