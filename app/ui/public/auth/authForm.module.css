@@ -6,6 +6,7 @@
 
 .loginform {
   width: 100%;
+  color: var(--text)
 }
 
 .input {
@@ -25,7 +26,7 @@
 }
 
 .button {
-  margin: 20px 0px;
+  margin: 10px 0px;
   width: 320px;
   height: 45px;
   font-size: 18px;
@@ -88,6 +89,8 @@
 .dialogform {
   margin-left: 20%;
   margin-top: 15%;
+  width: 300px;
+  color: var(--text);
 }
 
 .container {
@@ -114,4 +117,10 @@
 .resendconfirmation:hover {
   cursor: pointer;
   color: var(--secondary-variant);
+}
+
+.showpassword {
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
 }

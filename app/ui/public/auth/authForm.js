@@ -11,6 +11,7 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [signUpSuccess, setSignUpSuccess] = useState(false);
   const [email, setEmail] = useState('');
+  const [inputType, setInputType] = useState("password"); // alternative is "text"
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -59,11 +60,21 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
 
   }
 
+  const updateVisibility = () => {
+    if (inputType === "password") {
+      setInputType("text");
+    } else {
+      setInputType("password");
+    }
+    console.log(inputType);
+  }
+
   return (
     <div className={styles.formcontainer} >
       <form className={`${styles.loginform} ${displayForm}`} >
         <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
-        <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
+        <input id="password" name="password" type={inputType} required className={styles.input} placeholder="Password" />
+        <input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} />Show password
         <button formAction={action} className={styles.button} >{buttonText}</button>
       </form>
       <Dialog.Root open={open} onOpenChange={setOpen} >
@@ -87,7 +98,8 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
             : 
             <form className={styles.dialogform} onSubmit={handleSignUp} >
               <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
-              <input id="password" name="password" type="password" required className={styles.input} placeholder="Password" />
+              <input id="password" name="password" type={inputType} required className={styles.input} placeholder="Password" />
+              <input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} />Show password
               <input id="confirmpassword" name="confirmpassword" type="password" required className={styles.input} placeholder="Confirm password" />
               <button type="submit" disabled={isSubmitting} className={styles.button} >Sign up</button>
             </form>}
