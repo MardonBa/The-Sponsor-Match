@@ -8,8 +8,6 @@ export default function Page() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("running");
-    console.log(e.target.email.value);
     const email = e.target.email.value;
     handleRequestPasswordResetLink(email);
   }
