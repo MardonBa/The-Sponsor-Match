@@ -134,7 +134,7 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
                 </g>
               </svg>
               <h2 className={styles.text}>Thank you for creating your account!</h2>
-              <p className={styles.text} >You've been sent an email with a link to finish setting up your account. Do not close this window or reload the page until you have recieved an email from us to finish setting up your account.</p>
+              <p className={styles.text} >You&apos;ve been sent an email with a link to finish setting up your account. Do not close this window or reload the page until you have recieved an email from us to finish setting up your account.</p>
               <p className={styles.text} >Click <i onClick={handleReconfirm} className={styles.resendconfirmation}>here</i> to resend the email.</p>
             </div>
             : 
