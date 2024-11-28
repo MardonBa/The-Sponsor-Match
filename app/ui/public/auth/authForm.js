@@ -4,6 +4,7 @@ import styles from "./authForm.module.css";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { validatePassword } from "@/app/lib/auth/validation";
+import Link from "next/link";
 
 export default function AuthForm({ displayForm, displayButton, action, buttonText }) {
 
@@ -118,6 +119,7 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
         <input id="password" name="password" type={inputType} required className={`${styles.input} ${passwordStyle}`} placeholder="Password" />
         <input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} />Show password
         <button formAction={action} className={styles.button} >{buttonText}</button>
+        <Link className={styles.forgotpassword} href="/forgot-password" >Forgot password?</Link> 
       </form>
       <Dialog.Root open={open} onOpenChange={setOpen} >
         <Dialog.Trigger className={`${styles.button} ${displayButton}`} >{buttonText}</Dialog.Trigger>

@@ -140,3 +140,15 @@
 .passwordreqs {
   font-size: 12px;
 }
+
+.forgotpassword {
+  font-size: 14px;
+  margin: none;
+  text-decoration: underline;
+  color: var(--text);
+}
+
+.forgotpassword:hover {
+  color: var(--text-variant);
+  cursor: pointer;
+}

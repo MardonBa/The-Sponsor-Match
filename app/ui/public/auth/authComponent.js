@@ -70,4 +70,5 @@ Link to the account setup page in the confirmation email
 - on create account dialog, check is a user with the email exists. If it does, tell the user
 that they already have an account associated with that email, prompt them to go to the login page
 - add a "remember me" checkbox (also look into what it should actually do to remember the user)
+- make the user get redirected to dashboard when they go to the homepage if they are authenticated
 */
