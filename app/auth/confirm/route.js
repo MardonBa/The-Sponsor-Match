@@ -6,6 +6,8 @@ export async function GET(request) {
   const token_hash = searchParams.get('token_hash');
   const type = searchParams.get('type');
   const next = searchParams.get('next') ?? '/dashboard';
+  const redirectTo = request.nextUrl.clone();
+  redirectTo.pathname = next;
 
   if (token_hash && type) {
     const supabase = await createClient()
@@ -16,7 +18,7 @@ export async function GET(request) {
     })
     if (!error) {
       // redirect user to specified redirect URL or root of app
-      redirect(next);
+      NextResponse.redirect(redirectTo)
     }
   }
 
