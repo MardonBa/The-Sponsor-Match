@@ -88,7 +88,7 @@
 
 .dialogform {
   margin-left: 20%;
-  margin-top: 15%;
+  margin-top: 30px;
   width: 300px;
   color: var(--text);
 }
@@ -123,4 +123,20 @@
   margin-right: 10px;
   width: 15px;
   height: 15px;
+}
+
+.nopassword {
+  border-color: var(--text)
+}
+
+.badpassword {
+  border-color: red;
+}
+
+.goodpassword {
+  border-color: green;
+}
+
+.passwordreqs {
+  font-size: 12px;
 }

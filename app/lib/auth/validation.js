@@ -6,7 +6,7 @@ export function validateEmail(email) {
 export function validatePassword(password) {
     // Allow for digits, letters (don't have to have uppercase), special characters
     // Must have a letter (any case) and number
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,12}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,}$/;
 
     return passwordRegex.test(password);
 }

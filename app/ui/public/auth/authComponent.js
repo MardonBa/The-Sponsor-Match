@@ -66,8 +66,6 @@ sign up with email, then continue and get more of their information in subsequen
 authenticate them, then send them to the page to get necessary info)
 Link to the account setup page in the confirmation email
 - When a user signs in with linked oauth accounts, only let them sign up with the original one
-- Add ability to show password
-- show a green thing when password and confirmation match
 - add a forgot password to log in
 - on create account dialog, check is a user with the email exists. If it does, tell the user
 that they already have an account associated with that email, prompt them to go to the login page

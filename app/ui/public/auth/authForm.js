@@ -1,9 +1,9 @@
 "use client";
 
 import styles from "./authForm.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { resendConfirmationEmail } from "./action";
+import { validatePassword } from "@/app/lib/auth/validation";
 
 export default function AuthForm({ displayForm, displayButton, action, buttonText }) {
 
@@ -12,6 +12,50 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
   const [signUpSuccess, setSignUpSuccess] = useState(false);
   const [email, setEmail] = useState('');
   const [inputType, setInputType] = useState("password"); // alternative is "text"
+  const [passwordStyle, setPasswordStyle] = useState(styles.nopassword);
+  const [confirmPasswordStyle, setConfirmPasswordStyle] = useState(styles.nopassword);
+  const [passwordsMatch, setPasswordsMatch] = useState("do not ");
+  // Ref variables for the password inputs
+  const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
+
+  const handlePasswordChange = (e) => {
+    e.preventDefault();
+    const isValid = validatePassword(passwordRef.current.value);
+    if (isValid) {
+      setPasswordStyle(styles.goodpassword);
+    } else {
+      setPasswordStyle(styles.badpassword);
+    }
+    // also check for if the confirm changes in case the user sets the confirm, changes the original, and they no longer match
+    if (passwordRef.current.value === confirmPasswordRef.current.value) {
+      setConfirmPasswordStyle(styles.goodpassword);
+      setPasswordsMatch(" ");
+    } else {
+      setConfirmPasswordStyle(styles.badpassword);
+      setPasswordsMatch("do not");
+    }
+    if (passwordRef.current.value === "") {
+      setPasswordStyle(styles.nopassword);
+    }
+    if (confirmPasswordRef.current.value === "") {
+      setConfirmPasswordStyle(styles.nopassword);
+    }
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    e.preventDefault();
+    if (passwordRef.current.value === confirmPasswordRef.current.value) {
+      setConfirmPasswordStyle(styles.goodpassword);
+      setPasswordsMatch(" ");
+    } else {
+      setConfirmPasswordStyle(styles.badpassword);
+      setPasswordsMatch("do not");
+    }
+    if (confirmPasswordRef.current.value === "") {
+      setConfirmPasswordStyle(styles.nopassword);
+    }
+  };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -34,7 +78,7 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
         // TODO update the UI if something is invalid
       }
     } catch (error) {
-      console.log(error);
+      throw error
       // TODO set up some sort of error handling, may display a little thing that says
       // an error occured and try again
     } finally {
@@ -43,19 +87,18 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
   }
 
   const handleReconfirm = async () => {
-    console.log(email);
-    const response = await fetch('/auth/admin', {
+    const response = await fetch("/auth/admin", {
       method: "POST", 
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email })
     });
 
     // don't really need to do anything here
     const result = await response.json();
     if (result.error) {
-      console.error('Error resending invite:', result.error);
+      console.error("Error resending invite:", result.error);
     } else {
-      console.log('Invite sent:', result.data);
+      console.log("Invite sent:", result.data);
     }
 
   }
@@ -66,14 +109,13 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
     } else {
       setInputType("password");
     }
-    console.log(inputType);
   }
 
   return (
     <div className={styles.formcontainer} >
       <form className={`${styles.loginform} ${displayForm}`} >
         <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
-        <input id="password" name="password" type={inputType} required className={styles.input} placeholder="Password" />
+        <input id="password" name="password" type={inputType} required className={`${styles.input} ${passwordStyle}`} placeholder="Password" />
         <input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} />Show password
         <button formAction={action} className={styles.button} >{buttonText}</button>
       </form>
@@ -96,11 +138,16 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
               <p className={styles.text} >Click <i onClick={handleReconfirm} className={styles.resendconfirmation}>here</i> to resend the email.</p>
             </div>
             : 
-            <form className={styles.dialogform} onSubmit={handleSignUp} >
+            <form className={styles.dialogform} onSubmit={(e) => handleSignUp(e)} >
+              <label className={styles.inputlabel} htmlFor="email" >Email:</label>
               <input id="email" name="email" type="email" required className={styles.input} placeholder="Email" />
-              <input id="password" name="password" type={inputType} required className={styles.input} placeholder="Password" />
+              <label className={styles.inputlabel} htmlFor="password" >Password:</label>
+              <input id="password" name="password" type={inputType} required className={`${styles.input} ${passwordStyle}`} placeholder="Password" onChange={handlePasswordChange} ref={passwordRef} />
               <input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} />Show password
-              <input id="confirmpassword" name="confirmpassword" type="password" required className={styles.input} placeholder="Confirm password" />
+              <p className={styles.passwordreqs}>Password must have at least 8 characters, at least one uppercase letter and at least one number</p>
+              <label className={styles.inputlabel} htmlFor="confirmpassword" >Confirm Password:</label>
+              <input id="confirmpassword" name="confirmpassword" type="password" required className={`${styles.input} ${confirmPasswordStyle}`} placeholder="Confirm password" onChange={handleConfirmPasswordChange} ref={confirmPasswordRef} />
+              <p>Passwords {passwordsMatch} match</p>
               <button type="submit" disabled={isSubmitting} className={styles.button} >Sign up</button>
             </form>}
           </Dialog.Content>
