@@ -71,4 +71,8 @@ Link to the account setup page in the confirmation email
 that they already have an account associated with that email, prompt them to go to the login page
 - add a "remember me" checkbox (also look into what it should actually do to remember the user)
 - make the user get redirected to dashboard when they go to the homepage if they are authenticated
+- if the user tries to sign up with an email linked to an account, tell them an account already exists
+with that email.
+- if the user tries to log in or reset password for an email not linked to an account, tell them no
+account with that email exists
 */
