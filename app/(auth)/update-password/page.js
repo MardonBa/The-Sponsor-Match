@@ -21,6 +21,7 @@ export default function Page() {
   const confirmPasswordRef = useRef(null);
   
   // Search parameters
+  const searchParams = useSearchParams();
   
   const handlePasswordChange = (e) => {
     e.preventDefault();
@@ -74,8 +75,8 @@ export default function Page() {
     const confirmPassword = e.target.confirmpassword.value;
     const validPassword = validatePassword(password) && (password === confirmPassword);
     if (validPassword) {
-      const userId = 
-      resetPassword(password);
+      const userId = searchParams.get("id");
+      resetPassword(password, userId);
     } else {
       // TODO handle the invalid email, probably just update the UI
       console.log("invalid email");
