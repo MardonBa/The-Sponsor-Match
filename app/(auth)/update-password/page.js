@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 import { useState, useRef } from "react";
 import { validatePassword } from "@/app/lib/auth/validation";
 import resetPassword from "./action";
+import { useSearchParams } from "next/navigation";
 
 export default function Page() {
 
@@ -18,6 +19,8 @@ export default function Page() {
   // Ref variables for the password inputs
   const passwordRef = useRef(null);
   const confirmPasswordRef = useRef(null);
+  
+  // Search parameters
   
   const handlePasswordChange = (e) => {
     e.preventDefault();
@@ -71,6 +74,7 @@ export default function Page() {
     const confirmPassword = e.target.confirmpassword.value;
     const validPassword = validatePassword(password) && (password === confirmPassword);
     if (validPassword) {
+      const userId = 
       resetPassword(password);
     } else {
       // TODO handle the invalid email, probably just update the UI
