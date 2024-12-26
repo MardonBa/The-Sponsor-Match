@@ -29,7 +29,6 @@ export default async function handleRequestPasswordResetLink(email) {
     .then((res) => res.json())
     .then(console.log)
     .catch(console.error);
-  console.log(data);
   const id = data[0].id; // Gets the user id returned from the function
 
   // the data returned by this function doesn't need to be used
@@ -42,8 +41,5 @@ export default async function handleRequestPasswordResetLink(email) {
   // TODO: from here i need to update the user's password in the update-password action, then figure out how to prevent an authenticated session from being created
   await supabase.auth.resetPasswordForEmail(email, {
     redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/update-password?id=${id}`
-  });
-
-  // make sure user isn't authenticated after this action is called
-
+  }); 
 }
