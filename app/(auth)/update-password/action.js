@@ -26,5 +26,4 @@ export default async function resetPassword(newPassword, id) {
   } else {
     // TODO handle what happens. this should never really run though since the password is validated on the client side first
   }
-// user isn't authenticated, nothing is being updated
 }
