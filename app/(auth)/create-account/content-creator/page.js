@@ -120,6 +120,7 @@ export default function Page() {
           isMulti
           className={styles.multiselect}
           placeholder="Select content formats..."
+          required
         />
         <label className={styles.label} htmlFor="community size" >Community size:</label>
         <input id="community-size" name="community-size" type="number" className={styles.textinput} required placeholder="Enter a number" />
@@ -131,6 +132,7 @@ export default function Page() {
           onChange={handleNichesChange}
           placeholder="Choose niches..."
           className={styles.multiselect}
+          required
         />
         <Select
         id="content-platforms"
@@ -141,6 +143,7 @@ export default function Page() {
         isMulti
         className={styles.select}
         placeholder="Select content platforms..."
+        required
         />
         <Select
           id="content-frequency"
@@ -150,6 +153,7 @@ export default function Page() {
           onChange={handleFrequencyChange}
           className={styles.select}
           placeholder="Select content frequency..."
+          required
         />
         <button type="submit">Continue</button>
       </form>

@@ -113,6 +113,7 @@ export default function Page() {
         isMulti
         className={styles.select}
         placeholder="Select content platforms..."
+        required
         />
         <Select
           id="content-format"
@@ -123,6 +124,7 @@ export default function Page() {
           isMulti
           className={styles.multiselect}
           placeholder="Select content formats..."
+          required
         />
         <Select
           id="industry"
@@ -133,6 +135,7 @@ export default function Page() {
           isMulti
           className={styles.select}
           placeholder="Select industries..."
+          required
         />
       </form>
     </div>

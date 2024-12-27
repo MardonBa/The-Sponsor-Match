@@ -55,6 +55,7 @@ export default function Page() {
           onChange={handleChange}
           className={styles.select}
           placeholder="Select account type..."
+          required
         />
         <button type="submit">Continue</button>
       </form>
