@@ -29,8 +29,8 @@ export default function SponsorPricing() {
         <div className={styles.pricingcontainer} >
             <PricingLayout content={freePlan} classes={`${styles.freeplan} ${styles.container}`} currentContent="sponsor" >
                 <ul className={styles.featurelist}>
-                    <li className={styles.li}><span>1 campaign/month</span></li>
-                    <li className={styles.li} ><span>5 relationships/campaign/month</span></li>
+                    <li className={styles.li}><span>1 campaign</span></li>
+                    <li className={styles.li} ><span>5 relationships/campaign</span></li>
                     <li className={styles.li} ><span>20 outreach messages/month</span></li>
                     <li className={styles.li} ><span>Limited sponsorship performance analytics</span></li>
                     <li className={styles.li} ><span>Basic search, no matching</span></li>
@@ -39,8 +39,8 @@ export default function SponsorPricing() {
             </PricingLayout>
             <PricingLayout content={proPlan} classes={`${styles.proplan} ${styles.container}`} currentContent="sponsor" >
                 <ul className={styles.featurelist}>
-                    <li className={styles.li}><span>8 campaign/month</span></li>
-                    <li className={styles.li} ><span>10 relationships/campaign/month</span></li>
+                    <li className={styles.li}><span>8 campaigns</span></li>
+                    <li className={styles.li} ><span>10 relationships/campaign</span></li>
                     <li className={styles.li} ><span>200 outreach messages/month</span></li>
                     <li className={styles.li} ><span>Full sponsorship performance analytics</span></li>
                     <li className={styles.li} ><span>AI-powered matching</span></li>
