@@ -47,10 +47,10 @@ export async function updateSession(request) {
   // If a path is ever added to either group, it has to be added to these lists
   const privatePaths = [
     '/advertise', '/analytics', '/dashboard', '/log-out', '/messages', '/partnerships', '/payment-history', '/search', '/settings', 
-    '/log-out'
+    '/log-out', '/create-account'
   ];
   const publicPaths = [
-    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/create-account', '/forgot-password'
+    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/update-password', '/forgot-password'
   ];
   
   const isPrivateRoute = privatePaths.some(path => url.pathname.startsWith(path));

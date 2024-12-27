@@ -7,10 +7,6 @@ import { redirect } from "next/navigation";
 // just add conditionals
 export async function oauthLogin(prov) {
 
-  if (prov == "X") {
-    prov = "twitter";
-  }
-
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.signInWithOAuth({
@@ -21,6 +17,6 @@ export async function oauthLogin(prov) {
   });
 
   if (data.url) {
-      redirect(data.url);
+    redirect(data.url);
   }
 }
