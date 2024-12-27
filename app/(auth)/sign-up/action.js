@@ -22,7 +22,13 @@ export async function signup(formData) {
 
       delete formData.confirmPassword;
 
-      const { data, error } = await supabase.auth.signUp(formData);
+      const { data, error } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/create-account`
+        }
+    });
 
       if (error) {
         return { success: false, error }

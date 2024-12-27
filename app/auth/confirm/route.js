@@ -5,8 +5,8 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const token_hash = searchParams.get('token_hash');
   const type = searchParams.get('type');
-  const next = searchParams.get('next') ?? '/';
-  const prefix = "http://localhost:3000";
+  const next = searchParams.get('next') ?? '/create-account';
+  const prefix = process.env.NEXT_PUBLIC_SITE_URL;
   
 
   if (token_hash && type) {
