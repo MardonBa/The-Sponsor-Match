@@ -5,7 +5,6 @@ import styles from "./authComponent.module.css";
 import { oauthLogin } from "./action";
 import Link from "next/link";
 import Logo from "../../logo/logo";
-import TwitchButton from "./oauthButtons/twitchButton";
 import FacebookButton from "./oauthButtons/facebookButton";
 import AuthForm from "./authForm";
 
@@ -45,7 +44,6 @@ export default function AuthComponent({ buttonText, action }) {
         <div className={styles.line}></div>
       </div>
       <GoogleButton action={oauthLogin} />
-      <TwitchButton action={oauthLogin} />
       <FacebookButton action={oauthLogin} />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
