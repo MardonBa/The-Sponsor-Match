@@ -1,0 +1,10 @@
+.container {
+    color: var(--text);
+    margin: 200px auto;
+    width: 90%;
+    max-width: 1000px;
+    background-color: var(--background-variant);
+    padding: 50px;
+    border-radius: 15px;
+    border: 2px solid var(--secondary);
+}

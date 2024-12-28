@@ -29,7 +29,7 @@ export default function LandingFooter() {
                 <h3 className={styles.heading} >Legal</h3>
                 <div className={styles.links} >
                     <p>Terms of Service</p>
-                    <p>Privacy Policy</p>
+                    <Link href="/privacy-policy" className={styles.link} >Privacy Policy</Link>
                     <p>Cookies Policy</p>
                 </div>
             </div>
