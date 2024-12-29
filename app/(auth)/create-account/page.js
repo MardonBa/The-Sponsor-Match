@@ -6,10 +6,12 @@ import styles from "./page.module.css";
 import Select from "react-select";
 import { useState } from "react";
 import insertUser from "./action";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   // when the form is submitted, the user should be redirected to either /creator or /sponsor
+
+  const router = useRouter();
 
   const accountTypes = [
     { value: 'content-creator', label: 'Content Creator' },
@@ -33,12 +35,11 @@ export default function Page() {
     const {success, error} = await insertUser(formData);
 
     if (success) {;
-      redirect(`${process.env.NEXT_PUBLIC_SITE_URL}/${selectedAccountType.value}`); // redirects to either /content-creator or /sponsor
+      router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/create-account/${formData.accountType}`); // redirects to either /content-creator or /sponsor
     } else {
       // TODO add real error handling
       console.log(error);
     }
-
   }
 
   return (
