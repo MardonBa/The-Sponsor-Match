@@ -127,33 +127,24 @@ export default function Page() {
     };
     // iterate and add to the array since that's the only way it seems to work
     let platformsArray = Array.from(e.target.contentPlatforms);
-    console.log(platformsArray);
     for (let i = 0; i < platformsArray.length; i++) {
       platformData.platforms.push(platformsArray[i].value);
     }
     if (platformsArray.length === 0) { // The array is empty when only one choice is selected. In that case, this is how you need add the format
       platformData.platforms = [e.target.contentPlatforms.value];
-      console.log('this shouldnt run')
     }
-    console.log(e.target.contentPlatforms)
-    console.log("platforms: " + platformData.platforms);
-
 
     const formatData = {
       formats: []
     };
     // iterate and add to the array since that's the only way it seems to work
     let formatsArray = Array.from(e.target.contentFormats);
-    console.log(formatsArray);
     for (let i = 0; i < formatsArray.length; i++) {
       formatData.formats.push(formatsArray[i].value);
     }
     if (formatsArray.length === 0) { // The array is empty when only one choice is selected. In that case, this is how you need add the format
       formatData.formats = [e.target.contentFormats.value];
-      console.log(e.target.contentFormats.value)
     }
-    console.log(formatsArray);
-    console.log("formats: " + formatData.formats);
 
 
     // call first function

@@ -96,7 +96,6 @@ export async function updateCreatorFormats(formData) {
   for (let i = 0; i < formData.formats.length; i++) {
     // rpc call to get the id associated with the format
     formatName = formData.formats[i];
-    console.log("format name: " + formatName);
     let { data, error } = await supabase.rpc(
     'get_format_id', {
       format_name: formatName
@@ -107,7 +106,6 @@ export async function updateCreatorFormats(formData) {
       return {success: false, error};
     }
     else {
-      console.log("data: " + data)
       formatId = data;
     }
     // add the user - platform combo to the creators-formats table via rpc call 
