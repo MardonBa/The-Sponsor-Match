@@ -12,8 +12,12 @@
 import styles from "./page.module.css";
 import Select from "react-select";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { updateCreator, updateCreatorPlatforms, updateCreatorFormats } from "./action";
 
 export default function Page() {
+
+  const router = useRouter();
 
   const contentNiches = [
     { value: "educational", label: "Educational Content" },
@@ -63,18 +67,17 @@ export default function Page() {
   ];
 
   const contentFormats = [
-    { value: 'short form video', label: 'Short form video' },
-    { value: 'long form video', label: 'Long form video' },
-    { value: 'short form writing', label: 'Short form writing' },
-    { value: 'long form writing', label: 'Long form writing' },
+    { value: 'short-form-video', label: 'Short form video' },
+    { value: 'long-form-video', label: 'Long form video' },
+    { value: 'short-form-writing', label: 'Short form writing' },
+    { value: 'long-form-writing', label: 'Long form writing' },
   ];
 
   const contentPlatforms = [
     { value: 'instagram', label: 'Instagram' },
     { value: 'youtube', label: 'YouTube' },
     { value: 'facebook', label: 'Facebook' },
-    { value: 'twitch', label: 'Twitch' },
-    { value: 'personal-blog', label: 'Personal Blog' },
+    { value: 'blog', label: 'Personal Blog' },
   ];
 
   const contentFrequencyOptions = [
@@ -87,13 +90,13 @@ export default function Page() {
     { value: 'whenever', label: 'Whenever' },
   ];
 
-  const [selectedNiches, setSelectedNiches] = useState([]);
+  const [selectedNiches, setSelectedNiches] = useState();
   const [selectedFormats, setSelectedFormats] = useState([]);
   const [selectedPlatforms, setSelectedPlatforms] = useState([]);
   const [selectedFrequency, setSelectedFrequency] = useState(null);
 
   const handleNichesChange = (selectedOptions) => {
-    setSelectedNiches(selectedOptions || []);
+    setSelectedNiches(selectedOptions);
   };
 
   const handleFormatsChange = (selectedOptions) => {
@@ -108,12 +111,82 @@ export default function Page() {
     setSelectedFrequency(selectedOption);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // set the creator data
+    const creatorData = {
+      niche: e.target.contentNiche.value,
+      size: e.target.communitySize.value,
+      frequency: e.target.contentFrequency.value
+    };
+
+    // set the platform data
+    const platformData = {
+      platforms: []
+    };
+    // iterate and add to the array since that's the only way it seems to work
+    let platformsArray = Array.from(e.target.contentPlatforms);
+    console.log(platformsArray);
+    for (let i = 0; i < platformsArray.length; i++) {
+      platformData.platforms.push(platformsArray[i].value);
+    }
+    if (platformsArray.length === 0) { // The array is empty when only one choice is selected. In that case, this is how you need add the format
+      platformData.platforms = [e.target.contentPlatforms.value];
+      console.log('this shouldnt run')
+    }
+    console.log(e.target.contentPlatforms)
+    console.log("platforms: " + platformData.platforms);
+
+
+    const formatData = {
+      formats: []
+    };
+    // iterate and add to the array since that's the only way it seems to work
+    let formatsArray = Array.from(e.target.contentFormats);
+    console.log(formatsArray);
+    for (let i = 0; i < formatsArray.length; i++) {
+      formatData.formats.push(formatsArray[i].value);
+    }
+    if (formatsArray.length === 0) { // The array is empty when only one choice is selected. In that case, this is how you need add the format
+      formatData.formats = [e.target.contentFormats.value];
+      console.log(e.target.contentFormats.value)
+    }
+    console.log(formatsArray);
+    console.log("formats: " + formatData.formats);
+
+
+    // call first function
+    let {success, error} = await updateCreator(creatorData);
+
+    if (success) {
+      // call second function
+      ({success, error} = await updateCreatorPlatforms(platformData));
+      if (success) {
+        // call third function
+        ({success, error} = await updateCreatorFormats(formatData));
+        if (success) {
+          //router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/create-account/socials-info`);
+        } else {
+          // TODO add real error handling
+          console.error(error);
+        }
+      } else {
+        // TODO add real error handling
+        console.error(error);
+      }
+    } else {
+        // TODO add real error handling
+        console.error(error);
+    }
+  }
+
   return (
     <div className={styles.container} >
-      <form className={styles.formcontainer}>
+      <form className={styles.formcontainer} onSubmit={(e) => handleSubmit(e)} >
         <Select
-          id="content-format"
-          name="content-format"
+          id="contentFormats"
+          name="contentFormats"
           options={contentFormats}
           value={selectedFormats}
           onChange={handleFormatsChange}
@@ -122,21 +195,21 @@ export default function Page() {
           placeholder="Select content formats..."
           required
         />
-        <label className={styles.label} htmlFor="community size" >Community size:</label>
-        <input id="community-size" name="community-size" type="number" className={styles.textinput} required placeholder="Enter a number" />
+        <label className={styles.label} htmlFor="communitySize" >Community size:</label>
+        <input id="communitySize" name="communitySize" type="number" className={styles.textinput} required placeholder="Enter a number" />
         <Select
-          id="content-niches"
-          isMulti
+          id="contentNiche"
+          name="contentNiche"
           options={contentNiches}
           value={selectedNiches}
           onChange={handleNichesChange}
           placeholder="Choose niches..."
-          className={styles.multiselect}
+          className={styles.select}
           required
         />
         <Select
-        id="content-platforms"
-        name="content-platforms"
+        id="contentPlatforms"
+        name="contentPlatforms"
         options={contentPlatforms}
         value={selectedPlatforms}
         onChange={handlePlatformsChange}
@@ -146,8 +219,8 @@ export default function Page() {
         required
         />
         <Select
-          id="content-frequency"
-          name="content-frequency"
+          id="contentFrequency"
+          name="contentFrequency"
           options={contentFrequencyOptions}
           value={selectedFrequency}
           onChange={handleFrequencyChange}

@@ -7,13 +7,12 @@ export default async function insertUser(formData) {
     const supabase = await createClient();
     const userType = formData.accountType;
 
-    // get the user's uuid from the current session
+    // get the user's uid from the current session
     let { data } = await supabase.auth.getUser();
     const userId = data.user.id; // We can be sure that the user exists since they can't access this page without an authenticated session
 
-    
-    // set the current user id for RLS
     // rpc call to insert the user
+    let error;
     ({ data, error } = await supabase.rpc(
       'insert_user', {
       user_id: userId, 
@@ -53,5 +52,4 @@ export default async function insertUser(formData) {
         return {success: true, error: null}
       }
     }
-    return {success: true, error: null}
 }
