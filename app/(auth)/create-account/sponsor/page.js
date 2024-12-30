@@ -12,21 +12,25 @@
 import styles from "./page.module.css";
 import Select from "react-select";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { updateSponsor, updateSponsorPlatforms } from "./action";
+import { updateUserFormats } from "../content-creator/action"; // this function is user type agnostic, so no need to rewrite it
 
 export default function Page() {
 
+  const router = useRouter();
+
   const contentFormats = [
-    { value: 'short form video', label: 'Short form video' },
-    { value: 'long form video', label: 'Long form video' },
-    { value: 'short form writing', label: 'Short form writing' },
-    { value: 'long form writing', label: 'Long form writing' },
+    { value: 'short-form-video', label: 'Short form video' },
+    { value: 'long-form-video', label: 'Long form video' },
+    { value: 'short-form-writing', label: 'Short form writing' },
+    { value: 'long-form-writing', label: 'Long form writing' },
   ];
 
   const contentPlatforms = [
     { value: 'instagram', label: 'Instagram' },
     { value: 'youtube', label: 'YouTube' },
     { value: 'facebook', label: 'Facebook' },
-    { value: 'twitch', label: 'Twitch' },
     { value: 'personal-blog', label: 'Personal Blog' },
   ];
 
@@ -96,17 +100,78 @@ export default function Page() {
     setSelectedIndustries(selectedOptions);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // set the sponsor data
+    const sponsorData = {
+      companyName: e.target.companyName.value,
+      companySize: e.target.companySize.value,
+      industry: e.target.industry.value
+    };
+
+    // set the platform data
+    const platformData = {
+      platforms: []
+    };
+    // iterate and add to the array since that's the only way it seems to work
+    let platformsArray = Array.from(e.target.contentPlatforms);
+    for (let i = 0; i < platformsArray.length; i++) {
+      platformData.platforms.push(platformsArray[i].value);
+    }
+    if (platformsArray.length === 0) { // The array is empty when only one choice is selected. In that case, this is how you need add the format
+      platformData.platforms = [e.target.contentPlatforms.value];
+    }
+
+    // set the format data
+    const formatData = {
+      formats: []
+    };
+    // iterate and add to the array since that's the only way it seems to work
+    let formatsArray = Array.from(e.target.contentFormats);
+    for (let i = 0; i < formatsArray.length; i++) {
+      formatData.formats.push(formatsArray[i].value);
+    }
+    if (formatsArray.length === 0) { // The array is empty when only one choice is selected. In that case, this is how you need add the format
+      formatData.formats = [e.target.contentFormats.value];
+    }
+
+
+    // call the first function
+    let {success, error} = await updateSponsor(sponsorData);
+
+    if (success) {
+      // call second function
+      ({success, error} = await updateSponsorPlatforms(platformData));
+      if (success) {
+        // call third function
+        ({success, error} = await updateUserFormats(formatData));
+        if (success) {
+          router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/dashboard`);
+        } else {
+          // TODO add real error handling
+          console.error(error);
+        }
+      } else {
+        // TODO add real error handling
+        console.error(error);
+      }
+    } else {
+        // TODO add real error handling
+        console.error(error);
+    }
+  }
+
   return (
     <div className={styles.container} >
-      <form className={styles.formcontainer}>
-        <label className={styles.label} htmlFor="company-name">Company name:</label>
-        <input id="company-name" name="company-name" type="text" required className={styles.input} placeholder="Company name" />
-        <label className={styles.label} htmlFor="company-size">Company size (approximate):</label>
-        <input id="company-size" name="company-size" type="number" required className={styles.input} placeholder="Enter an approximate size" />
-        <button type="submit">Continue</button>
+      <form className={styles.formcontainer} onSubmit={(e) => handleSubmit(e)} >
+        <label className={styles.label} htmlFor="companyName">Company name:</label>
+        <input id="companyName" name="companyName" type="text" required className={styles.input} placeholder="Company name" />
+        <label className={styles.label} htmlFor="companySize">Company size (approximate):</label>
+        <input id="companySize" name="companySize" type="number" required className={styles.input} placeholder="Enter an approximate size" />
         <Select
-        id="content-platforms"
-        name="content-platforms"
+        id="contentPlatforms"
+        name="contentPlatforms"
         options={contentPlatforms}
         value={selectedPlatforms}
         onChange={handlePlatformsChange}
@@ -116,8 +181,8 @@ export default function Page() {
         required
         />
         <Select
-          id="content-format"
-          name="content-format"
+          id="contentFormats"
+          name="contentFormats"
           options={contentFormats}
           value={selectedFormats}
           onChange={handleFormatsChange}
@@ -137,6 +202,7 @@ export default function Page() {
           placeholder="Select industries..."
           required
         />
+        <button type="submit">Continue</button>
       </form>
     </div>
   );

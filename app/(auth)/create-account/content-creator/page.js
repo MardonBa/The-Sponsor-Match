@@ -13,7 +13,7 @@ import styles from "./page.module.css";
 import Select from "react-select";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { updateCreator, updateCreatorPlatforms, updateCreatorFormats } from "./action";
+import { updateCreator, updateCreatorPlatforms, updateUserFormats } from "./action";
 
 export default function Page() {
 
@@ -155,9 +155,9 @@ export default function Page() {
       ({success, error} = await updateCreatorPlatforms(platformData));
       if (success) {
         // call third function
-        ({success, error} = await updateCreatorFormats(formatData));
+        ({success, error} = await updateUserFormats(formatData));
         if (success) {
-          //router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/create-account/socials-info`);
+          router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/create-account/socials-info`);
         } else {
           // TODO add real error handling
           console.error(error);

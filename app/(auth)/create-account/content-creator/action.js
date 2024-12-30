@@ -83,7 +83,7 @@ export async function updateCreatorPlatforms(formData) {
   return {success: true, error: null};
 }
 
-export async function updateCreatorFormats(formData) {
+export async function updateUserFormats(formData) { // this function is user type agnostic, so no need to rewrite it
   // initialize supabase client
   const supabase = await createClient();
   // get the user's uid from the current session
