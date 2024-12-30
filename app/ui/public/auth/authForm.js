@@ -3,7 +3,7 @@
 import styles from "./authForm.module.css";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { validatePassword } from "@/app/lib/auth/validation";
+import { sanitizeInput } from "../../../lib/auth/validation.js";
 import Link from "next/link";
 
 export default function AuthForm({ displayForm, displayButton, action, buttonText }) {
@@ -22,7 +22,7 @@ export default function AuthForm({ displayForm, displayButton, action, buttonTex
 
   const handlePasswordChange = (e) => {
     e.preventDefault();
-    const isValid = validatePassword(passwordRef.current.value);
+    const isValid = sanitizeInput(passwordRef.current.value, 'password');
     if (isValid) {
       setPasswordStyle(styles.goodpassword);
     } else {

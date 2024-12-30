@@ -15,6 +15,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateSponsor, updateSponsorPlatforms } from "./action";
 import { updateUserFormats } from "../content-creator/action"; // this function is user type agnostic, so no need to rewrite it
+import { sanitizeInput } from "../../../lib/auth/validation";
 
 export default function Page() {
 
@@ -105,9 +106,12 @@ export default function Page() {
 
     // set the sponsor data
     const sponsorData = {
-      companyName: e.target.companyName.value,
-      companySize: e.target.companySize.value,
-      industry: e.target.industry.value
+      companyName: sanitizeInput(e.target.companyName.value, 'text'),
+      companySize: sanitizeInput(e.target.companySize.value, 'number', {
+        min: 1,
+        max: Infinity
+      }),
+      industry: sanitizeInput(e.target.industry.value, 'text')
     };
 
     // set the platform data

@@ -7,6 +7,7 @@ import Select from "react-select";
 import { useState } from "react";
 import insertUser from "./action";
 import { useRouter } from "next/navigation";
+import { sanitizeInput } from "../../lib/auth/validation";
 
 export default function Page() {
   // when the form is submitted, the user should be redirected to either /creator or /sponsor
@@ -28,7 +29,7 @@ export default function Page() {
     e.preventDefault();
 
     const formData = {
-      username: e.target.username?.value,
+      username: sanitizeInput(e.target.username?.value, 'text'),
       accountType: e.target.accountType?.value
     }
 

@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
+import { sanitizeInput } from "@/app/lib/auth/validation";
 
 export async function updateSponsor(formData) {
   // initialize the supabase client
@@ -13,9 +14,12 @@ export async function updateSponsor(formData) {
   ({data, error} = await supabase.rpc(
     'update_sponsor', {
     cur_user_id: userId, 
-    new_company_name: formData.companyName, 
-    new_industry: formData.industry, 
-    new_size: formData.companySize
+    new_company_name: sanitizeInput(formData.companyName, 'text'), 
+    new_industry: sanitizeInput(formData.industry, 'text'), 
+    new_size: sanitizeInput(formData.companySize, 'number', {
+      min: 1,
+      max: Infinity
+    })
   }));
   if (error) {
     console.error(error);

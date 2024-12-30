@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
+import { sanitizeInput } from "../../../lib/auth/validation";
 
 export async function updateCreator(formData) {
   // initialize supabase client
@@ -13,7 +14,10 @@ export async function updateCreator(formData) {
   ({ data, error } = await supabase.rpc(
     'update_creator', {
     cur_user_id: userId, 
-    new_community_size: formData.size, 
+    new_community_size: sanitizeInput(formData.size, 'number', {
+      min: 0,
+      max: Infinity
+    }), 
     new_content_frequency: formData.frequency, 
     new_niche: formData.niche
   }))

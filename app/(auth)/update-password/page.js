@@ -5,7 +5,7 @@
 
 import styles from "./page.module.css";
 import { useState, useRef } from "react";
-import { validatePassword } from "@/app/lib/auth/validation";
+import { sanitizeInput } from "../../lib/auth/validation";
 import resetPassword from "./action";
 import { useSearchParams } from "next/navigation";
 
@@ -25,7 +25,7 @@ export default function Page() {
   
   const handlePasswordChange = (e) => {
     e.preventDefault();
-    const isValid = validatePassword(passwordRef.current.value);
+    const isValid = sanitizeInput(passwordRef.current.value, 'password');
     if (isValid) {
       setPasswordStyle(styles.goodpassword);
     } else {
@@ -73,7 +73,7 @@ export default function Page() {
     e.preventDefault();
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmpassword.value;
-    const validPassword = validatePassword(password) && (password === confirmPassword);
+    const validPassword = sanitizeInput(password, 'password') && (password === confirmPassword);
     if (validPassword) {
       const userId = searchParams.get("id");
       resetPassword(password, userId);

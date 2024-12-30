@@ -14,6 +14,7 @@ import Select from "react-select";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateCreator, updateCreatorPlatforms, updateUserFormats } from "./action";
+import { sanitizeInput } from "../../../lib/auth/validation";
 
 export default function Page() {
 
@@ -117,7 +118,10 @@ export default function Page() {
     // set the creator data
     const creatorData = {
       niche: e.target.contentNiche.value,
-      size: e.target.communitySize.value,
+      size: sanitizeInput(e.target.communitySize.value, 'number', {
+        min: 0,
+        max: Infinity
+      }), // this is the only one that needs to be sanitized since it relies on user input
       frequency: e.target.contentFrequency.value
     };
 

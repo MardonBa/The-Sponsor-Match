@@ -2,16 +2,16 @@
 
 import { revalidatePath } from 'next/cache';
 import { createClient } from "@/utils/supabase/server";
-import { validateEmail, validatePassword } from "@/app/lib/auth/validation";
+import { sanitizeInput } from "@/app/lib/auth/validation";
 
 // This action should be called in the page that is redirected to 
 // when the user wants to create an account with email
 export async function signup(formData) {
     const supabase = await createClient();
 
-    const validEmail = validateEmail(formData.email);
-    const validPassword = validatePassword(formData.password);
-    const validConfirmedPassword = validatePassword(formData.confirmedPassword);
+    const validEmail = sanitizeInput(formData.email, 'email');
+    const validPassword = sanitizeInput(formData.password, 'password');
+    const validConfirmedPassword = sanitizeInput(formData.confirmedPassword, 'password');
 
     if (validEmail && validPassword && validConfirmedPassword) {
       if (formData.password!= formData.confirmedPassword) {

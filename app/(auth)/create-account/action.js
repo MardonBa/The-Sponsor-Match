@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
+import { sanitizeInput } from "../../lib/auth/validation";
 
 export default async function insertUser(formData) {
 
@@ -16,7 +17,7 @@ export default async function insertUser(formData) {
     ({ data, error } = await supabase.rpc(
       'insert_user', {
       user_id: userId, 
-      username: formData.username
+      username: sanitizeInput(formData.username, 'text')
       }));
     if (error) {
       console.error("Error inserting into users table: ");

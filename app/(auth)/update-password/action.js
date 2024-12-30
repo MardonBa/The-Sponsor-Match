@@ -1,7 +1,7 @@
 "use server";
 
 //import { createClient } from "@/utils/supabase/server";
-import { validatePassword } from "@/app/lib/auth/validation";
+import { sanitizeInput } from "@app/lib/auth/validation";
 import { redirect } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 
@@ -11,7 +11,7 @@ export default async function resetPassword(newPassword, id) {
     process.env.SUPABASE_SERVICE_ROLE_KEY
   );
 
-  const validPassword = validatePassword(newPassword);
+  const validPassword = sanitizeInput(newPassword, password);
   if (validPassword) {
     const { data, error } = await supabase.auth.admin.updateUserById(id, {
       password: newPassword,

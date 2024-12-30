@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { validateEmail, validatePassword } from '@/app/lib/auth/validation';
+import { sanitizeInput } from '@/app/lib/auth/validation';
 import { createClient } from '@/utils/supabase/server';
 
 export default async function login(formData) {
@@ -13,8 +13,8 @@ export default async function login(formData) {
         password: formData.get("password")
     };
 
-    const validEmail = validateEmail(data.email);
-    const validPassword = validatePassword(data.password);
+    const validEmail = sanitizeInput(data.email, 'email');
+    const validPassword = sanitizeInput(data.password, 'password');
 
     if (validEmail && validPassword) {
         const { error } = await supabase.auth.signInWithPassword(data);
