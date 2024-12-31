@@ -12,8 +12,21 @@ export default async function insertUser(formData) {
     let { data } = await supabase.auth.getUser();
     const userId = data.user.id; // We can be sure that the user exists since they can't access this page without an authenticated session
 
-    // rpc call to insert the user
+    // check if the username is taken
     let error;
+    ({ data, error } = await supabase.rpc(
+    'is_username_taken', {
+      input_username: formData.username
+    }));
+    if (error) {
+      console.error(error);
+      return {success: false, error, details: {
+        message: 'Sorry, that username is alraedy taken!'
+      }};
+      // TODO add more error handling if necessary
+    }
+
+    // rpc call to insert the user
     ({ data, error } = await supabase.rpc(
       'insert_user', {
       user_id: userId, 

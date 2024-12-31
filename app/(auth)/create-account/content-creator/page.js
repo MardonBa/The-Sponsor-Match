@@ -9,12 +9,13 @@
 
 "use client";
 
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import Select from "react-select";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateCreator, updateCreatorPlatforms, updateUserFormats } from "./action";
 import { sanitizeInput } from "../../../lib/auth/validation";
+import { selectStyles, selectStylesMulti } from "../selectStyles";
 
 export default function Page() {
 
@@ -178,52 +179,62 @@ export default function Page() {
 
   return (
     <div className={styles.container} >
+      <h2 className={styles.h2} >Hey there! Are you ready to start monetizing your content?</h2>
+      <p className={styles.p} >Before you start, we need to get some information</p>
       <form className={styles.formcontainer} onSubmit={(e) => handleSubmit(e)} >
+        <p className={styles.p} >How would you describe the format of the content you create?</p>
         <Select
           id="contentFormats"
           name="contentFormats"
           options={contentFormats}
           value={selectedFormats}
           onChange={handleFormatsChange}
+          styles={selectStylesMulti}
           isMulti
           className={styles.multiselect}
           placeholder="Select content formats..."
           required
         />
-        <label className={styles.label} htmlFor="communitySize" >Community size:</label>
-        <input id="communitySize" name="communitySize" type="number" className={styles.textinput} required placeholder="Enter a number" />
+        <label className={styles.label} htmlFor="communitySize" >How large is your following?</label>
+        <input id="communitySize" name="communitySize" type="number" className={styles.input} required placeholder="Enter a number" />
+        <p className={styles.p} >What category best describes your content?</p>
         <Select
           id="contentNiche"
           name="contentNiche"
           options={contentNiches}
           value={selectedNiches}
           onChange={handleNichesChange}
-          placeholder="Choose niches..."
+          styles={selectStyles}
+          placeholder="Choose category..."
           className={styles.select}
           required
         />
+        <p className={styles.p} >Which of our supported platforms do you use?</p>
         <Select
         id="contentPlatforms"
         name="contentPlatforms"
         options={contentPlatforms}
         value={selectedPlatforms}
         onChange={handlePlatformsChange}
+        styles={selectStylesMulti}
         isMulti
         className={styles.select}
         placeholder="Select content platforms..."
         required
         />
+        <p className={styles.p} >How often do you post?</p>
         <Select
           id="contentFrequency"
           name="contentFrequency"
           options={contentFrequencyOptions}
           value={selectedFrequency}
           onChange={handleFrequencyChange}
+          styles={selectStyles}
           className={styles.select}
           placeholder="Select content frequency..."
           required
         />
-        <button type="submit">Continue</button>
+        <button type="submit" className={styles.button} >Continue</button>
       </form>
     </div>
   );

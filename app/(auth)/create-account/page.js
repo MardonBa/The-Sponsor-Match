@@ -8,6 +8,7 @@ import { useState } from "react";
 import insertUser from "./action";
 import { useRouter } from "next/navigation";
 import { sanitizeInput } from "../../lib/auth/validation";
+import { selectStyles } from "./selectStyles";
 
 export default function Page() {
   // when the form is submitted, the user should be redirected to either /creator or /sponsor
@@ -45,21 +46,27 @@ export default function Page() {
 
   return (
     <div className={styles.container} >
+      <h2 className={styles.heading} >Welcome to The Sponsor Match!</h2>
+      <p className={styles.p} >Before you get started, we need to ask you some questions</p>
+      <p className={styles.p} >Create a username and let us know what kind of account you want to create</p>
       <form className={styles.formcontainer} onSubmit={(e) => handleSubmit(e)} >
         <label className={styles.label} htmlFor="username">Username:</label>
         <input id="username" name="username" type="text" required className={styles.input} placeholder="Username" />
-        <label className={styles.label} htmlFor="accountType">Account type:</label>
+        <br />
+        <p className={styles.p} htmlFor="accountType">Account type:</p>
         <Select
           id="accountType"
           name="accountType"
           options={accountTypes}
           value={selectedAccountType}
           onChange={handleChange}
-          className={styles.select}
+          styles={selectStyles}
           placeholder="Select account type..."
+          className="react-select-container"
+          classNamePrefix="react-select"
           required
         />
-        <button type="submit">Continue</button>
+        <button type="submit" className={styles.button} >Continue</button>
       </form>
     </div>
   );

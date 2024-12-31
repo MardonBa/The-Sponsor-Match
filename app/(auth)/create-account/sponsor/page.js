@@ -9,13 +9,14 @@
 
 "use client";
 
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import Select from "react-select";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateSponsor, updateSponsorPlatforms } from "./action";
 import { updateUserFormats } from "../content-creator/action"; // this function is user type agnostic, so no need to rewrite it
 import { sanitizeInput } from "../../../lib/auth/validation";
+import { selectStyles, selectStylesMulti } from "../selectStyles";
 
 export default function Page() {
 
@@ -169,44 +170,51 @@ export default function Page() {
   return (
     <div className={styles.container} >
       <form className={styles.formcontainer} onSubmit={(e) => handleSubmit(e)} >
+        <h2 className={styles.h2} >Hey there! Are you ready to start advertising your products?</h2>
+        <p className={styles.p} >Before you start, we need to get some information</p>
         <label className={styles.label} htmlFor="companyName">Company name:</label>
         <input id="companyName" name="companyName" type="text" required className={styles.input} placeholder="Company name" />
         <label className={styles.label} htmlFor="companySize">Company size (approximate):</label>
         <input id="companySize" name="companySize" type="number" required className={styles.input} placeholder="Enter an approximate size" />
+        <p className={styles.p }>What platforms do you want to advertise on?</p>
         <Select
         id="contentPlatforms"
         name="contentPlatforms"
         options={contentPlatforms}
         value={selectedPlatforms}
         onChange={handlePlatformsChange}
+        styles={selectStylesMulti}
         isMulti
         className={styles.select}
         placeholder="Select content platforms..."
         required
         />
+        <p className={styles.p }>What content formats would you like to advertise with?</p>
         <Select
           id="contentFormats"
           name="contentFormats"
           options={contentFormats}
           value={selectedFormats}
           onChange={handleFormatsChange}
+          styles={selectStylesMulti}
           isMulti
           className={styles.multiselect}
           placeholder="Select content formats..."
           required
         />
+        <p className={styles.p }>What industry best describes your company?</p>
         <Select
           id="industry"
           name="industry"
           options={industryOptions}
           value={selectedIndustries}
           onChange={handleIndustryChange}
-          isMulti
+          styles={selectStyles}
           className={styles.select}
           placeholder="Select industries..."
           required
         />
-        <button type="submit">Continue</button>
+        <button type="submit" className={styles.button} >Continue</button>
       </form>
     </div>
   );
