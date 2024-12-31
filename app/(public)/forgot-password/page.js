@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import handleRequestPasswordResetLink from "./action.js";
 import { useState } from "react";
-import { validateEmail } from "@/app/lib/auth/validation";
+import { sanitizeInput } from "@/app/lib/auth/validation";
 
 export default function Page() {
 
@@ -13,7 +13,7 @@ export default function Page() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    const validEmail = validateEmail(email);
+    const validEmail = sanitizeInput(email, 'email');
     if (validEmail) {
       handleRequestPasswordResetLink(email);
       setEmailSent(true);
