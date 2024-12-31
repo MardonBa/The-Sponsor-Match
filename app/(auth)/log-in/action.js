@@ -24,7 +24,7 @@ export default async function login(formData) {
         }
     
         revalidatePath('/', 'layout');
-        redirect('/dashboard');
+        redirect('/create-account');
     } else {
         // TODO: Build this out
         // If the email or password is invalid, update the UI (somehow)
