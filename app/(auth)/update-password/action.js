@@ -1,7 +1,7 @@
 "use server";
 
 //import { createClient } from "@/utils/supabase/server";
-import { sanitizeInput } from "@app/lib/auth/validation";
+import { sanitizeInput } from "@/app/lib/auth/validation";
 import { redirect } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 
