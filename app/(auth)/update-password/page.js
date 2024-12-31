@@ -8,6 +8,7 @@ import { useState, useRef } from "react";
 import { sanitizeInput } from "../../lib/auth/validation";
 import resetPassword from "./action";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function Page() {
 
@@ -84,19 +85,21 @@ export default function Page() {
   }
 
   return (
-    <div className={styles.container}>
-      <p className={styles.mainheader} >Password reset</p>
-      <p className={styles.secondaryheader} >Enter your password</p>
-      <form className={styles.form} onSubmit={(e) => handleFormSubmit(e)} >
-        <label htmlFor="password" className={styles.label} >Password:</label>
-        <input id="password" name="password" type={inputType} placeholder="Enter password" className={`${passwordStyle} ${styles.input}`} ref={passwordRef} onChange={(e) => handlePasswordChange(e)} />
-        <div className={styles.showpasswordcontainer} ><input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} /><p>Show password</p></div>
-        <p className={styles.passwordreqs}>Password must have at least 8 characters, at least one uppercase letter and at least one number</p>
-        <label htmlFor="confirmpassword" className={styles.label} >Confirm password:</label>
-        <input id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm password" className={`${confirmPasswordStyle}  ${styles.input}`} ref={confirmPasswordRef} onChange={(e) => handleConfirmPasswordChange(e)} />
-        <p>Passwords {passwordsMatch} match</p>
-        <button type="submit" className={styles.submit} >Reset password</button>
-      </form>
-    </div>
+    <Suspense>
+      <div className={styles.container}>
+        <p className={styles.mainheader} >Password reset</p>
+        <p className={styles.secondaryheader} >Enter your password</p>
+        <form className={styles.form} onSubmit={(e) => handleFormSubmit(e)} >
+          <label htmlFor="password" className={styles.label} >Password:</label>
+          <input id="password" name="password" type={inputType} placeholder="Enter password" className={`${passwordStyle} ${styles.input}`} ref={passwordRef} onChange={(e) => handlePasswordChange(e)} />
+          <div className={styles.showpasswordcontainer} ><input id="showpassword" name="showpassword" type="checkbox" className={styles.showpassword} onClick={updateVisibility} /><p>Show password</p></div>
+          <p className={styles.passwordreqs}>Password must have at least 8 characters, at least one uppercase letter and at least one number</p>
+          <label htmlFor="confirmpassword" className={styles.label} >Confirm password:</label>
+          <input id="confirmpassword" name="confirmpassword" type="password" placeholder="Confirm password" className={`${confirmPasswordStyle}  ${styles.input}`} ref={confirmPasswordRef} onChange={(e) => handleConfirmPasswordChange(e)} />
+          <p>Passwords {passwordsMatch} match</p>
+          <button type="submit" className={styles.submit} >Reset password</button>
+        </form>
+      </div>
+    </Suspense>
   );
 }
