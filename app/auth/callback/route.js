@@ -25,5 +25,5 @@ export async function GET(request) {
   }
 
   // return the user to the landing page
-  return NextResponse.redirect("/");
+  return NextResponse.redirect(origin);
 }
