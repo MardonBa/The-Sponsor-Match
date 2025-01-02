@@ -2,10 +2,11 @@
 
 import GoogleButton from "./oauthButtons/googleButton";
 import styles from "./authComponent.module.css";
-import { oauthLogin } from "./action";
+import { oauthLogin, instagramOauthLogin } from "./action";
 import Link from "next/link";
 import Logo from "../../logo/logo";
 import FacebookButton from "./oauthButtons/facebookButton";
+import InstagramButton from "./oauthButtons/instagramButton";
 import AuthForm from "./authForm";
 
 // buttonText is either Log in or Sign up, action is the authentication Server Action
@@ -45,6 +46,7 @@ export default function AuthComponent({ buttonText, action }) {
       </div>
       <GoogleButton action={oauthLogin} />
       <FacebookButton action={oauthLogin} />
+      <InstagramButton action={instagramOauthLogin} />
       <div className={styles.nav} >
         <p>{navText} <Link href={link} className={styles.navlink} >{navButton}</Link></p>
       </div>

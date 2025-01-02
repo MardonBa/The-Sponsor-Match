@@ -3,7 +3,7 @@ import OauthButtonSkeleton from "./oauthButtonSkeleton";
 
 export default function GoogleButton({ action} ) {
   return (
-    <OauthButtonSkeleton clickAction={action} logo={<GoogleLogo />} provider="Google" colorStyle={styles.color} />
+    <OauthButtonSkeleton clickAction={action} logo={<GoogleLogo />} provider="google" colorStyle={styles.color} />
   );
 }
 

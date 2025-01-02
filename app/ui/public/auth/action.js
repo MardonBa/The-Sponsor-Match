@@ -28,3 +28,12 @@ export async function oauthLogin(prov) {
     redirect(data.url);
   }
 }
+
+// Supabase doesn't support instagram oauth, so I have to build it out myself. This function essentially does what supabase.auth.signInWithOAuth does
+export async function instagramOauthLogin(provider) { // Don't need to actually do anything with the parameter, it just needs to be there
+  const scopes = 'instagram_business_basic instagram_business_manage_messages instagram_business_manage_comments'
+  const redirectUri = encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback/instagram`);
+  const authUrl = `https://www.instagram.com/oauth/authorize?enable_fb_login=0&force_authentication=1&client_id=${process.env.INSTAGRAM_APP_ID}&redirect_uri=${redirectUri}&response_type=code&scope=${scopes}`;
+
+  redirect(authUrl);
+}

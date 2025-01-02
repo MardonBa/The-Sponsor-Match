@@ -1,6 +1,5 @@
 "use client";
 
-import { color } from "framer-motion";
 import styles from "./oauthButtonSkeleton.module.css";
 
 export default function OauthButtonSkeleton({ clickAction, logo, provider, colorStyle }) {

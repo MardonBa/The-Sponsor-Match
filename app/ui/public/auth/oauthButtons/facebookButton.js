@@ -5,7 +5,7 @@ import OauthButtonSkeleton from "./oauthButtonSkeleton";
 
 export default function FacebookButton({ action }) {
   return (
-    <OauthButtonSkeleton clickAction={action} logo={<FacebookLogo />} provider="Facebook" colorStyle={styles.color} />
+    <OauthButtonSkeleton clickAction={action} logo={<FacebookLogo />} provider="facebook" colorStyle={styles.color} />
   );
 }
 

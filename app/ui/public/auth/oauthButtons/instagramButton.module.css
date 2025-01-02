@@ -1,0 +1,13 @@
+.logo {
+  grid-column: 1 / 2;
+  margin: auto;
+}
+.color {
+  background-color: #81348F;
+  color: #FFFFFF;
+}
+
+.color:hover {
+  background: #aa46bc;
+  cursor: pointer;
+}
