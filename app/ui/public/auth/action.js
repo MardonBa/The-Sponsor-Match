@@ -9,19 +9,10 @@ export async function oauthLogin(prov) {
 
   const supabase = await createClient();
 
-  let scopes;
-  if (prov == 'facebook') {
-    scopes = 'read_insights pages_read_engagement pages_show_list user_friends pages_read_user_content';
-  } else if (prov == 'google') {
-    scopes = '/auth/yt-analytics.readonly /auth/userinfo.email /auth/userinfo.profile openid'
-  }
-
   const { data, error } = await supabase.auth.signInWithOAuth({
       provider: prov,
       options: {
-          redirectTo: 'http://localhost:3000/auth/callback',
-          scopes
-      }
+          redirectTo: 'http://localhost:3000/auth/callback'      }
   });
 
   if (data.url) {
