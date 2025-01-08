@@ -21,7 +21,15 @@ export default async function insertUser(formData) {
     if (error) {
       console.error(error);
       return {success: false, error, details: {
-        message: 'Sorry, that username is alraedy taken!'
+        message: 'Sorry, an error occured'
+      }};
+      // TODO add more error handling if necessary
+    }
+
+    if (data == true) { // checks if data is true, meaning the username is taken
+      console.log('Sorry, that username is taken!');
+      return {success: false, error, details: {
+        message: 'Sorry, an error occured'
       }};
       // TODO add more error handling if necessary
     }

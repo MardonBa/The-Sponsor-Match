@@ -13,7 +13,7 @@ export async function GET(request) {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
         client_id: process.env.INSTAGRAM_APP_ID,
-        client_secret: process.envINSTAGRAM_APP_SECRET,
+        client_secret: process.env.INSTAGRAM_APP_SECRET,
         grant_type: 'authorization_code',
         redirect_uri: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback/instagram`,
         code,
@@ -26,39 +26,58 @@ export async function GET(request) {
       return NextResponse.redirect(origin);
     }
 
-    const { accessToken, userId } = tokenData;
+    const { accessToken } = tokenData;
+
+    const { longLivedAccessToken, expiresIn } = getLongLivedToken(accessToken);
+
+    // create a supabase instance
+    const supabase = await createClient();
     
-    // exchange the short lived token for a long lived one https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/business-login
-    const longLivedTokenResponse = await fetch('https://graph.instagram.com/access_token', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({
-        grant_type: 'ig_exchange_token',
-        client_secret: process.env.INSTAGRAM_APP_SECRET,
-        access_token: accessToken,
-      }),
+    /*
+     save the token to database
+    */
+
+    // get the user id
+    const { data: { user } } = await supabase.auth.getUser()
+    const userId = user.id
+
+    // get the creator id based on the user id
+    let { data, error } = await supabase.rpc(
+      'get_creator_id', {
+        user_id: userId
     });
-    
-    const longLivedTokenData = await longLivedTokenResponse.json();
-    
-    if (longLivedTokenData.error) {
+    if (error) {
+      console.error(error);
+      return NextResponse.redirect(origin);
+    }
+    const creatorId = data;
+
+    // get the platform id for instagram
+    ({ data, error } = await supabase.rpc(
+      'get_platform_id', {
+        name: 'instagram'
+    }));
+    if (error) {
+      console.error(error);
+      return NextResponse.redirect(origin);
+    }
+    const platformId = data;
+    // rpc call to update platforms_creators based on the creator_id
+    ({ data, error } = await supabase.rpc(
+      'update_platforms_creators', {
+        creator_id: creatorId, 
+        expires_in_seconds: expiresIn, 
+        new_access_token: longLivedAccessToken, 
+        new_refresh_token: null, 
+        platform_id: platformId
+    }));
+
+    if (error) {
+      console.error(error);
       return NextResponse.redirect(origin);
     }
 
-    const { access_token, expires_at } = longLivedTokenData;
-
-    // save the token to database
     // need to see about how i can automatically refresh the user's token (if possible)
     // redirect user to the next page
-    const forwardedHost = request.headers.get('x-forwarded-host'); // original origin before load balancer
-    const isLocalEnv = process.env.NODE_ENV === 'development';
-    if (isLocalEnv) {
-      // we can be sure that there is no load balancer in between, so no need to watch for X-Forwarded-Host
-      return NextResponse.redirect(`${origin}${next}`);
-    } else if (forwardedHost) {
-      return NextResponse.redirect(`https://${forwardedHost}${next}`);
-    } else {
-      return NextResponse.redirect(`${origin}${next}`);
-    }
   }
 }
