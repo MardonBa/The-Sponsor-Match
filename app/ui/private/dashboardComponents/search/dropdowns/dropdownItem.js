@@ -11,7 +11,7 @@ const style = {
   container: (base) => ({
     ...base,
     margin: '15px 0px',
-    width: '170px',
+    width: '210px',
     fontSize: '12px'
   }),
   control: (base, state) => ({
@@ -40,6 +40,16 @@ const style = {
     color: state.isFocused? 'var(--background)' : 'var(--text)',
     backgroundColor: state.isFocused ? 'var(--primary)' : 'var(--background)',
     cursor: state.isFocused ? 'pointer' : 'auto'
+  }),
+  multiValue: (base) => ({
+    ...base,
+    padding: '1px',
+    backgroundColor: 'var(--primary)'
+  }),
+  multiValueLabel: (base) => ({
+    ...base, 
+    color: 'var(--background)',
+    backgroundColor: 'var(--primary)'
   })
 }
 
