@@ -191,7 +191,6 @@ export default function Page() {
           onChange={handleFormatsChange}
           styles={selectStylesMulti}
           isMulti
-          className={styles.multiselect}
           placeholder="Select content formats..."
           required
         />
@@ -206,7 +205,6 @@ export default function Page() {
           onChange={handleNichesChange}
           styles={selectStyles}
           placeholder="Choose category..."
-          className={styles.select}
           required
         />
         <p className={styles.p} >Which of our supported platforms do you use?</p>
@@ -218,7 +216,6 @@ export default function Page() {
         onChange={handlePlatformsChange}
         styles={selectStylesMulti}
         isMulti
-        className={styles.select}
         placeholder="Select content platforms..."
         required
         />
@@ -230,7 +227,6 @@ export default function Page() {
           value={selectedFrequency}
           onChange={handleFrequencyChange}
           styles={selectStyles}
-          className={styles.select}
           placeholder="Select content frequency..."
           required
         />
