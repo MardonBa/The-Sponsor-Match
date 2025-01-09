@@ -9,7 +9,8 @@ export async function getUserType() {
   // create a supabase session
   const supabase = await createClient();
   // get the user_id from the session
-  const userId = supabase.auth.user().id;
+  const {data: {user}} = await supabase.auth.getUser();
+  const userId = user.id;
   // check if the user_id matches a record in the creators table using get_creator_id
   let { data, error } = await supabase.rpc(
     'get_creator_id', {

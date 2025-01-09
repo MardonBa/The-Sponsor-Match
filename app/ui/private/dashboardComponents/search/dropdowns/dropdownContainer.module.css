@@ -1,4 +1,14 @@
-.container {
+.text {
+  font-size: 20px;
+  color: var(--text);
+  background-color: var(--background);
+  padding: 10px;
+  width: 300px;
+  border-radius: 15px;
+  margin-bottom: 0px;
+}
+
+.dropdownscontainer {
     display: grid;
     grid-template-columns: repeat(5, auto) 1fr;
     column-gap: 10px;
@@ -9,7 +19,7 @@
     height: 50px;
 }
 
-.container > *:nth-child(n):nth-child(n+6) {
+.dropdownscontainer > *:nth-child(n):nth-child(n+6) {
     grid-column: n / span 1;
     
 }
