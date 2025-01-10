@@ -1,7 +1,6 @@
 import styles from './dropdownContainer.module.css'
 import DropdownItem from './dropdownItem';
-import { getUserType } from './action';
-
+import { getUserType } from '@/utils/helper/getUserType';
 // For sponsors, it should have dropdowns to sort by platform, content type, community size, niche, content frequency
 
 export default async function DropdownContainer() {
