@@ -11,8 +11,8 @@ const getDropdownStyles = (width) => {
     // styles here
     container: (base) => ({
       ...base,
-      margin: '15px 0px',
-      width: width,
+      margin: '15px 30px',
+      width: '100%',
       fontSize: '12px'
     }),
     control: (base, state) => ({

@@ -1,9 +1,13 @@
+.container {
+  height: 100px;
+}
+
 .text {
   font-size: 20px;
   color: var(--text);
   background-color: var(--background);
   padding: 10px;
-  width: 300px;
+  width: 65px;
   border-radius: 15px;
   margin-bottom: 0px;
 }

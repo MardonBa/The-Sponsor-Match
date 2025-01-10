@@ -68,4 +68,5 @@
     background-color: var(--dashboard-back);
     color: var(--text);
     border: 2px solid var(--primary);
+    z-index: 1000;
 }
