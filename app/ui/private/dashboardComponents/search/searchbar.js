@@ -6,14 +6,19 @@ import { useState } from 'react';
 
 export default function SearchBar({ userType }) {
 
-    // create stateful variable
-    const [selectedValues, setSelectedValues] = useState([]);
+  const [filters, setFilters] = useState({}); // State to hold all filter values
 
-    // event handler for when it is changed
-    const handleValueChange = (selectedOptions) => {
-      setSelectedValues(selectedOptions || []);
-    };
+  const handleFilterChange = (name, selectedValues) => {
+    setFilters((prev) => ({
+      ...prev,
+      [name]: selectedValues,
+    }));
+  };
 
+  const handleSearch = () => { // to be used
+    console.log('Filters:', filters);
+    // Trigger your database search here using the filters
+  };
 
   return (
     <div className={styles.container} >
@@ -23,9 +28,9 @@ export default function SearchBar({ userType }) {
         Might not be necessary, it just depends on how the databse can be queried when the user presses search
         */}
     </textarea>
-      <p className={styles.searchbutton} >Search</p> {/* This should eventually be a button that triggers a database search */}
+      <p className={styles.searchbutton} onClick={handleSearch} >Search</p> {/* This should eventually be a button that triggers a database search */}
       <div className={styles.dropdowns} >
-        <DropdownContainer userType={userType} />
+        <DropdownContainer userType={userType} onSelectionChange={handleFilterChange} />
       </div>
     </div>
   );

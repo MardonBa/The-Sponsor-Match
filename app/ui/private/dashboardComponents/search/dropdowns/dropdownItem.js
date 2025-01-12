@@ -53,7 +53,14 @@ const getDropdownStyles = () => {
   }
 }
 
-export default function DropdownItem({ text, options, name }) {
+export default function DropdownItem({ text, options, name, onSelectChange }) {
+
+  const [selectedValues, setSelectedValues] = useState([]);
+
+  const handleValueChange = (selected) => {
+    setSelectedValues(selected || []);
+    onSelectChange(name, selected || []);
+  };
 
     return (
       <>

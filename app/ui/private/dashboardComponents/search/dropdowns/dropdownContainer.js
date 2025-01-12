@@ -1,8 +1,10 @@
+"use client";
+
 import styles from './dropdownContainer.module.css'
 import DropdownItem from './dropdownItem';
 // For sponsors, it should have dropdowns to sort by platform, content type, community size, niche, content frequency
 
-export default function DropdownContainer({ userType }) {
+export default function DropdownContainer({ userType, onSelectionChange }) {
 
   let filters;
 
@@ -187,7 +189,7 @@ export default function DropdownContainer({ userType }) {
       <p className={styles.text} >Filters:</p>
       <div className={styles.dropdownscontainer} >
         {filters.map((item, index) => {
-          return <DropdownItem text={item.text} options={item.options} name={item.name} key={index} />
+          return <DropdownItem text={item.text} options={item.options} name={item.name} key={index} onSelectChange={onSelectionChange} />
         })}
       </div>
     </div>
