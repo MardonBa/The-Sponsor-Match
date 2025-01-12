@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 .container {
-    grid-row: 1 / 2;
-    display: grid;
-    grid-template-rows: 50px 100px;
-    grid-template-columns: 2% repeat(5, 16%) 18%;
-    height: auto;
-    width: 100%;
-    align-items: center;
-    padding-top: 20px;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-rows: 50px 100px;
+  grid-template-columns: 2% repeat(5, 16%) 18%;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  padding-top: 20px;
 }
 
 .searchbar {
-    grid-row: 1 / 2;
-    grid-column: 2 / 8;
-    width: 80%;
-    height: 21px;
-    resize: none;
-    background-color: var(--dashboard-back);
-    border-radius: 10px;
-    color: var(--text);
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    border: none;
-    padding: 5px;
-    justify-self: left;
-    font-family: "Rubik", sans-serif;
-    resize: none;
-    white-space: nowrap;
-    overflow-x: scroll;
+  grid-row: 1 / 2;
+  grid-column: 2 / 8;
+  width: 80%;
+  height: 21px;
+  resize: none;
+  background-color: var(--dashboard-back);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 5px;
+  justify-self: left;
+  font-family: "Rubik", sans-serif;
+  resize: none;
+  white-space: nowrap;
+  overflow-x: scroll;
 }
 
 .searchbar:focus {
@@ -37,20 +37,31 @@
 }
 
 .searchbutton {
-    grid-row: 1 / 2;
-    grid-column: 7 / 8;
-    color: var(--text);
-    border-radius: 10px;
-    width: 100px;
-    background-color: var(--dashboard-back);
-    height: 21px;
-    text-align: center;
-    padding: 5px;
-    justify-self: center;
+  grid-row: 1 / 2;
+  grid-column: 7 / 8;
+  color: var(--text);
+  border-radius: 10px;
+  width: 100px;
+  background-color: var(--dashboard-back);
+  height: 31px;
+  text-align: center;
+  padding: 5px;
+  justify-self: center;
+  border: none;
 }
 
+.searchbutton:hover {
+  border: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.searchbutton:focus {
+  background-color: var(--background-variant);
+}
+
+
 .dropdowns {
-    grid-row: 2 / 3;
-    grid-column: 2 / 7;
-    justify-self: left;
+  grid-row: 2 / 3;
+  grid-column: 2 / 7;
+  justify-self: left;
 }

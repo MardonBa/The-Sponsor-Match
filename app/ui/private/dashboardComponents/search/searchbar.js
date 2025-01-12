@@ -22,13 +22,13 @@ export default function SearchBar({ userType }) {
 
   return (
     <div className={styles.container} >
-      <textarea className={styles.searchbar} rows="1" >
+      <textarea className={styles.searchbar} rows="1" placeholder='Search...' >
         {/*
         Probably need to set up redux to manage the state of the searchbar (what text has been entered)
         Might not be necessary, it just depends on how the databse can be queried when the user presses search
         */}
     </textarea>
-      <p className={styles.searchbutton} onClick={handleSearch} >Search</p> {/* This should eventually be a button that triggers a database search */}
+      <button className={styles.searchbutton} onClick={handleSearch} >Search</button> {/* This should eventually be a button that triggers a database search */}
       <div className={styles.dropdowns} >
         <DropdownContainer userType={userType} onSelectionChange={handleFilterChange} />
       </div>
