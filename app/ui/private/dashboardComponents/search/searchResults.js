@@ -1,6 +1,6 @@
 import styles from './searchResults.module.css';
 import {CreatorSearchResult, SponsorSearchResult} from './searchResults/searchResult';
-import { getUserType } from '@/utils/helper/getUserType';
+import { getUserType } from '@/app/lib/helper/getUserType';
 import { createClient } from '@/utils/supabase/server';
 
 export default async function SearchResults() {
