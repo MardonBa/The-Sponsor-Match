@@ -6,7 +6,7 @@ import { getUserType } from '@/utils/helper/getUserType';
 export default async function DropdownContainer() {
 
   const userType = await getUserType();
-  let things; // change the name
+  let filters;
 
   if (userType == "sponsor") { // set all the values that a sponsor might want to search for
 
@@ -93,7 +93,7 @@ export default async function DropdownContainer() {
       { value: 'whenever', label: 'Whenever' }
     ];
 
-    things = [
+    filters = [
       {text: "Platform", options: platformOptions, name: "platform"},
       {text: "Content Type", options: contentTypeOptions, name: "contentType"},
       {text: "Community Size", options: communitySizeOptions, name: "communitySize"},
@@ -176,7 +176,7 @@ export default async function DropdownContainer() {
       { value: '1000+', label: '1000+' }
     ];
 
-    things = [
+    filters = [
       {text: "Preferred Formats", options: contentFormatOptions, name: "formats"},
       {text: "Preferred Platforms", options: contentPlatformOtions, name: "platforms"},
       {text: "Industry", options: industryOptions, name: "industry"},
@@ -188,8 +188,8 @@ export default async function DropdownContainer() {
     <div className={styles.container} >
       <p className={styles.text} >Filters:</p>
       <div className={styles.dropdownscontainer} >
-        {things.map((item) => {
-          return <DropdownItem text={item.text} options={item.options} name={item.name} />
+        {filters.map((item, index) => {
+          return <DropdownItem text={item.text} options={item.options} name={item.name} key={index} />
         })}
       </div>
     </div>
