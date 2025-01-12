@@ -1,11 +1,9 @@
 import styles from './dropdownContainer.module.css'
 import DropdownItem from './dropdownItem';
-import { getUserType } from '@/utils/helper/getUserType';
 // For sponsors, it should have dropdowns to sort by platform, content type, community size, niche, content frequency
 
-export default async function DropdownContainer() {
+export default function DropdownContainer({ userType }) {
 
-  const userType = await getUserType();
   let filters;
 
   if (userType == "sponsor") { // set all the values that a sponsor might want to search for

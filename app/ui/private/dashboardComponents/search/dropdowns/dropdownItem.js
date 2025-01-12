@@ -55,14 +55,6 @@ const getDropdownStyles = () => {
 
 export default function DropdownItem({ text, options, name }) {
 
-    // create stateful variable
-    const [selectedValues, setSelectedValues] = useState([]);
-
-    // event handler for when it is changed
-    const handleValueChange = (selectedOptions) => {
-      setSelectedValues(selectedOptions || []);
-    };
-
     return (
       <>
         <Select
