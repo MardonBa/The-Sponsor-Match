@@ -1,5 +1,5 @@
 import styles from './searchResults.module.css';
-import SearchResult from './searchResults/searchResult';
+import {CreatorSearchResult, SponsorSearchResult} from './searchResults/searchResult';
 import { getUserType } from '@/utils/helper/getUserType';
 import { createClient } from '@/utils/supabase/server';
 
@@ -11,7 +11,6 @@ export default async function SearchResults() {
   // initialize supabase
   const supabase = await createClient();
   let userData;
-  console.log(userType);
   if (userType == "sponsor") {
     // get the data of all creators
     let { data, error } = await supabase.rpc('get_all_creators');
@@ -48,30 +47,38 @@ export default async function SearchResults() {
     }
     else {
       userData = data;
-      console.log(userData);
     } 
   }
   // look at what is retured to see if it already works
   // make a list of dictionaries that are of the form {name, communitySize, niche, contentFrequency}
 
-  // function that maps over the results that are from content creators and displays search results
-  const displayCreatorResults = (results) => {
+  // function that maps over the user data and displays search results (displays creators)
+  const displayCreatorResults = () => {
 
+    if (!Array.isArray(userData) || userData.length === 0) {
+      return <p>No results found.</p>;
+    }
+
+    return userData.map((user, index) => (
+      <CreatorSearchResult name={user.username} communitySize={user.community_size_out} niche={user.niche_out} contentFrequency={user.content_frequency_out} key={user.user_id_out || index} />
+    ));
   }
 
-  // function that maps over the results that are from sponsors and displays the search results
-  const displaySponsorResults = (results) => {
+  // function that maps over the user data and displays search results (displays sponsors)
+  const displaySponsorResults = () => {
 
+    if (!Array.isArray(userData) || userData.length === 0) {
+      return <p>No results found.</p>;
+    }
+
+    return userData.map((user, index) => (
+       <SponsorSearchResult name={user.company_name_out} size={user.size_out} industry={user.industry_out} key={user.user_id_out || index} />
+    ));
   }
 
   return (
     <div className={styles.container} >
-      <SearchResult name={'Bayan'} communitySize={'13k'} niche={'games'} contentFrequency={'weekly'} />
-      <SearchResult name={'Bayan'} communitySize={'13k'} niche={'games'} contentFrequency={'weekly'} />
-      <SearchResult name={'Bayan'} communitySize={'13k'} niche={'games'} contentFrequency={'weekly'} />
-      <SearchResult name={'Bayan'} communitySize={'13k'} niche={'games'} contentFrequency={'weekly'} />
-      <SearchResult name={'Bayan'} communitySize={'13k'} niche={'games'} contentFrequency={'weekly'} />
-      <SearchResult name={'Bayan'} communitySize={'13k'} niche={'games'} contentFrequency={'weekly'} />
+      {userType == "sponsor" ? displayCreatorResults() : displaySponsorResults()}
     </div>
   );
 }
