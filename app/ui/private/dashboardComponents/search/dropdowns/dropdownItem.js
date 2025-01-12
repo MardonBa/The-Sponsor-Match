@@ -1,12 +1,10 @@
 "use client";
 
-import styles from './dropdownItem.module.css';
-import DownArrow from '@/app/ui/public/downArrow/downArrow'; // TODO remove
 import { useState } from 'react';
 import Select from "react-select";
 
 // function that returns a style object. needs to be a function to allow for variable dropdown widths
-const getDropdownStyles = (width) => {
+const getDropdownStyles = () => {
   return {
     // styles here
     container: (base) => ({
@@ -65,22 +63,6 @@ export default function DropdownItem({ text, options, name }) {
       setSelectedValues(selectedOptions || []);
     };
 
-    // conditionals for the dropdown width
-    let dropdownWidth;
-    if (name == "platform") {
-      dropdownWidth = '150px';
-    } else if (name == "contentType") {
-      dropdownWidth = '220px';
-    } else if (name == "communitySize") {
-      dropdownWidth = '180px';
-    } else if (name == "niche") {
-      dropdownWidth = '150px';
-    } else if (name == "contentFrequency") {
-      dropdownWidth = '210px';
-    } else {
-      dropdownWidth = '210px'; // this should never run, but it's here in case
-    }
-
     return (
       <>
         <Select
@@ -89,7 +71,7 @@ export default function DropdownItem({ text, options, name }) {
           options={options}
           value={selectedValues}
           onChange={handleValueChange}
-          styles={getDropdownStyles(dropdownWidth)}
+          styles={getDropdownStyles()}
           isMulti
           placeholder={text}
           required
