@@ -94,8 +94,8 @@ export default function DropdownContainer({ userType, onSelectionChange }) {
     ];
 
     filters = [
-      {text: "Platform", options: platformOptions, name: "platform"},
-      {text: "Content Type", options: contentTypeOptions, name: "contentType"},
+      {text: "Platform", options: platformOptions, name: "platforms"},
+      {text: "Content Type", options: contentTypeOptions, name: "formats"},
       {text: "Community Size", options: communitySizeOptions, name: "communitySize"},
       {text: "Niche", options: nicheOptions, name: "niche"},
       {text: "Content Frequency", options: contentFrequencyOptions, name: "contentFrequency"}
@@ -180,7 +180,7 @@ export default function DropdownContainer({ userType, onSelectionChange }) {
       {text: "Preferred Formats", options: contentFormatOptions, name: "formats"},
       {text: "Preferred Platforms", options: contentPlatformOtions, name: "platforms"},
       {text: "Industry", options: industryOptions, name: "industry"},
-      {text: "Size", options: sizeOptions, name: "size"}
+      {text: "Size", options: sizeOptions, name: "companySize"}
     ];
   };
 

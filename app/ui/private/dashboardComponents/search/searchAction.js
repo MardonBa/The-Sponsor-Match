@@ -1,21 +1,85 @@
 "use server";
 
 import { sanitizeInput } from "@/app/lib/auth/validation";
+import { createClient } from "@/utils/supabase/server";
 
 export default async function handleSearch(filters, searchInput, userType) {
 
   const sanitizedInput = sanitizeInput(searchInput, 'text');
 
   // create a supabse client
+  const supabase = await createClient();
+  // define variables
+  let platformIds = [];
+  let formatIds = [];
+
   // get the platform_ids, remove from the filters
+  let { data, error } = await supabase.rpc(
+    'get_several_platform_ids', {
+    names: filters.platforms
+  });
+  if (error) {
+    console.error(error);
+    // TODO add real error handling
+  } else {
+    delete filters.platforms;
+    platformIds = data;
+  }
+
   // get the format_ids, remove from the filters
+  ({ data, error } = await supabase.rpc(
+    'get_several_format_ids', {
+      format_names: filters.formats
+  }));
+  if (error) {
+    console.error(error);
+    // TODO add real error handling
+  } else {
+    delete filters.formats;
+    formatIds = data;
+  }
+
   // if userType is "creator"
+  if (userType == "creator") {
     // call search_sponors (user being a creator means they are looking for sponsors)
+    ({ data, error } = await supabase.rpc(
+      'search_sponsors', {
+        _company_name: sanitizedInput, 
+        _filters: filters, 
+        _formats: formatIds, 
+        _platforms: platformIds
+    }));
     // handle errors
-    // return the data (a list of sponsor objects)
-  // else if userType is "sponsor"
+    if (error) {
+      console.error(error);
+      // TODO add real error handling
+    } else { // return the data (a list of sponsor objects)
+      console.log(data);
+      return data;
+    }
+  } else if (userType == "sponsor") { // else if userType is "sponsor"
     // call search_creators (user being a sponsor means they are looking for creators)
+    ({ data, error } = await supabase.rpc(
+      'search_creators', {
+        _filters: filters, 
+        _formats: formatIds, 
+        _platforms: platformIds, 
+        _username: sanitizedInput
+    }));
     // handle errors
-    // return the data (a list of creator objects)
-  // else return an error
+    if (error) {
+      console.error(error);
+      // TODO add real error handling
+    } else { // return the data (a list of craetor objects)
+      console.log(data);
+      return data;
+    }
+  } else {  // else return an error
+    console.log("there is an error somewhere! the user should be a craetor or a sponsor");
+    // TODO add real error handling
+  }
+
+  console.log("returning null");
+  return null;
+ 
 }
