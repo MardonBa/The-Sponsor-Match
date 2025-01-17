@@ -23,7 +23,10 @@ export default async function handleSearch(filters, searchInput, userType) {
     // TODO add real error handling
   } else {
     delete filters.platforms;
-    platformIds = data;
+    platformIds = [];
+    for (let i = 0; i < data.length; i++) {
+      platformIds.push(data[i].platform_id);
+    }
   }
 
   // get the format_ids, remove from the filters
@@ -79,7 +82,6 @@ export default async function handleSearch(filters, searchInput, userType) {
     // TODO add real error handling
   }
 
-  console.log("returning null");
   return null;
  
 }

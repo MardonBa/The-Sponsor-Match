@@ -34,10 +34,13 @@ export default function SearchBar({ userType, handleSearch }) {
   }, []);
 
   const handleFilterChange = (name, selectedValues) => {
-    console.log(selectedValues)
+    let values = [];
+    for (let i = 0; i < selectedValues.length; i++) {
+      values.push(selectedValues[i].value);
+    }
     setFilters((prev) => ({
       ...prev,
-      [name]: selectedValues,
+      [name]: values,
     }));
   };
 
@@ -63,7 +66,6 @@ export default function SearchBar({ userType, handleSearch }) {
       filters.companySizeMax = [];
       for (let  i = 0; i < filters.companySize.length; i++) {
         if (filters.companySize[i].value.includes("+")) { 
-          console.log(filters.companySize[i]);
           filters.companySizeMin.push(Number(filters.companySize[i].value.slice(0, -1)));
           filters.companySizeMax.push(Number.MAX_SAFE_INTEGER);
         } else {
