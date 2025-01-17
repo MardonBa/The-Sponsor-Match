@@ -22,74 +22,74 @@ export default function Page() {
   const router = useRouter();
 
   const contentNiches = [
-    { value: "educational", label: "Educational Content" },
-    { value: "comedy", label: "Comedy" },
-    { value: "gaming", label: "Gaming" },
-    { value: "music", label: "Music" },
-    { value: "movies", label: "Movies/TV Shows" },
-    { value: "fan-fiction", label: "Fan Fiction" },
-    { value: "fashion", label: "Fashion" },
-    { value: "beauty", label: "Beauty" },
-    { value: "health-fitness", label: "Health & Fitness" },
-    { value: "travel", label: "Travel" },
-    { value: "home-decor", label: "Home Décor" },
-    { value: "tech-reviews", label: "Tech Reviews" },
-    { value: "programming", label: "Programming" },
-    { value: "productivity", label: "Productivity Tools" },
-    { value: "science", label: "Science & Innovation" },
-    { value: "entrepreneurship", label: "Entrepreneurship" },
-    { value: "investments", label: "Investments" },
-    { value: "personal-finance", label: "Personal Finance" },
-    { value: "marketing", label: "Marketing" },
-    { value: "recipes", label: "Recipes" },
-    { value: "restaurant-reviews", label: "Restaurant Reviews" },
-    { value: "food-challenges", label: "Food Challenges" },
-    { value: "nutrition", label: "Nutrition" },
-    { value: "visual-art", label: "Visual Art" },
-    { value: "graphic-design", label: "Graphic Design" },
-    { value: "photography", label: "Photography" },
-    { value: "crafts-diy", label: "Crafts/DIY" },
-    { value: "motivational", label: "Motivational Content" },
-    { value: "life-coaching", label: "Life Coaching" },
-    { value: "self-help", label: "Self-Help" },
-    { value: "current-events", label: "Current Events" },
-    { value: "pop-culture", label: "Pop Culture" },
-    { value: "analysis", label: "Analysis" },
-    { value: "sports", label: "Sports" },
-    { value: "collectibles", label: "Collectibles" },
-    { value: "books", label: "Books" },
-    { value: "outdoors", label: "Outdoors" },
-    { value: "non-profit", label: "Non-Profit Work" },
-    { value: "advocacy", label: "Advocacy" },
-    { value: "local-stories", label: "Local Stories" },
-    { value: "memes", label: "Memes & Viral Trends" },
-    { value: "unboxing", label: "Unboxing & Hauls" },
-    { value: "asmr", label: "ASMR" },
-    { value: "pet-content", label: "Pet Content" },
+    { value: "Educational Content", label: "Educational Content" },
+    { value: "Comedy", label: "Comedy" },
+    { value: "Gaming", label: "Gaming" },
+    { value: "Music", label: "Music" },
+    { value: "Movies/TV Shows", label: "Movies/TV Shows" },
+    { value: "Fan Fiction", label: "Fan Fiction" },
+    { value: "Fashion", label: "Fashion" },
+    { value: "Beauty", label: "Beauty" },
+    { value: "Health & Fitness", label: "Health & Fitness" },
+    { value: "Travel", label: "Travel" },
+    { value: "Home Décor", label: "Home Décor" },
+    { value: "Tech Reviews", label: "Tech Reviews" },
+    { value: "m", label: "Programming" },
+    { value: "Productivity Tools", label: "Productivity Tools" },
+    { value: "Science & Innovation", label: "Science & Innovation" },
+    { value: "Entrepreneurship", label: "Entrepreneurship" },
+    { value: "Investments", label: "Investments" },
+    { value: "Personal Finance", label: "Personal Finance" },
+    { value: "Marketing", label: "Marketing" },
+    { value: "Recipes", label: "Recipes" },
+    { value: "Restaurant Reviews", label: "Restaurant Reviews" },
+    { value: "Food Challenges", label: "Food Challenges" },
+    { value: "Nutrition", label: "Nutrition" },
+    { value: "Visual Art", label: "Visual Art" },
+    { value: "Graphic Design", label: "Graphic Design" },
+    { value: "Photography", label: "Photography" },
+    { value: "Crafts/DIY", label: "Crafts/DIY" },
+    { value: "Motivational Content", label: "Motivational Content" },
+    { value: "Life Coaching", label: "Life Coaching" },
+    { value: "Self-Help", label: "Self-Help" },
+    { value: "Current Events", label: "Current Events" },
+    { value: "Pop Culture", label: "Pop Culture" },
+    { value: "Analysis", label: "Analysis" },
+    { value: "Sports", label: "Sports" },
+    { value: "Collectibles", label: "Collectibles" },
+    { value: "Books", label: "Books" },
+    { value: "Outdoors", label: "Outdoors" },
+    { value: "Non-Profit Work", label: "Non-Profit Work" },
+    { value: "Advocacy", label: "Advocacy" },
+    { value: "Local Stories", label: "Local Stories" },
+    { value: "Memes & Viral Trends", label: "Memes & Viral Trends" },
+    { value: "Unboxing & Hauls", label: "Unboxing & Hauls" },
+    { value: "ASMR", label: "ASMR" },
+    { value: "Pet Content", label: "Pet Content" }
   ];
 
   const contentFormats = [
-    { value: 'short-form-video', label: 'Short form video' },
-    { value: 'long-form-video', label: 'Long form video' },
-    { value: 'short-form-writing', label: 'Short form writing' },
-    { value: 'long-form-writing', label: 'Long form writing' },
+    { value: 'Short form video', label: 'Short form video' },
+    { value: 'Long form video', label: 'Long form video' },
+    { value: 'Short form writing', label: 'Short form writing' },
+    { value: 'Long form writing', label: 'Long form writing'}
   ];
 
   const contentPlatforms = [
-    { value: 'instagram', label: 'Instagram' },
-    { value: 'youtube', label: 'YouTube' },
-    { value: 'facebook', label: 'Facebook' },
-    { value: 'blog', label: 'Personal Blog' },
+    { value: 'Instagram', label: 'Instagram' },
+    { value: 'YouTube', label: 'YouTube' },
+    { value: 'Facebook', label: 'Facebook' },
+    { value: 'Personal Blog', label: 'Personal Blog' }
   ];
 
   const contentFrequencyOptions = [
-    { value: 'several-per-day', label: 'Several per day' },
-    { value: 'daily', label: 'Daily' },
-    { value: 'several-per-week', label: 'Several per week' },
-    { value: 'weekly', label: 'Weekly' },
-    { value: 'several-per-month', label: 'Several per month' },
-    { value: 'monthly', label: 'Monthly' },
-    { value: 'whenever', label: 'Whenever' },
+    { value: 'Several per day', label: 'Several per day' },
+    { value: 'Daily', label: 'Daily' },
+    { value: 'Several per week', label: 'Several per week' },
+    { value: 'Weekly', label: 'Weekly' },
+    { value: 'Several per month', label: 'Several per month' },
+    { value: 'Monthly', label: 'Monthly' },
+    { value: 'Whenever', label: 'Whenever' }
   ];
 
   const [selectedNiches, setSelectedNiches] = useState();
@@ -115,6 +115,8 @@ export default function Page() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(e.target.contentNiche.value);
+    console.log(e.target.contentNiche);
 
     // set the creator data
     const creatorData = {

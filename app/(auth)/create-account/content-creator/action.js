@@ -39,7 +39,6 @@ export async function updateCreatorPlatforms(formData) {
   let { data } = await supabase.auth.getUser();
   const userId = data.user.id; // We can be sure that the user exists since they can't access this page without an authenticated session
   // get the creator id based on the user id
-  console.log(userId);
   let creatorId;
   let error;
   ({ data, error } = await supabase
@@ -52,7 +51,6 @@ export async function updateCreatorPlatforms(formData) {
     return {success: false, error};
   } else {
     creatorId = data;
-    console.log(`creator id: ${creatorId}`);
   }
 
   let platformId;

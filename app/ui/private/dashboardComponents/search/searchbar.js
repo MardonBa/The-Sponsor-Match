@@ -33,12 +33,11 @@ export default function SearchBar({ userType, handleSearch }) {
     }
   }, []);
 
-  console.log(filters);
-
   const handleFilterChange = (name, selectedValues) => {
+    console.log(selectedValues)
     setFilters((prev) => ({
       ...prev,
-      [name]: selectedValues?.value || selectedValues,
+      [name]: selectedValues,
     }));
   };
 
@@ -49,24 +48,37 @@ export default function SearchBar({ userType, handleSearch }) {
       filters.communitySizeMin = [];
       filters.communitySizeMax = [];
       for (let i = 0; i < filters.communitySize.length; i++) {
-        const range = filters.communitySize[i].split("_");
-        filters.communitySizeMin[i] = int(range[0]);
-        filters.communitySizeMax[i] = int(range[1]);
+        if (filters.communitySize[i].value.includes("+")) { 
+          filters.communitySizeMin.push(Number(filters.communitySize[i].slice(0, -1)));
+          filters.communitySizeMax.push(Number.MAX_SAFE_INTEGER);
+        } else {
+          const range = filters.communitySize[i].value.split("-");
+          filters.communitySizeMin.push(Number(range[0]));
+          filters.communitySizeMax.push(Number(range[1]));
+        }
       }
+      delete filters.communitySize;
     } else if (filters.companySize) {
       filters.companySizeMin = [];
       filters.companySizeMax = [];
       for (let  i = 0; i < filters.companySize.length; i++) {
-        const range = filters.companySize[i].split("_");
-      filters.companySizeMin[i] = int(range[0]);
-      filters.companySizeMax[i] = int(range[1]);
+        if (filters.companySize[i].value.includes("+")) { 
+          console.log(filters.companySize[i]);
+          filters.companySizeMin.push(Number(filters.companySize[i].value.slice(0, -1)));
+          filters.companySizeMax.push(Number.MAX_SAFE_INTEGER);
+        } else {
+          const range = filters.companySize[i].value.split("-");
+          filters.companySizeMin.push(Number(range[0]));
+          filters.companySizeMax.push(Number(range[1]));
+        }
       }
+      delete filters.companySize;
     }
 
     console.log('Filters:', filters);
     console.log('Search Input:', searchInputRef.current.value);
     const input = sanitizeInput(searchInputRef.current.value, 'text')
-    // Trigger your database search here using the filters
+    // Trigger database search here using the filters
     handleSearch(filters, input, userType);
   };
 
