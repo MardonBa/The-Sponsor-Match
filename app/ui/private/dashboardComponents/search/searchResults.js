@@ -44,32 +44,32 @@ export default async function SearchResults() {
   }
 
   // function that maps over the user data and displays search results (displays creators)
-  const displayCreatorResults = () => {
+  const displayCreatorResults = (data) => {
 
-    if (!Array.isArray(userData) || userData.length === 0) {
+    if (!Array.isArray(data) || data.length === 0) {
       return <p>No results found.</p>;
     }
 
-    return userData.map((user, index) => (
+    return data.map((user, index) => (
       <CreatorSearchResult name={user.username} communitySize={user.community_size} niche={user.niche} contentFrequency={user.content_frequency} key={user.user_id_out || index} />
     ));
   }
 
   // function that maps over the user data and displays search results (displays sponsors)
-  const displaySponsorResults = () => {
+  const displaySponsorResults = (data) => {
 
-    if (!Array.isArray(userData) || userData.length === 0) {
+    if (!Array.isArray(data) || data.length === 0) {
       return <p>No results found.</p>;
     }
 
-    return userData.map((user, index) => (
+    return data.map((user, index) => (
        <SponsorSearchResult name={user.company_name} size={user.company_size} industry={user.industry} key={user.user_id_out || index} />
     ));
   }
 
   return (
     <div className={styles.container} >
-      {userType == "sponsor" ? displayCreatorResults() : displaySponsorResults()}
+      {userType == "sponsor" ? displayCreatorResults(userData) : displaySponsorResults(userData)}
     </div>
   );
 }
