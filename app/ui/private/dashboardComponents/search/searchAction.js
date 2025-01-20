@@ -3,7 +3,7 @@
 import { sanitizeInput } from "@/app/lib/auth/validation";
 import { createClient } from "@/utils/supabase/server";
 
-export default async function handleSearch(filters, searchInput, userType) {
+async function handleSearch(filters, searchInput, userType) {
 
   const sanitizedInput = sanitizeInput(searchInput, 'text');
 
@@ -85,3 +85,41 @@ export default async function handleSearch(filters, searchInput, userType) {
   return null;
  
 }
+
+// search for a user
+export default async function search(filters, searchInput, userType) {
+  
+  // change the communitySize filter to be a min and max, if it is provided
+  if (filters.communitySize) {
+    filters.communitySizeMin = [];
+    filters.communitySizeMax = [];
+    for (let i = 0; i < filters.communitySize.length; i++) {
+      if (filters.communitySize[i].value.includes("+")) { 
+        filters.communitySizeMin.push(Number(filters.communitySize[i].slice(0, -1)));
+        filters.communitySizeMax.push(Number.MAX_SAFE_INTEGER);
+      } else {
+        const range = filters.communitySize[i].value.split("-");
+        filters.communitySizeMin.push(Number(range[0]));
+        filters.communitySizeMax.push(Number(range[1]));
+      }
+    }
+    delete filters.communitySize;
+  } else if (filters.companySize) {
+    filters.companySizeMin = [];
+    filters.companySizeMax = [];
+    for (let  i = 0; i < filters.companySize.length; i++) {
+      if (filters.companySize[i].value.includes("+")) { 
+        filters.companySizeMin.push(Number(filters.companySize[i].value.slice(0, -1)));
+        filters.companySizeMax.push(Number.MAX_SAFE_INTEGER);
+      } else {
+        const range = filters.companySize[i].value.split("-");
+        filters.companySizeMin.push(Number(range[0]));
+        filters.companySizeMax.push(Number(range[1]));
+      }
+    }
+    delete filters.companySize;
+  }
+
+  // Trigger database search here using the filters
+  return await handleSearch(filters, searchInput, userType);
+};

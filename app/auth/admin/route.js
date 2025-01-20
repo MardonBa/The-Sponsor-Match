@@ -19,7 +19,7 @@ export async function POST(request) {
       return NextResponse.json({ error }, { status: 400});
     }
 
-    return NextResponse.json({ data }, { satus: 200 });
+    return NextResponse.json({ data }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 500});
   }
