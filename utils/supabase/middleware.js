@@ -43,21 +43,14 @@ export async function updateSession(request) {
     data: { user }
   } = await supabase.auth.getUser();
 
-  // Each list should contain all routes in the private and public route groups respectively
-  // If a path is ever added to either group, it has to be added to these lists
-  const privatePaths = [
-    '/advertise', '/analytics', '/dashboard', '/log-out', '/messages', '/partnerships', '/payment-history', '/search', '/settings', 
-    '/log-out', '/create-account'
-  ];
   const publicPaths = [
-    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/update-password', '/forgot-password'
+    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/update-password', '/forgot-password', '/privacy-policy'
   ];
   
-  const isPrivateRoute = privatePaths.some(path => url.pathname.startsWith(path));
   const isPublicRoute = publicPaths.some(path => url.pathname.startsWith(path));
 
   // Case where the user is not authenticated and tries to access a private route
-  if (!user && isPrivateRoute) {
+  if (!user && !isPublicRoute) {
     url.pathname = "/";
     return NextResponse.redirect(url);
   }
