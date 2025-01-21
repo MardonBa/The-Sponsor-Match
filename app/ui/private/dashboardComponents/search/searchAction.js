@@ -94,11 +94,11 @@ export default async function search(filters, searchInput, userType) {
     filters.communitySizeMin = [];
     filters.communitySizeMax = [];
     for (let i = 0; i < filters.communitySize.length; i++) {
-      if (filters.communitySize[i].value.includes("+")) { 
+      if (filters.communitySize[i].includes("+")) { 
         filters.communitySizeMin.push(Number(filters.communitySize[i].slice(0, -1)));
         filters.communitySizeMax.push(Number.MAX_SAFE_INTEGER);
       } else {
-        const range = filters.communitySize[i].value.split("-");
+        const range = filters.communitySize[i].split("-");
         filters.communitySizeMin.push(Number(range[0]));
         filters.communitySizeMax.push(Number(range[1]));
       }
@@ -108,11 +108,11 @@ export default async function search(filters, searchInput, userType) {
     filters.companySizeMin = [];
     filters.companySizeMax = [];
     for (let  i = 0; i < filters.companySize.length; i++) {
-      if (filters.companySize[i].value.includes("+")) { 
-        filters.companySizeMin.push(Number(filters.companySize[i].value.slice(0, -1)));
+      if (filters.companySize[i].includes("+")) { 
+        filters.companySizeMin.push(Number(filters.companySize[i].slice(0, -1)));
         filters.companySizeMax.push(Number.MAX_SAFE_INTEGER);
       } else {
-        const range = filters.companySize[i].value.split("-");
+        const range = filters.companySize[i].split("-");
         filters.companySizeMin.push(Number(range[0]));
         filters.companySizeMax.push(Number(range[1]));
       }

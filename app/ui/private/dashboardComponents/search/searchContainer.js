@@ -16,7 +16,7 @@ export default function SearchContainer({ userType, res }) {
 
   return (
     <div className={`${styles.searchcontainer}`} >
-        <SearchBar userType={userType} handleSearch={setResults} />
+        <SearchBar userType={userType} searchFunc={setResults} />
         <SearchResults userType={userType} userData={results} />
     </div>
   );
