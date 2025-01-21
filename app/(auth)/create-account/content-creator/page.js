@@ -10,12 +10,14 @@
 "use client";
 
 import styles from "../page.module.css";
-import Select from "react-select";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateCreator, updateCreatorPlatforms, updateUserFormats } from "./action";
 import { sanitizeInput } from "../../../lib/auth/validation";
 import { selectStyles, selectStylesMulti } from "../selectStyles";
+import dynamic from 'next/dynamic';
+
+const Select = dynamic(() => import('react-select'), { ssr: false });
 
 export default function Page() {
 
@@ -187,9 +189,11 @@ export default function Page() {
         <p className={styles.p} >How would you describe the format of the content you create?</p>
         <Select
           id="contentFormats"
+          instanceId="contentFormats"
           name="contentFormats"
           options={contentFormats}
           value={selectedFormats}
+          defaultValue={null}
           onChange={handleFormatsChange}
           styles={selectStylesMulti}
           isMulti
@@ -202,9 +206,11 @@ export default function Page() {
         <p className={styles.p} >What category best describes your content?</p>
         <Select
           id="contentNiche"
+          instanceId="contentNiche"
           name="contentNiche"
           options={contentNiches}
           value={selectedNiches}
+          defaultValue={null}
           onChange={handleNichesChange}
           styles={selectStyles}
           placeholder="Choose category..."
@@ -214,9 +220,11 @@ export default function Page() {
         <p className={styles.p} >Which of our supported platforms do you use?</p>
         <Select
         id="contentPlatforms"
+        instanceId="contentPlatforms"
         name="contentPlatforms"
         options={contentPlatforms}
         value={selectedPlatforms}
+        defaultValue={null}
         onChange={handlePlatformsChange}
         styles={selectStylesMulti}
         isMulti
@@ -227,9 +235,11 @@ export default function Page() {
         <p className={styles.p} >How often do you post?</p>
         <Select
           id="contentFrequency"
+          instanceId="contentFrequency"
           name="contentFrequency"
           options={contentFrequencyOptions}
           value={selectedFrequency}
+          defaultValue={null}
           onChange={handleFrequencyChange}
           styles={selectStyles}
           className={styles.select}

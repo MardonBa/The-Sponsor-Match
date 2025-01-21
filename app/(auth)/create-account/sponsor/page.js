@@ -10,13 +10,15 @@
 "use client";
 
 import styles from "../page.module.css";
-import Select from "react-select";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateSponsor, updateSponsorPlatforms } from "./action";
 import { updateUserFormats } from "../content-creator/action"; // this function is user type agnostic, so no need to rewrite it
 import { sanitizeInput } from "../../../lib/auth/validation";
 import { selectStyles, selectStylesMulti } from "../selectStyles";
+import dynamic from 'next/dynamic';
+
+const Select = dynamic(() => import('react-select'), { ssr: false });
 
 export default function Page() {
 
@@ -179,9 +181,11 @@ export default function Page() {
         <p className={styles.p }>What platforms do you want to advertise on?</p>
         <Select
         id="contentPlatforms"
+        instanceId="contentPlatforms"
         name="contentPlatforms"
         options={contentPlatforms}
         value={selectedPlatforms}
+        defaultValue={null}
         onChange={handlePlatformsChange}
         styles={selectStylesMulti}
         isMulti
@@ -192,9 +196,11 @@ export default function Page() {
         <p className={styles.p }>What content formats would you like to advertise with?</p>
         <Select
           id="contentFormats"
+          instanceId="contentFormats"
           name="contentFormats"
           options={contentFormats}
           value={selectedFormats}
+          defaultValue={null}
           onChange={handleFormatsChange}
           styles={selectStylesMulti}
           isMulti
@@ -205,9 +211,11 @@ export default function Page() {
         <p className={styles.p }>What industry best describes your company?</p>
         <Select
           id="industry"
+          instanceId="industry"
           name="industry"
           options={industryOptions}
           value={selectedIndustries}
+          defaultValue={null}
           onChange={handleIndustryChange}
           styles={selectStyles}
           className={styles.select}

@@ -3,12 +3,15 @@
 "use client";
 
 import styles from "./page.module.css";
-import Select from "react-select";
 import { useState } from "react";
 import insertUser from "./action";
 import { useRouter } from "next/navigation";
 import { sanitizeInput } from "../../lib/auth/validation";
 import { selectStyles } from "./selectStyles";
+import dynamic from 'next/dynamic';
+
+const Select = dynamic(() => import('react-select'), { ssr: false });
+
 
 export default function Page() {
   // when the form is submitted, the user should be redirected to either /creator or /sponsor
@@ -56,9 +59,11 @@ export default function Page() {
         <p className={styles.p} htmlFor="accountType">Account type:</p>
         <Select
           id="accountType"
+          instanceId="accountType"
           name="accountType"
           options={accountTypes}
           value={selectedAccountType}
+          defaultValue={null}
           onChange={handleChange}
           styles={selectStyles}
           placeholder="Select account type..."

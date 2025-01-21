@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import Select from "react-select";
+import dynamic from 'next/dynamic';
+
+const Select = dynamic(() => import('react-select'), { ssr: false });
 
 // function that returns a style object. needs to be a function to allow for variable dropdown widths
 const getDropdownStyles = () => {
@@ -66,9 +68,11 @@ export default function DropdownItem({ text, options, name, onSelectChange }) {
       <>
         <Select
           id={name}
+          instanceId={name}
           name={name}
           options={options}
           value={selectedValues}
+          defaultValue={null}
           onChange={handleValueChange}
           styles={getDropdownStyles()}
           isMulti
