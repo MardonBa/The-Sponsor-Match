@@ -1,10 +1,18 @@
+import { getCreatorData, getSponsorData } from "./action";
 import styles from "./page.module.css";
-import { useRouter } from "next/router";
 
-export default function Page() {
-  const router = useRouter();
-  const userType = router.query.user_type;
-  const name = router.query.username; // will either be the username or the company name depending on the user type
+export default async function Page({
+  params
+}) {
+  const userType = (await params).user_type;
+  const name = decodeURIComponent((await params).username); // will either be the username or the company name depending on the user type
+
+  let data;
+  if (userType == "creator") {
+    data = getCreatorData(name);
+  } else {
+    data = getSponsorData(name);
+  }
 
   return (
     <>
