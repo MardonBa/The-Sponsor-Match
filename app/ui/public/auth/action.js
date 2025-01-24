@@ -17,6 +17,7 @@ export async function oauthLogin(prov) {
   });
 
   if (data.url) {
+    console.log(data.url);
     redirect(data.url);
   }
 }

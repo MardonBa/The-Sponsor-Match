@@ -44,10 +44,10 @@ export async function updateSession(request) {
   } = await supabase.auth.getUser();
 
   const publicPaths = [
-    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/update-password', '/forgot-password', '/privacy-policy'
+    '/contact', '/features', '/log-in', '/meet-the-team', '/pricing', 'sign-up', '/update-password', '/forgot-password', '/privacy-policy', '/', '/auth/callback'
   ];
   
-  const isPublicRoute = publicPaths.some(path => url.pathname.startsWith(path));
+  const isPublicRoute = publicPaths.includes(url.pathname);
 
   // Case where the user is not authenticated and tries to access a private route
   if (!user && !isPublicRoute) {
