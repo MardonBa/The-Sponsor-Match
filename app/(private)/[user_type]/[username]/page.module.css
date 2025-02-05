@@ -1,0 +1,16 @@
+.pagecontainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.sidebar {
+  height: calc(100vh - 20px);
+  margin: 10px;
+  grid-column: 1 / 2;
+}
+
+.datacontainer {
+  height: calc(100vh - 20px);
+  grid-column: 2 / 3;
+  margin: 10px 10px 10px 0px;
+}

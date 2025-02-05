@@ -1,6 +1,7 @@
 import { getCreatorData, getSponsorData } from "./action";
 import styles from "./page.module.css";
 import NavSideBar from "@/app/ui/private/dashboardComponents/sidebar/navsidebar";
+import Sidebar from "@/app/ui/private/dashboardComponents/sidebar/sidebar";
 import DisplayCreator from "@/app/ui/private/userPages/creator/displayCreator";
 import DisplaySponsor from "@/app/ui/private/userPages/sponsor/displaySponsor";
 
@@ -12,18 +13,20 @@ export default async function Page({
 
   let data;
   let component;
-  if (userType == "creator") {
-    data = getCreatorData(name);
+  if (userType == "sponsor") {
+    data = getSponsorData(name);
     component = <DisplaySponsor userData={data} />
   } else {
-    data = getSponsorData(name);
+    data = getCreatorData(name);
     component = <DisplayCreator userData={data} />
   }
 
   return (
     <div className={styles.pagecontainer}>
-      <NavSideBar />
-      <div className={styles.platformscontainer}>
+      <Sidebar style={styles.sidebar} >
+        <NavSideBar />
+      </Sidebar>
+      <div className={styles.datacontainer}>
         {component}
       </div>
     </div>
