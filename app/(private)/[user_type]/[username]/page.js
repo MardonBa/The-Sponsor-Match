@@ -14,10 +14,10 @@ export default async function Page({
   let data;
   let component;
   if (userType == "sponsor") {
-    data = getSponsorData(name);
+    data = await getSponsorData(name);
     component = <DisplaySponsor userData={data} />
   } else {
-    data = getCreatorData(name);
+    data = await getCreatorData(name);
     component = <DisplayCreator userData={data} />
   }
 
