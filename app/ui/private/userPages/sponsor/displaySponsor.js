@@ -2,7 +2,7 @@ import styles from "./displaySponsor.module.css";
 
 export default function DisplaySponsor({ userData }) {
 
-  let { company_name_out: company_name, industry_out: industry, size, platforms, formats } = userData;
+  let { company_name_out: companyName, industry_out: industry, size, platforms, formats } = userData;
 
   return (
     <>
@@ -20,7 +20,9 @@ export default function DisplaySponsor({ userData }) {
 
       </div>
       <div className={styles.demographicscontainer}>
-
+        Company name: {companyName}
+        Industry: {industry}
+        Company size: {size}
       </div>
     </>
   );
